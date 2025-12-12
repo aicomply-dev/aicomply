@@ -243,12 +243,16 @@ This is the **first iteration** of AI Comply. Future improvements include:
 
 ---
 
-## Author
+## Authors
 
 **Daniel Minda**
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-danielm7-blue?logo=linkedin)](https://www.linkedin.com/in/danielm7)
 [![Twitter](https://img.shields.io/badge/Twitter-mndaniel78-blue?logo=x)](https://x.com/mndaniel78)
+
+**Radu Socoliuc**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-snradu-blue?logo=linkedin)](https://www.linkedin.com/in/snradu/)
 
 ---
 
