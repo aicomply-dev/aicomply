@@ -50,3 +50,6 @@ sqlite.db
 
 # Finder (MacOS) folder config
 .DS_Store
+
+# Internal documentation (not for public repo)
+docs/
