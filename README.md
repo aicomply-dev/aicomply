@@ -15,6 +15,45 @@
 
 ---
 
+## 📖 The Story
+
+This project started a couple of weeks ago with a simple goal: **make EU AI Act compliance accessible to everyone**.
+
+Using [Daniel Miessler's](https://github.com/danielmiessler) **PAI (Personal AI) agent infrastructure** combined with **Claude**, we extracted and structured the EU AI Act requirements into actionable content. The result? A complete compliance toolkit including:
+
+- 📚 **Training materials** — Learning modules to understand the regulation
+- 📋 **Policy framework** — Ready-to-adapt AI governance policy
+- 📐 **14 Standards** — Technical and organizational requirements
+- 📝 **Procedures, checklists, forms, and records** — Operational documentation
+- 🎯 **114+ Controls** — Mapped to EU AI Act articles
+
+### Why This Exists
+
+If you're wondering *"How do I even start with AI Act compliance?"* — this platform is for you.
+
+AI Act compliance is a **cross-functional effort** involving legal, technical, risk, and business teams. This app helps you **kick-start your AI compliance program** by providing a structured foundation you can build upon.
+
+---
+
+## ⚠️ Important Disclaimer
+
+> **This content is for educational and training purposes only.**
+>
+> - This platform does **not guarantee compliance** with the EU AI Act
+> - Compliance requires cross-functional work with legal, technical, and business stakeholders
+> - The materials are starting points — **adapt them to your organization's context**
+> - This is the **first iteration** — errors in content are possible and will be addressed
+> - Always consult qualified legal and compliance professionals for your specific situation
+
+### How to Use This
+
+1. **Learn** — Use the training modules to understand the EU AI Act
+2. **Adapt** — Customize the policies, standards, and procedures for your organization
+3. **Improve** — Found an error or have a suggestion? Open an issue or PR!
+4. **Share** — Help the community (remember to remove sensitive content before sharing)
+
+---
+
 ## Overview
 
 AI Comply is a comprehensive open-source platform designed to help organizations understand, assess, and implement compliance with the **EU AI Act (Regulation 2024/1689)**. Built for organizations of all sizes, it provides structured guidance through the entire compliance journey.
@@ -167,6 +206,20 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Roadmap
+
+This is the **first iteration** of AI Comply. Future improvements include:
+
+- [ ] Enhanced assessment workflows
+- [ ] Document generation and export
+- [ ] Multi-language support
+- [ ] API for integrations
+- [ ] Community-contributed templates
+
+**Recommendations and suggestions are welcome!** Open an issue or start a discussion.
 
 ---
 
