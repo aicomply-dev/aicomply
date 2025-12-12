@@ -195,6 +195,26 @@ Ensure your production environment has:
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a PR.
 
+### Contributing Content
+
+You can improve the compliance content by editing markdown and JSON files directly — **no coding required!**
+
+| Content Type | Location |
+|--------------|----------|
+| Learning Modules | `content/modules/*.json` |
+| Assessments | `content/assessments/*/questions.json` |
+| EU AI Act Text | `src/lib/data/regulation/*.md` |
+| Policy | `src/lib/data/policy/AI-POLICY.md` |
+| Standards | `src/lib/data/standards/*.md` |
+| Procedures | `src/lib/data/guides/procedures/*.md` |
+| Checklists | `src/lib/data/guides/checklists/*.md` |
+| Forms | `src/lib/data/guides/forms/*.md` |
+| Records | `src/lib/data/guides/records/*.md` |
+| Glossary | `content/glossary/*.json` |
+| FAQ | `content/faq/*.json` |
+
+### Contributing Code
+
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
