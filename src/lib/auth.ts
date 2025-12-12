@@ -2,10 +2,8 @@ import { NextAuthOptions } from "next-auth"
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import GoogleProvider from "next-auth/providers/google"
 import GitHubProvider from "next-auth/providers/github"
-import CredentialsProvider from "next-auth/providers/credentials"
 import { db } from "@/lib/db"
 import { user, account, session as sessionTable, verificationToken, organization } from "@/lib/db/schema"
-import { verifyPassword } from "@/lib/auth/password"
 import { eq } from "drizzle-orm"
 import { nanoid } from "nanoid"
 
@@ -32,39 +30,6 @@ export const authOptions: NextAuthOptions = {
       clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
       allowDangerousEmailAccountLinking: true,
     }),
-    CredentialsProvider({
-      name: "credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" }
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          return null
-        }
-
-        const existingUser = await db.query.user.findFirst({
-          where: eq(user.email, credentials.email.toLowerCase())
-        })
-
-        if (!existingUser || !existingUser.passwordHash) {
-          return null
-        }
-
-        const passwordMatch = verifyPassword(credentials.password, existingUser.passwordHash)
-
-        if (!passwordMatch) {
-          return null
-        }
-
-        return {
-          id: existingUser.id,
-          email: existingUser.email,
-          name: existingUser.name,
-          image: existingUser.image,
-        }
-      }
-    })
   ],
   callbacks: {
     async redirect({ url, baseUrl }) {
