@@ -1,0 +1,79 @@
+[
+  {
+    "id": "prohibited-practices",
+    "title": "Prohibited Practices",
+    "article": "Article 5",
+    "category": "prohibited",
+    "questionCount": 20
+  },
+  {
+    "id": "high-risk-classification",
+    "title": "High-Risk Classification",
+    "article": "Article 6",
+    "category": "high-risk-classification",
+    "questionCount": 35
+  },
+  {
+    "id": "limited-risk",
+    "title": "Limited Risk",
+    "article": "Article 50",
+    "category": "limited-risk",
+    "questionCount": 5
+  },
+  {
+    "id": "risk-management",
+    "title": "Risk Management",
+    "article": "Article 9",
+    "category": "risk-management",
+    "questionCount": 14
+  },
+  {
+    "id": "data-governance",
+    "title": "Data Governance",
+    "article": "Article 10",
+    "category": "data-governance",
+    "questionCount": 12
+  },
+  {
+    "id": "technical-documentation",
+    "title": "Technical Documentation",
+    "article": "Article 11",
+    "category": "technical-documentation",
+    "questionCount": 10
+  },
+  {
+    "id": "record-keeping",
+    "title": "Record Keeping",
+    "article": "Article 12",
+    "category": "record-keeping",
+    "questionCount": 8
+  },
+  {
+    "id": "transparency",
+    "title": "Transparency Requirements",
+    "article": "Article 13",
+    "category": "transparency",
+    "questionCount": 10
+  },
+  {
+    "id": "human-oversight",
+    "title": "Human Oversight",
+    "article": "Article 14",
+    "category": "human-oversight",
+    "questionCount": 11
+  },
+  {
+    "id": "accuracy-robustness",
+    "title": "Accuracy & Robustness",
+    "article": "Article 15",
+    "category": "accuracy-robustness",
+    "questionCount": 10
+  },
+  {
+    "id": "conformity-assessment",
+    "title": "Conformity Assessment",
+    "article": "Article 43",
+    "category": "conformity-assessment",
+    "questionCount": 15
+  }
+]

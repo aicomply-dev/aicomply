@@ -1,0 +1,451 @@
+export interface Regulation {
+  id: string
+  jurisdiction: string
+  name: string
+  shortName: string
+  status: "enacted" | "proposed" | "voluntary" | "rescinded"
+  effectiveDate?: string
+  description: string
+  philosophy: string
+  keyFeatures: string[]
+  penalties?: string
+  icon: string
+  color: string
+  links?: { label: string; url: string }[]
+}
+
+export interface RegulationCategory {
+  id: string
+  title: string
+  description: string
+  regulations: Regulation[]
+}
+
+export const GLOBAL_REGULATIONS: RegulationCategory[] = [
+  {
+    id: "comprehensive",
+    title: "Comprehensive Safety Frameworks",
+    description: "Jurisdictions with binding, risk-based AI legislation focused on fundamental rights and safety.",
+    regulations: [
+      {
+        id: "eu-ai-act",
+        jurisdiction: "European Union",
+        name: "Artificial Intelligence Act",
+        shortName: "EU AI Act",
+        status: "enacted",
+        effectiveDate: "August 2025 (phased)",
+        description: "The world's first comprehensive AI regulation, establishing a risk-based framework for AI systems with strict requirements for high-risk applications.",
+        philosophy: "Fundamental Rights & Safety",
+        keyFeatures: [
+          "Risk-based classification (Prohibited, High-Risk, Limited, Minimal)",
+          "Prohibited practices include social scoring, manipulative AI, real-time biometric ID",
+          "High-risk systems require conformity assessments, technical documentation, human oversight",
+          "GPAI models must provide training data summaries and comply with copyright law",
+          "Systemic risk models require additional safety evaluations and incident reporting",
+        ],
+        penalties: "Up to €35M or 7% of global annual turnover",
+        icon: "eu",
+        color: "blue",
+        links: [
+          { label: "Full Text", url: "/resources/regulation" },
+          { label: "EUR-Lex", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689" },
+        ],
+      },
+      {
+        id: "brazil-ai-act",
+        jurisdiction: "Brazil",
+        name: "AI Regulatory Framework (Bill 2338/2023)",
+        shortName: "Brazil AI Act",
+        status: "proposed",
+        effectiveDate: "Expected 2025-2026",
+        description: "Latin America's first comprehensive AI law, heavily modeled on the EU AI Act with risk-based classification and algorithmic impact assessments.",
+        philosophy: "Fundamental Rights & Safety",
+        keyFeatures: [
+          "Risk-based classification (Excessive Risk vs. High Risk)",
+          "Mandatory algorithmic impact assessments",
+          "Rights catalog: explanation, human review, contestation",
+          "Sector-specific requirements for healthcare, finance, public services",
+        ],
+        penalties: "TBD (expected to mirror EU approach)",
+        icon: "brazil",
+        color: "green",
+        links: [
+          { label: "Bill Status", url: "https://www.camara.leg.br/proposicoesWeb/fichadetramitacao?idProposicao=2338" },
+        ],
+      },
+    ],
+  },
+  {
+    id: "us-federal",
+    title: "United States Federal",
+    description: "Federal policy shifted from safety mandates to innovation acceleration in 2025.",
+    regulations: [
+      {
+        id: "eo-14179",
+        jurisdiction: "United States (Federal)",
+        name: "Executive Order 14179: Removing Barriers to American Leadership in AI",
+        shortName: "EO 14179",
+        status: "enacted",
+        effectiveDate: "January 23, 2025",
+        description: "Establishes federal policy focused on 'AI dominance' and removing regulatory barriers to innovation. Rescinded previous safety-focused EO 14110.",
+        philosophy: "Innovation & Dominance",
+        keyFeatures: [
+          "Rescinded EO 14110 safety reporting requirements",
+          "Directs agencies to remove regulatory barriers to AI innovation",
+          "Accelerates AI infrastructure development (data centers, energy)",
+          "Prohibits 'ideological' AI in government procurement",
+          "Broad national security exemptions",
+        ],
+        icon: "us",
+        color: "red",
+        links: [
+          { label: "White House", url: "https://www.whitehouse.gov/presidential-actions/2025/01/removing-barriers-to-american-leadership-in-artificial-intelligence/" },
+        ],
+      },
+      {
+        id: "eo-14110",
+        jurisdiction: "United States (Federal)",
+        name: "Executive Order 14110: Safe, Secure, and Trustworthy AI",
+        shortName: "EO 14110 (Rescinded)",
+        status: "rescinded",
+        effectiveDate: "Rescinded January 20, 2025",
+        description: "Former executive order establishing safety reporting requirements for dual-use foundation models. Rescinded by the Trump administration.",
+        philosophy: "Safety & Security (Former)",
+        keyFeatures: [
+          "Required safety testing for large AI models",
+          "Established AI Safety Institute",
+          "Mandated reporting for dual-use foundation models",
+          "Created federal AI governance framework",
+        ],
+        icon: "us",
+        color: "gray",
+      },
+    ],
+  },
+  {
+    id: "us-states",
+    title: "United States State Laws",
+    description: "In the absence of federal regulation, states have enacted their own AI laws with divergent liability standards.",
+    regulations: [
+      {
+        id: "texas-traiga",
+        jurisdiction: "Texas",
+        name: "Texas Responsible AI Governance Act",
+        shortName: "TRAIGA (HB 149)",
+        status: "enacted",
+        effectiveDate: "January 1, 2026",
+        description: "Business-friendly AI law with intent-based liability standard. Prohibits social scoring, manipulation, and CSAM. Provides safe harbor for NIST RMF/ISO 42001 compliance.",
+        philosophy: "Intent-Based Liability",
+        keyFeatures: [
+          "Intent-based discrimination standard (not disparate impact)",
+          "Prohibits social scoring, manipulation, CSAM generation",
+          "Safe harbor for NIST AI RMF or ISO 42001 compliance",
+          "36-month regulatory sandbox for testing",
+          "AG-only enforcement, no private right of action",
+        ],
+        penalties: "Civil penalties via Attorney General",
+        icon: "texas",
+        color: "orange",
+      },
+      {
+        id: "colorado-sb205",
+        jurisdiction: "Colorado",
+        name: "Colorado AI Act",
+        shortName: "SB 205",
+        status: "enacted",
+        effectiveDate: "June 30, 2026",
+        description: "Establishes duty of reasonable care to protect consumers from algorithmic discrimination. Requires annual impact assessments for high-risk AI.",
+        philosophy: "Duty of Care",
+        keyFeatures: [
+          "Duty of reasonable care standard",
+          "Applies to 'consequential decisions' (lending, housing, employment, healthcare)",
+          "Developers must provide training data info to deployers",
+          "Deployers must conduct annual impact assessments",
+          "Consumer rights: notification and appeal of adverse decisions",
+          "NIST AI RMF creates rebuttable presumption of compliance",
+        ],
+        penalties: "Enforcement by Attorney General under CCPA",
+        icon: "colorado",
+        color: "purple",
+      },
+      {
+        id: "california-ab2013",
+        jurisdiction: "California",
+        name: "California AI Transparency Laws",
+        shortName: "AB 2013 + Related",
+        status: "enacted",
+        effectiveDate: "January 1, 2026",
+        description: "Suite of targeted laws requiring training data transparency, digital replica protections, and deepfake labeling.",
+        philosophy: "Transparency & Specific Harms",
+        keyFeatures: [
+          "AB 2013: Training data summary disclosure (sources, personal data, copyrighted works)",
+          "AB 1836: Digital replica protections for deceased personalities",
+          "Deepfake labeling for election-related content",
+          "Prohibition on materially deceptive election content",
+        ],
+        icon: "california",
+        color: "yellow",
+      },
+    ],
+  },
+  {
+    id: "china",
+    title: "China",
+    description: "Technical security model focused on information control, data purity, and supply chain security through mandatory national standards.",
+    regulations: [
+      {
+        id: "china-genai",
+        jurisdiction: "China",
+        name: "Generative AI Measures + National Standards",
+        shortName: "GenAI Measures",
+        status: "enacted",
+        effectiveDate: "November 1, 2025 (Standards)",
+        description: "Comprehensive framework regulating generative AI through the '3+N' system: three foundational regulations plus expanding mandatory technical standards.",
+        philosophy: "Information Control & Security",
+        keyFeatures: [
+          "Algorithm Recommendation Provisions (content pushing)",
+          "Deep Synthesis Provisions (deepfakes)",
+          "Generative AI Measures (public-facing LLMs)",
+          "'5% Rule': Training data must contain <5% harmful/illegal content",
+          "Mandatory annotator vetting and security training",
+          "Input filtering and output monitoring requirements",
+          "Mandatory AI content labeling (visible + metadata)",
+        ],
+        penalties: "Criminal and civil liability",
+        icon: "china",
+        color: "red",
+      },
+    ],
+  },
+  {
+    id: "soft-law",
+    title: "Voluntary & Soft Law Approaches",
+    description: "Jurisdictions relying on principles, guidelines, and sector-specific regulation rather than comprehensive AI legislation.",
+    regulations: [
+      {
+        id: "uk-approach",
+        jurisdiction: "United Kingdom",
+        name: "Pro-Innovation AI Framework",
+        shortName: "UK AI Framework",
+        status: "voluntary",
+        effectiveDate: "Ongoing",
+        description: "Sector-led approach empowering existing regulators (ICO, CMA, FCA) to apply context-specific rules based on five non-statutory principles.",
+        philosophy: "Innovation & Sector Regulation",
+        keyFeatures: [
+          "Five principles: Safety, Transparency, Fairness, Accountability, Contestability",
+          "Principles are non-statutory (guidance only)",
+          "Sector regulators interpret and apply principles",
+          "Data Use and Access Act 2025 enables AI development",
+          "Broader ADM permissions than EU (with safeguards)",
+          "Expanded 'scientific research' definition includes commercial R&D",
+        ],
+        icon: "uk",
+        color: "blue",
+      },
+      {
+        id: "japan-guidelines",
+        jurisdiction: "Japan",
+        name: "AI Guidelines for Business Ver 1.1",
+        shortName: "Japan AI Guidelines",
+        status: "voluntary",
+        effectiveDate: "April 2025",
+        description: "Strictly voluntary guidelines focused on 'Human-Centric AI,' safety, and fairness. References G7 Hiroshima Process Code of Conduct.",
+        philosophy: "Human-Centric AI (Voluntary)",
+        keyFeatures: [
+          "Voluntary compliance (no penalties)",
+          "Focus on human-centric AI, safety, fairness",
+          "References G7 Hiroshima Process",
+          "Effectively mandatory for government procurement",
+          "Social pressure mechanism via keiretsu relationships",
+        ],
+        icon: "japan",
+        color: "red",
+      },
+      {
+        id: "australia-vaiss",
+        jurisdiction: "Australia",
+        name: "Voluntary AI Safety Standards",
+        shortName: "VAISS",
+        status: "voluntary",
+        effectiveDate: "2025",
+        description: "After abandoning mandatory guardrails, Australia released voluntary safety standards and a National AI Plan.",
+        philosophy: "Innovation & Voluntary Standards",
+        keyFeatures: [
+          "Rejected mandatory guardrails approach",
+          "National AI Plan for strategic direction",
+          "Voluntary AI Safety Standards (VAISS)",
+          "Focus on reducing compliance burden for SMEs",
+          "Aligns with UK/Japan soft law model",
+        ],
+        icon: "australia",
+        color: "green",
+      },
+      {
+        id: "canada-aida",
+        jurisdiction: "Canada",
+        name: "Artificial Intelligence and Data Act",
+        shortName: "AIDA (Stalled)",
+        status: "proposed",
+        effectiveDate: "Failed to pass (2025)",
+        description: "Part of Bill C-27, AIDA failed to pass before Parliament prorogued in January 2025. Quebec's Law 25 remains the primary constraint.",
+        philosophy: "Legislative Vacuum",
+        keyFeatures: [
+          "Bill C-27 failed to pass",
+          "No federal AI law as of late 2025",
+          "Quebec Law 25 regulates ADM and data portability",
+          "Provincial patchwork emerging",
+        ],
+        icon: "canada",
+        color: "red",
+      },
+    ],
+  },
+  {
+    id: "international",
+    title: "International Standards & Treaties",
+    description: "Global frameworks and technical standards serving as 'compliance passports' across jurisdictions.",
+    regulations: [
+      {
+        id: "iso-42001",
+        jurisdiction: "International",
+        name: "ISO/IEC 42001: AI Management System",
+        shortName: "ISO 42001",
+        status: "enacted",
+        effectiveDate: "2023 (Updated 2025)",
+        description: "The critical certifiable framework for AI governance. Provides legal safe harbor in Texas and Colorado, and demonstrates EU AI Act compliance.",
+        philosophy: "Technical Governance Standard",
+        keyFeatures: [
+          "Certifiable AI Management System (AIMS)",
+          "Safe harbor defense in Texas (TRAIGA)",
+          "Rebuttable presumption in Colorado (SB 205)",
+          "Demonstrates EU AI Act Article 17 compliance",
+          "Annex A controls for risk, data, transparency",
+          "Serves as 'compliance passport' across jurisdictions",
+        ],
+        icon: "iso",
+        color: "blue",
+        links: [
+          { label: "ISO Website", url: "https://www.iso.org/standard/81230.html" },
+        ],
+      },
+      {
+        id: "coe-convention",
+        jurisdiction: "International",
+        name: "Council of Europe Framework Convention on AI",
+        shortName: "CoE AI Convention",
+        status: "enacted",
+        effectiveDate: "2024 (Signed)",
+        description: "First legally binding international treaty on AI, focusing on human rights, democracy, and rule of law. Signed by EU, UK, US, Japan, Canada.",
+        philosophy: "Human Rights & Democracy",
+        keyFeatures: [
+          "First binding international AI treaty",
+          "Signatories: EU, UK, US, Japan, Canada, Switzerland",
+          "Requires national implementation",
+          "Focus on human rights, democracy, rule of law",
+          "US signature largely symbolic without implementing legislation",
+        ],
+        icon: "coe",
+        color: "purple",
+        links: [
+          { label: "Council of Europe", url: "https://www.coe.int/en/web/artificial-intelligence" },
+        ],
+      },
+      {
+        id: "g7-hiroshima",
+        jurisdiction: "G7",
+        name: "Hiroshima Process International Code of Conduct",
+        shortName: "G7 Hiroshima Code",
+        status: "voluntary",
+        effectiveDate: "2023",
+        description: "High-level normative framework for advanced AI systems. Forms basis of safety testing commitments by major AI labs.",
+        philosophy: "Voluntary Safety Commitments",
+        keyFeatures: [
+          "Voluntary code for advanced AI developers",
+          "Basis for AI lab safety commitments",
+          "Monitored by OECD",
+          "US withdrawal from mandatory reporting weakened enforcement",
+          "Shifted to voluntary self-reporting regime",
+        ],
+        icon: "g7",
+        color: "blue",
+      },
+    ],
+  },
+]
+
+export const COMPLIANCE_MATRIX = {
+  headers: ["Feature", "EU", "US Federal", "US States", "China", "UK"],
+  rows: [
+    {
+      feature: "Core Philosophy",
+      eu: "Fundamental Rights & Safety",
+      usFederal: "Innovation & Dominance",
+      usStates: "Liability & Consumer Protection",
+      china: "Information Control & Security",
+      uk: "Innovation & Data Access",
+    },
+    {
+      feature: "Legal Status",
+      eu: "Hard Law (AI Act)",
+      usFederal: "Deregulation (EO 14179)",
+      usStates: "Hard Law (State Patchwork)",
+      china: "Hard Law (Mandatory Standards)",
+      uk: "Soft Law / Data Reform",
+    },
+    {
+      feature: "Liability Approach",
+      eu: "High (Admin Fines up to 7%)",
+      usFederal: "Minimal (Contractual)",
+      usStates: "Variable (Intent vs. Duty of Care)",
+      china: "Criminal & Civil",
+      uk: "Moderate (GDPR-based)",
+    },
+    {
+      feature: "Data Requirements",
+      eu: "Transparency / Copyright Summary",
+      usFederal: "None (Procurement preference)",
+      usStates: "Disclosure of Training Data (CA)",
+      china: "<5% Harmful Content / Security Review",
+      uk: "Broad Research Exemptions",
+    },
+    {
+      feature: "Key 2025 Deadline",
+      eu: "Feb/Aug 2025 (Prohibitions/GPAI)",
+      usFederal: "April 2025 (OMB Memos)",
+      usStates: "Jan/Jun 2026 (Effective Dates)",
+      china: "November 2025 (Security Standards)",
+      uk: "June 2025 (Data Act)",
+    },
+    {
+      feature: "Recommended Strategy",
+      eu: "Strict Internal Control / Notified Bodies",
+      usFederal: "Alignment with NIST RMF",
+      usStates: "ISO 42001 Certification",
+      china: "Localized Model Training",
+      uk: "GDPR Compliance",
+    },
+  ],
+}
+
+export const STRATEGIC_RECOMMENDATIONS = [
+  {
+    title: "Forked Compliance Architectures",
+    description: "Maintain separate model weights or fine-tuning pipelines for different markets. China's data purity requirements (<5% harmful content) are incompatible with broad web-scraping practices.",
+    priority: "high",
+  },
+  {
+    title: "ISO 42001 as Keystone",
+    description: "Pursuing ISO 42001 certification provides the highest ROI. It creates legal shields in Texas and Colorado, aligns with EU requirements, and serves as a 'compliance passport' for the fragmented US market.",
+    priority: "high",
+  },
+  {
+    title: "Documentation Dualism",
+    description: "For Texas, document intent (benign purpose, lack of discriminatory intent). For Colorado/EU, document impact (testing results, bias auditing, risk mitigation). Maintain both types of records.",
+    priority: "medium",
+  },
+  {
+    title: "Brussels Effect Limits",
+    description: "The US Federal pivot has blunted EU extraterritorial power. Expect continued geopolitical friction over 'systemic risk' definitions and open-source exemptions.",
+    priority: "medium",
+  },
+]

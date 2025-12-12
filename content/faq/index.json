@@ -1,0 +1,36 @@
+{
+  "categoryCount": 6,
+  "faqCount": 14,
+  "categories": [
+    {
+      "id": "general",
+      "label": "General",
+      "count": 2
+    },
+    {
+      "id": "scope",
+      "label": "Scope & Applicability",
+      "count": 3
+    },
+    {
+      "id": "timeline",
+      "label": "Timeline & Deadlines",
+      "count": 2
+    },
+    {
+      "id": "compliance",
+      "label": "Compliance Requirements",
+      "count": 4
+    },
+    {
+      "id": "organizations",
+      "label": "For Organizations",
+      "count": 1
+    },
+    {
+      "id": "enforcement",
+      "label": "Enforcement & Penalties",
+      "count": 2
+    }
+  ]
+}

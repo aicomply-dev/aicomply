@@ -1,0 +1,62 @@
+[
+  {
+    "id": "serious-incident",
+    "term": "Serious Incident",
+    "definition": "An incident or malfunctioning of an AI system that directly or indirectly leads to death or serious damage to health, property, or the environment, or serious and irreversible disruption of critical infrastructure.",
+    "article": "Article 3(49)",
+    "category": "Enforcement",
+    "related": [
+      "Post-Market Monitoring",
+      "Reporting",
+      "Market Surveillance"
+    ],
+    "keyPoints": [
+      "Must be reported immediately",
+      "Triggers investigation",
+      "May result in market withdrawal",
+      "Includes near-misses in some cases"
+    ]
+  },
+  {
+    "id": "penalties",
+    "term": "Penalties and Fines",
+    "definition": "Administrative fines for non-compliance with the AI Act, with maximum amounts up to 35 million EUR or 7% of worldwide annual turnover for prohibited AI practices, 15 million EUR or 3% for other violations.",
+    "article": "Article 99",
+    "category": "Enforcement",
+    "related": [
+      "Prohibited AI Practices",
+      "Non-Compliance",
+      "Market Surveillance"
+    ],
+    "keyPoints": [
+      "Up to 35M EUR / 7% for prohibited practices",
+      "Up to 15M EUR / 3% for other violations",
+      "Up to 7.5M EUR / 1.5% for false information",
+      "Proportionate to violation severity"
+    ]
+  },
+  {
+    "id": "right-to-explanation",
+    "term": "Right to Explanation",
+    "definition": "The right of affected persons to obtain from the deployer clear and meaningful explanations about the role of the AI system in the decision-making procedure and the main elements of the decision taken.",
+    "article": "Article 86",
+    "category": "Enforcement",
+    "related": [
+      "Affected Person",
+      "Transparency",
+      "High-Risk AI System"
+    ]
+  },
+  {
+    "id": "right-to-complaint",
+    "term": "Right to Lodge a Complaint",
+    "definition": "The right of any natural or legal person to lodge a complaint with the relevant market surveillance authority if they consider that there has been an infringement of the AI Act.",
+    "article": "Article 85",
+    "category": "Enforcement",
+    "related": [
+      "Market Surveillance Authority",
+      "Affected Person",
+      "Enforcement"
+    ]
+  }
+]

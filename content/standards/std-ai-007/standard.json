@@ -1,0 +1,117 @@
+{
+  "id": "std-ai-007",
+  "standardId": "STD-AI-007",
+  "title": "AI Human Oversight Standard",
+  "shortTitle": "Human Oversight",
+  "description": "This standard defines requirements for designing AI systems to enable effective human oversight and intervention in compliance with EU AI Act Article 14.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "AI Risk Manager",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 14",
+    "Article 14(2)",
+    "Article 14(4)",
+    "Annex I"
+  ],
+  "iso42001Clauses": [],
+  "category": "human-oversight",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 4,
+  "kpis": [
+    {
+      "id": "KPI-HO-001",
+      "name": "Oversight Measures Implementation",
+      "definition": "% of high-risk AI with all oversight measures",
+      "target": "100%",
+      "measurementMethod": "(# AI with all measures / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-002",
+      "name": "Oversight Personnel Assignment",
+      "definition": "% of AI systems with assigned oversight personnel",
+      "target": "100%",
+      "measurementMethod": "(# AI with personnel / # total AI) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-003",
+      "name": "Oversight Personnel Training",
+      "definition": "% of oversight personnel trained",
+      "target": "100%",
+      "measurementMethod": "(# trained personnel / # total personnel) × 100",
+      "frequency": "Quarterly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-004",
+      "name": "Oversight Coverage",
+      "definition": "% of AI operations with oversight",
+      "target": "100%",
+      "measurementMethod": "(# operations with oversight / # total operations) × 100",
+      "frequency": "Daily",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-005",
+      "name": "Oversight Effectiveness",
+      "definition": "Composite effectiveness score",
+      "target": "≥95%",
+      "measurementMethod": "Weighted average of effectiveness metrics",
+      "frequency": "Quarterly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-006",
+      "name": "Override Response Time",
+      "definition": "Average time to override AI decision",
+      "target": "< 5 minutes",
+      "measurementMethod": "Σ (override time) / # overrides",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-007",
+      "name": "Intervention Success Rate",
+      "definition": "% of successful interventions",
+      "target": "≥98%",
+      "measurementMethod": "(# successful interventions / # total interventions) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-008",
+      "name": "Stop Response Time",
+      "definition": "Average time to stop AI system",
+      "target": "< 2 minutes",
+      "measurementMethod": "Σ (stop time) / # stops",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-009",
+      "name": "Oversight Activity Logging",
+      "definition": "% of oversight activities logged",
+      "target": "100%",
+      "measurementMethod": "(# logged activities / # total activities) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-HO-010",
+      "name": "Training Effectiveness",
+      "definition": "Training effectiveness score",
+      "target": "≥90%",
+      "measurementMethod": "Post-training assessment scores",
+      "frequency": "Quarterly",
+      "owner": "Training"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "std-ai-001",
+    "title": "AI System Classification Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "classification",
+    "euAiActRef": "Article 3, Article 5, Article 5(1)",
+    "controlCount": 9
+  },
+  {
+    "id": "std-ai-002",
+    "title": "AI Risk Management Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "risk-management",
+    "euAiActRef": "Article 9, Article 9(1), Article 10(5)",
+    "controlCount": 14
+  },
+  {
+    "id": "std-ai-003",
+    "title": "AI Data Governance Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "data-governance",
+    "euAiActRef": "Article 10, Article 10(2), Article 10(3)",
+    "controlCount": 15
+  },
+  {
+    "id": "std-ai-004",
+    "title": "AI Technical Documentation Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "documentation",
+    "euAiActRef": "Article 11, Article 53, Article 18",
+    "controlCount": 10
+  },
+  {
+    "id": "std-ai-005",
+    "title": "AI Logging and Record Keeping Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "record-keeping",
+    "euAiActRef": "Article 12, Article 12(1), Article 12(2)",
+    "controlCount": 5
+  },
+  {
+    "id": "std-ai-006",
+    "title": "AI Transparency Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "transparency",
+    "euAiActRef": "Article 50, Article 13, Article 13(3)",
+    "controlCount": 5
+  },
+  {
+    "id": "std-ai-007",
+    "title": "AI Human Oversight Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "human-oversight",
+    "euAiActRef": "Article 14, Article 14(2), Article 14(4)",
+    "controlCount": 4
+  },
+  {
+    "id": "std-ai-008",
+    "title": "AI Accuracy, Robustness and Security Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "technical-requirements",
+    "euAiActRef": "Article 15, Article 15(1), Article 15(2)",
+    "controlCount": 8
+  },
+  {
+    "id": "std-ai-009",
+    "title": "AI Quality Management Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "quality-management",
+    "euAiActRef": "Article 17, Article 17(1), Article 9",
+    "controlCount": 15
+  },
+  {
+    "id": "std-ai-010",
+    "title": "AI Conformity Assessment Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "conformity-assessment",
+    "euAiActRef": "Article 43, Article 47, Article 48",
+    "controlCount": 13
+  },
+  {
+    "id": "std-ai-011",
+    "title": "AI Registration Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "registration",
+    "euAiActRef": "Article 49, Article 49(1), Article 60",
+    "controlCount": 3
+  },
+  {
+    "id": "std-ai-012",
+    "title": "AI Post-Market Monitoring Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "post-market-monitoring",
+    "euAiActRef": "Article 72, Article 72(1), Article 72(2)",
+    "controlCount": 5
+  },
+  {
+    "id": "std-ai-013",
+    "title": "AI Incident Management Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "incident-management",
+    "euAiActRef": "Article 73, Article 73(2), Article 73(1)",
+    "controlCount": 5
+  },
+  {
+    "id": "std-ai-014",
+    "title": "AI Literacy and Training Standard",
+    "version": "1.0",
+    "status": "draft",
+    "category": "training",
+    "euAiActRef": "Article 4, Article 5",
+    "controlCount": 5
+  }
+]

@@ -1,0 +1,119 @@
+{
+  "id": "std-ai-005",
+  "standardId": "STD-AI-005",
+  "title": "AI Logging and Record Keeping Standard",
+  "shortTitle": "Logging and",
+  "description": "This standard defines requirements for automated logging of AI system operations and record-keeping with 10-year retention in compliance with EU AI Act Article 12.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "IT Security Manager",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 12",
+    "Article 12(1)",
+    "Article 12(2)",
+    "Article 53",
+    "Article 3(40)",
+    "Annex I"
+  ],
+  "iso42001Clauses": [],
+  "category": "record-keeping",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 5,
+  "kpis": [
+    {
+      "id": "KPI-LOG-001",
+      "name": "Logging Availability",
+      "definition": "% uptime of logging system",
+      "target": "≥99.9%",
+      "measurementMethod": "(Uptime / Total time) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-002",
+      "name": "Log Completeness",
+      "definition": "% of AI operations logged",
+      "target": "100%",
+      "measurementMethod": "(# operations logged / # total operations) × 100",
+      "frequency": "Daily",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-003",
+      "name": "Retention Compliance",
+      "definition": "% of logs retained for 10 years",
+      "target": "100%",
+      "measurementMethod": "(# logs retained / # logs created) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-004",
+      "name": "Access Control Compliance",
+      "definition": "% of logs with proper access controls",
+      "target": "100%",
+      "measurementMethod": "(# logs with access controls / # total logs) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-005",
+      "name": "Authority Response Time",
+      "definition": "Average days to respond to authority requests",
+      "target": "< 5 days",
+      "measurementMethod": "Σ (response date - request date) / # requests",
+      "frequency": "Per request",
+      "owner": "Legal"
+    },
+    {
+      "id": "KPI-LOG-006",
+      "name": "Integrity Verification",
+      "definition": "% of logs with verified integrity",
+      "target": "100%",
+      "measurementMethod": "(# logs verified / # total logs) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-007",
+      "name": "Log Analysis Completion",
+      "definition": "% of scheduled log analyses completed",
+      "target": "100%",
+      "measurementMethod": "(# analyses completed / # scheduled analyses) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-008",
+      "name": "Access Review Completion",
+      "definition": "% of quarterly access reviews completed on time",
+      "target": "100%",
+      "measurementMethod": "(# reviews on time / # scheduled reviews) × 100",
+      "frequency": "Quarterly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-009",
+      "name": "Tamper Detection",
+      "definition": "Number of tamper attempts detected",
+      "target": "0",
+      "measurementMethod": "Count of tamper attempts",
+      "frequency": "Continuous",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-LOG-010",
+      "name": "Retrieval Test Success",
+      "definition": "% of retrieval tests successful",
+      "target": "100%",
+      "measurementMethod": "(# successful tests / # total tests) × 100",
+      "frequency": "Quarterly",
+      "owner": "IT Security Manager"
+    }
+  ]
+}

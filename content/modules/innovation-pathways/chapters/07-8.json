@@ -1,0 +1,113 @@
+{
+  "id": 8,
+  "title": "Module 5 Assessment",
+  "description": "Test your understanding of innovation pathways under the AI Act.",
+  "type": "quiz",
+  "duration": 15,
+  "questions": [
+    {
+      "id": 1,
+      "question": "When must Member States have AI regulatory sandboxes operational?",
+      "type": "mcq",
+      "options": [
+        "February 2025",
+        "August 2025",
+        "August 2026",
+        "August 2027"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 57 requires Member States to ensure at least one regulatory sandbox is operational by August 2, 2026."
+    },
+    {
+      "id": 2,
+      "question": "Who gets priority access to regulatory sandboxes?",
+      "type": "mcq",
+      "options": [
+        "Large enterprises only",
+        "SMEs and start-ups",
+        "Only high-risk AI providers",
+        "Only GPAI providers"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 57 requires that regulatory sandboxes be accessible to SMEs and start-ups on a priority basis."
+    },
+    {
+      "id": 3,
+      "question": "What is required before real-world testing under Article 60?",
+      "type": "mcq",
+      "options": [
+        "No requirements",
+        "Informed consent from participants",
+        "Only internal approval",
+        "Only documentation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 60 requires informed consent from test participants, among other safeguards including authority approval or sandbox participation."
+    },
+    {
+      "id": 4,
+      "question": "What is the nature of codes of conduct under Article 95?",
+      "type": "mcq",
+      "options": [
+        "Mandatory for all AI",
+        "Voluntary for non-high-risk AI",
+        "Only for GPAI",
+        "Required for sandboxes"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 95 codes of conduct are voluntary and encourage application of AI Act principles to non-high-risk AI systems."
+    },
+    {
+      "id": 5,
+      "question": "How are SME penalties treated under the AI Act?",
+      "type": "mcq",
+      "options": [
+        "Same as large companies",
+        "Lower cap applies with proportionality",
+        "No penalties for SMEs",
+        "Higher penalties to deter"
+      ],
+      "correctAnswer": 1,
+      "explanation": "For SMEs and start-ups, the lower of the two penalty caps applies (\u20ac amount vs turnover percentage), with proportionality considerations."
+    },
+    {
+      "id": 6,
+      "question": "What is a key benefit of regulatory sandbox participation?",
+      "type": "mcq",
+      "options": [
+        "Automatic market access",
+        "Regulatory guidance before market entry",
+        "Exemption from compliance",
+        "Guaranteed conformity"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Sandboxes provide regulatory guidance before market entry, reducing uncertainty, but do not guarantee market access or exempt from compliance requirements."
+    },
+    {
+      "id": 7,
+      "question": "Which is NOT typically covered by codes of conduct?",
+      "type": "mcq",
+      "options": [
+        "Environmental sustainability",
+        "Prohibited AI practices",
+        "AI accessibility",
+        "Diversity in AI teams"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Codes of conduct are for voluntary good practices beyond legal requirements. Prohibited AI practices are banned by law and cannot be subject to voluntary codes."
+    },
+    {
+      "id": 8,
+      "question": "What is the best approach to balancing innovation and compliance?",
+      "type": "mcq",
+      "options": [
+        "Compliance after launch",
+        "Design for compliance from start",
+        "Avoid regulation entirely",
+        "Only focus on innovation"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Building compliance into AI design from the start supports both innovation speed and regulatory readiness, and typically costs less than retrofitting compliance later."
+    }
+  ]
+}

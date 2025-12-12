@@ -1,0 +1,88 @@
+{
+  "id": "std-ai-014",
+  "standardId": "STD-AI-014",
+  "title": "AI Literacy and Training Standard",
+  "shortTitle": "Literacy and",
+  "description": "This standard defines requirements for ensuring all staff dealing with AI systems have appropriate AI literacy and training in compliance with EU AI Act Article 4 and Recital 106.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "HR Director",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 4",
+    "Article 5"
+  ],
+  "iso42001Clauses": [],
+  "category": "training",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 5,
+  "kpis": [
+    {
+      "id": "KPI-LIT-001",
+      "name": "Training Completion Rate",
+      "definition": "% of staff completing required training",
+      "target": "100%",
+      "measurementMethod": "(# completed / # required) × 100",
+      "frequency": "Quarterly",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-002",
+      "name": "Assessment Pass Rate",
+      "definition": "% passing assessments on first attempt",
+      "target": "≥90%",
+      "measurementMethod": "(# passed / # total) × 100",
+      "frequency": "Per training",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-003",
+      "name": "Training Effectiveness",
+      "definition": "Training effectiveness score",
+      "target": "≥4.0/5.0",
+      "measurementMethod": "Average effectiveness score",
+      "frequency": "Per training",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-004",
+      "name": "Competency Level",
+      "definition": "Average competency level",
+      "target": "≥Intermediate",
+      "measurementMethod": "Average competency level",
+      "frequency": "Annually",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-005",
+      "name": "Refresher Training Completion",
+      "definition": "% completing annual refresher",
+      "target": "100%",
+      "measurementMethod": "(# completed / # required) × 100",
+      "frequency": "Annually",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-006",
+      "name": "Training Timeliness",
+      "definition": "% completing training on time",
+      "target": "≥95%",
+      "measurementMethod": "(# on time / # total) × 100",
+      "frequency": "Quarterly",
+      "owner": "HR Director"
+    },
+    {
+      "id": "KPI-LIT-007",
+      "name": "Competency Assessment Coverage",
+      "definition": "% of staff with competency assessment",
+      "target": "100%",
+      "measurementMethod": "(# assessed / # total staff) × 100",
+      "frequency": "Annually",
+      "owner": "HR Director"
+    }
+  ]
+}

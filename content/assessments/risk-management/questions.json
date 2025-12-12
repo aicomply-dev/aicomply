@@ -1,0 +1,175 @@
+[
+  {
+    "id": "risk_mgmt_1",
+    "question": "Is there an established risk management system for the AI system?",
+    "description": "Risk management system existence",
+    "category": "risk-management",
+    "article": "Article 9(1)",
+    "weight": 10,
+    "answerType": "yes_no_partial",
+    "guidance": "Must be a continuous iterative process throughout the entire lifecycle.",
+    "evidenceRequired": [
+      "Risk management policy",
+      "Risk management procedures"
+    ]
+  },
+  {
+    "id": "risk_mgmt_2",
+    "question": "Is the risk management system planned, implemented, documented, and maintained throughout the AI system lifecycle?",
+    "description": "Risk management lifecycle coverage",
+    "category": "risk-management",
+    "article": "Article 9(1)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "options": [
+      {
+        "value": "yes",
+        "label": "Fully implemented",
+        "score": 100
+      },
+      {
+        "value": "partial",
+        "label": "Partially implemented",
+        "score": 50
+      },
+      {
+        "value": "no",
+        "label": "Not implemented",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "id": "risk_mgmt_3",
+    "question": "Have known and reasonably foreseeable risks to health, safety, or fundamental rights been identified and analyzed?",
+    "description": "Risk identification completeness",
+    "category": "risk-management",
+    "article": "Article 9(2)(a)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Risk register",
+      "Risk assessment documentation"
+    ]
+  },
+  {
+    "id": "risk_mgmt_4",
+    "question": "Are risks estimated and evaluated that may emerge when the AI system is used according to its intended purpose?",
+    "description": "Intended use risk assessment",
+    "category": "risk-management",
+    "article": "Article 9(2)(b)",
+    "weight": 8,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "risk_mgmt_5",
+    "question": "Are risks estimated and evaluated that may emerge under conditions of reasonably foreseeable misuse?",
+    "description": "Misuse risk assessment",
+    "category": "risk-management",
+    "article": "Article 9(2)(b)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Must consider how the system might be misused in ways that are reasonably foreseeable."
+  },
+  {
+    "id": "risk_mgmt_6",
+    "question": "Have post-market monitoring data been evaluated to identify new risks?",
+    "description": "Post-market risk monitoring",
+    "category": "risk-management",
+    "article": "Article 9(2)(c)",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Post-market monitoring reports",
+      "Incident analysis"
+    ]
+  },
+  {
+    "id": "risk_mgmt_7",
+    "question": "Are appropriate and targeted risk management measures in place to address identified risks?",
+    "description": "Risk mitigation measures",
+    "category": "risk-management",
+    "article": "Article 9(4)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Risk mitigation plans",
+      "Control implementation evidence"
+    ]
+  },
+  {
+    "id": "risk_mgmt_8",
+    "question": "Do risk management measures give due consideration to effects on children when the system is likely to be used by them?",
+    "description": "Child protection considerations",
+    "category": "risk-management",
+    "article": "Article 9(4)",
+    "weight": 6,
+    "answerType": "yes_no_na",
+    "guidance": "Required when the system may be accessed or used by children."
+  },
+  {
+    "id": "risk_mgmt_9",
+    "question": "Has the overall residual risk been assessed to be acceptable?",
+    "description": "Residual risk acceptance",
+    "category": "risk-management",
+    "article": "Article 9(5)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "After mitigation, remaining risk must be judged acceptable given intended purpose."
+  },
+  {
+    "id": "risk_mgmt_10",
+    "question": "Are residual risks communicated to deployers through instructions for use?",
+    "description": "Residual risk communication",
+    "category": "risk-management",
+    "article": "Article 9(5)",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "User documentation",
+      "Instructions for use"
+    ]
+  },
+  {
+    "id": "risk_mgmt_11",
+    "question": "Is there a process for testing the AI system against risk management measures?",
+    "description": "Risk management testing",
+    "category": "risk-management",
+    "article": "Article 9(6)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Testing must identify most appropriate and targeted risk management measures."
+  },
+  {
+    "id": "risk_mgmt_12",
+    "question": "Are testing procedures suitable for the intended purpose of the AI system?",
+    "description": "Testing procedure adequacy",
+    "category": "risk-management",
+    "article": "Article 9(7)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "risk_mgmt_13",
+    "question": "Is testing performed at appropriate points in the development process and before market placement?",
+    "description": "Testing timing appropriateness",
+    "category": "risk-management",
+    "article": "Article 9(7)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "risk_mgmt_14",
+    "question": "Is testing performed against prior defined metrics and probabilistic thresholds?",
+    "description": "Testing metrics and thresholds",
+    "category": "risk-management",
+    "article": "Article 9(7)",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Test plans",
+      "Performance metrics",
+      "Threshold definitions"
+    ]
+  }
+]

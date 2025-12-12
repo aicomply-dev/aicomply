@@ -1,0 +1,182 @@
+[
+  {
+    "id": "prohibited-ai-practices",
+    "term": "Prohibited AI Practices",
+    "definition": "AI systems and practices that are prohibited under Article 5 due to their unacceptable risk to fundamental rights, including subliminal manipulation, exploitation of vulnerabilities, social scoring by public authorities, and certain uses of real-time remote biometric identification.",
+    "article": "Article 5",
+    "category": "Risk Classification",
+    "related": [
+      "Social Scoring",
+      "Subliminal Techniques",
+      "Biometric Identification"
+    ],
+    "keyPoints": [
+      "Complete ban - no compliance pathway",
+      "Social scoring prohibited",
+      "Subliminal manipulation banned",
+      "Some biometric ID exceptions for law enforcement"
+    ],
+    "examples": [
+      "Social scoring systems",
+      "AI exploiting children's vulnerabilities",
+      "Emotion recognition in workplace/education (with exceptions)",
+      "Untargeted facial image scraping"
+    ]
+  },
+  {
+    "id": "high-risk-ai-system",
+    "term": "High-Risk AI System",
+    "definition": "An AI system that falls within one of the areas listed in Annex III (such as biometrics, critical infrastructure, education, employment, essential services, law enforcement, migration, justice) or is a safety component of a product covered by Union harmonisation legislation listed in Annex I.",
+    "article": "Article 6",
+    "category": "Risk Classification",
+    "related": [
+      "Annex III",
+      "Conformity Assessment",
+      "CE Marking",
+      "Technical Documentation"
+    ],
+    "keyPoints": [
+      "Two pathways to high-risk",
+      "Extensive compliance requirements",
+      "Mandatory conformity assessment",
+      "Registration in EU database"
+    ],
+    "examples": [
+      "AI for CV screening in recruitment",
+      "Credit scoring systems",
+      "AI in medical devices",
+      "Biometric identification systems"
+    ]
+  },
+  {
+    "id": "limited-risk-ai",
+    "term": "Limited Risk AI",
+    "definition": "AI systems subject primarily to transparency obligations under Article 50, where users must be informed they are interacting with AI or that content was AI-generated.",
+    "article": "Article 50",
+    "category": "Risk Classification",
+    "related": [
+      "Transparency Obligations",
+      "Chatbots",
+      "Deepfakes",
+      "Emotion Recognition"
+    ],
+    "examples": [
+      "Chatbots and conversational AI",
+      "AI-generated content (deepfakes)",
+      "Emotion recognition systems",
+      "Biometric categorisation"
+    ]
+  },
+  {
+    "id": "minimal-risk-ai",
+    "term": "Minimal Risk AI",
+    "definition": "AI systems not falling under prohibited, high-risk, or limited risk categories. No mandatory requirements apply, though voluntary codes of conduct are encouraged.",
+    "article": "Recital 28",
+    "category": "Risk Classification",
+    "related": [
+      "Codes of Conduct",
+      "Voluntary Standards"
+    ],
+    "examples": [
+      "AI-enabled video games",
+      "Spam filters",
+      "Inventory management systems",
+      "AI in manufacturing optimisation"
+    ]
+  },
+  {
+    "id": "social-scoring",
+    "term": "Social Scoring",
+    "definition": "AI systems that evaluate or classify natural persons or groups based on their social behaviour or known, inferred or predicted personal characteristics, leading to detrimental or unfavourable treatment in unrelated social contexts or disproportionate to their social behaviour.",
+    "article": "Article 5(1)(c)",
+    "category": "Risk Classification",
+    "related": [
+      "Prohibited AI Practices",
+      "Fundamental Rights",
+      "Public Authorities"
+    ]
+  },
+  {
+    "id": "subliminal-techniques",
+    "term": "Subliminal Techniques",
+    "definition": "AI systems deploying techniques beyond a person's consciousness to materially distort their behaviour in a manner that causes or is reasonably likely to cause significant harm.",
+    "article": "Article 5(1)(a)",
+    "category": "Risk Classification",
+    "related": [
+      "Prohibited AI Practices",
+      "Manipulation",
+      "Dark Patterns"
+    ]
+  },
+  {
+    "id": "biometric-identification",
+    "term": "Biometric Identification",
+    "definition": "The automated recognition of physical, physiological, behavioural, or psychological human features for the purpose of establishing the identity of a natural person by comparing biometric data of that person to biometric data stored in a database.",
+    "article": "Article 3(35)",
+    "category": "Risk Classification",
+    "related": [
+      "Remote Biometric Identification",
+      "Biometric Data",
+      "Real-Time Identification"
+    ]
+  },
+  {
+    "id": "remote-biometric-identification",
+    "term": "Remote Biometric Identification",
+    "definition": "An AI system for the purpose of identifying natural persons, without their active involvement, typically at a distance through comparison of a person's biometric data with the biometric data contained in a reference database.",
+    "article": "Article 3(37)",
+    "category": "Risk Classification",
+    "related": [
+      "Biometric Identification",
+      "Real-Time Identification",
+      "Law Enforcement"
+    ]
+  },
+  {
+    "id": "real-time-rbi",
+    "term": "Real-Time Remote Biometric Identification",
+    "definition": "A remote biometric identification system whereby the capturing of biometric data, the comparison and the identification all occur without a significant delay, comprising instantaneous identification as well as limited short delays to avoid circumvention.",
+    "article": "Article 3(38)",
+    "category": "Risk Classification",
+    "related": [
+      "Remote Biometric Identification",
+      "Law Enforcement",
+      "Prohibited AI Practices"
+    ]
+  },
+  {
+    "id": "post-rbi",
+    "term": "Post Remote Biometric Identification",
+    "definition": "A remote biometric identification system other than a real-time remote biometric identification system.",
+    "article": "Article 3(39)",
+    "category": "Risk Classification",
+    "related": [
+      "Remote Biometric Identification",
+      "Real-Time RBI"
+    ]
+  },
+  {
+    "id": "emotion-recognition",
+    "term": "Emotion Recognition System",
+    "definition": "An AI system for the purpose of identifying or inferring emotions or intentions of natural persons on the basis of their biometric data.",
+    "article": "Article 3(34)",
+    "category": "Risk Classification",
+    "related": [
+      "Biometric Data",
+      "Transparency Obligations",
+      "Workplace AI"
+    ]
+  },
+  {
+    "id": "biometric-categorisation",
+    "term": "Biometric Categorisation System",
+    "definition": "An AI system for the purpose of assigning natural persons to specific categories on the basis of their biometric data, unless ancillary to another commercial service and strictly necessary for objective technical reasons.",
+    "article": "Article 3(36)",
+    "category": "Risk Classification",
+    "related": [
+      "Biometric Data",
+      "Prohibited AI Practices",
+      "Sensitive Categories"
+    ]
+  }
+]

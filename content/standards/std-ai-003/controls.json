@@ -1,0 +1,383 @@
+[
+  {
+    "id": "DATA-001",
+    "name": "Data Quality Requirements Definition",
+    "type": "preventive",
+    "frequency": "Per AI system, annually",
+    "riskLevel": "high",
+    "objective": "Define specific data quality requirements for each AI system based on intended purpose and risk level to ensure datasets meet appropriate quality standards before use in AI training, validation, and testing, in compliance with EU AI Act Article 10(2).",
+    "requirements": [
+      "Define quality requirements per AI system",
+      "Document quality thresholds in Data Quality Requirements Document",
+      "Obtain AI System Owner approval",
+      "Review and update annually",
+      "Align with intended purpose and risk level"
+    ],
+    "evidence": [
+      "Data Quality Requirements Document (DOC-AI-DATA-001)",
+      "Quality thresholds by AI system",
+      "Approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-002",
+    "name": "Data Quality Assessment",
+    "type": "preventive",
+    "frequency": "Before training, after significant data updates",
+    "riskLevel": "high",
+    "objective": "Assess data quality against defined requirements before use in AI training to ensure datasets meet quality thresholds and prevent quality issues from affecting AI system performance and compliance.",
+    "requirements": [
+      "Profile datasets to assess all quality dimensions",
+      "Calculate quality metrics for each dimension",
+      "Compare against defined thresholds",
+      "Document assessment results",
+      "Remediate quality issues before use",
+      "Obtain quality approval before training begins"
+    ],
+    "evidence": [
+      "Data Quality Assessment Report (RPT-AI-DATA-001)",
+      "Quality metrics dashboard",
+      "Remediation records",
+      "Quality approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-003",
+    "name": "Data Quality Monitoring",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Continuously monitor data quality during AI system operation to detect quality degradation, identify quality issues early, and enable timely remediation to maintain AI system performance and compliance.",
+    "requirements": [
+      "Implement automated quality checks",
+      "Monitor quality metrics in real-time",
+      "Alert on quality threshold breaches",
+      "Investigate quality issues promptly",
+      "Remediate quality issues",
+      "Report quality trends monthly"
+    ],
+    "evidence": [
+      "Quality monitoring dashboard",
+      "Alert logs",
+      "Remediation records",
+      "Monthly quality reports (RPT-AI-DATA-QM-XXX)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-004",
+    "name": "Data Relevance Assessment",
+    "type": "preventive",
+    "frequency": "Per AI system, annually",
+    "riskLevel": "high",
+    "objective": "Assess and document that datasets are relevant to intended purpose and geographical/behavioral/functional setting to ensure AI systems are trained on appropriate data that reflects their actual deployment context, in compliance with EU AI Act Article 10(3).",
+    "requirements": [
+      "Define intended purpose clearly",
+      "Identify target population/scenarios",
+      "Assess dataset coverage of target",
+      "Document relevance justification",
+      "Obtain stakeholder approval",
+      "Review relevance annually"
+    ],
+    "evidence": [
+      "Data Relevance Assessment (ASSESS-AI-DATA-001)",
+      "Purpose-to-data mapping",
+      "Stakeholder approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-005",
+    "name": "Representativeness Analysis",
+    "type": "preventive",
+    "frequency": "Before training, annually",
+    "riskLevel": "high",
+    "objective": "Ensure datasets are sufficiently representative of all persons/situations AI system will encounter to prevent bias and ensure fair treatment across all user groups and scenarios, in compliance with EU AI Act Article 10(3).",
+    "requirements": [
+      "Identify all relevant subpopulations",
+      "Analyze dataset distribution across subpopulations",
+      "Calculate representativeness metrics",
+      "Compare to target population distribution",
+      "Address underrepresentation",
+      "Document representativeness analysis"
+    ],
+    "evidence": [
+      "Representativeness Analysis Report (RPT-AI-DATA-002)",
+      "Distribution comparisons",
+      "Gap analysis",
+      "Mitigation plans (if underrepresentation identified)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-006",
+    "name": "Dataset Appropriateness Evaluation",
+    "type": "preventive",
+    "frequency": "Per AI system, when changing datasets",
+    "riskLevel": "medium",
+    "objective": "Ensure datasets are appropriate considering state of the art and available alternatives to ensure optimal dataset selection and justify dataset choices for AI system development.",
+    "requirements": [
+      "Research available datasets",
+      "Compare dataset options",
+      "Justify dataset selection",
+      "Document why chosen dataset is appropriate",
+      "Consider synthetic data alternatives",
+      "Obtain approval for dataset selection"
+    ],
+    "evidence": [
+      "Dataset Selection Justification (DOC-AI-DATA-002)",
+      "Alternative analysis",
+      "State of the art review",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-007",
+    "name": "Bias Examination",
+    "type": "preventive",
+    "frequency": "Before training, after dataset updates",
+    "riskLevel": "high",
+    "objective": "Examine training, validation, and testing datasets for possible biases to identify discriminatory patterns before they are learned by AI models, preventing bias propagation to AI system outputs, in compliance with EU AI Act Article 10(4).",
+    "requirements": [
+      "Conduct bias assessment before training",
+      "Use statistical methods to detect bias",
+      "Use bias detection tools (e.g., IBM AI Fairness 360, Aequitas)",
+      "Document bias findings",
+      "Assess bias impact on fairness",
+      "Assess all protected characteristics"
+    ],
+    "evidence": [
+      "Bias Assessment Report (RPT-AI-DATA-003)",
+      "Bias metrics by protected characteristic",
+      "Bias detection tool outputs",
+      "Impact assessment"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-008",
+    "name": "Bias Mitigation",
+    "type": "corrective",
+    "frequency": "After bias detection",
+    "riskLevel": "high",
+    "objective": "Implement appropriate measures to mitigate detected biases in datasets to reduce discriminatory outcomes and improve fairness across all protected characteristics.",
+    "requirements": [
+      "Select appropriate mitigation strategies",
+      "Implement mitigation measures",
+      "Validate mitigation effectiveness",
+      "Document mitigation actions",
+      "Monitor for residual bias",
+      "Obtain approval for mitigation approach"
+    ],
+    "evidence": [
+      "Bias Mitigation Plan (PLAN-AI-DATA-001)",
+      "Mitigation implementation records",
+      "Post-mitigation bias assessment",
+      "Effectiveness validation records",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-009",
+    "name": "Fairness Validation",
+    "type": "detective",
+    "frequency": "After mitigation, before deployment",
+    "riskLevel": "high",
+    "objective": "Validate that bias mitigation achieves fairness objectives by calculating and verifying fairness metrics meet defined thresholds, ensuring AI systems treat all groups fairly across protected characteristics.",
+    "requirements": [
+      "Calculate fairness metrics for all protected characteristics",
+      "Compare to fairness thresholds",
+      "Assess trade-offs (accuracy vs. fairness)",
+      "Document fairness validation",
+      "Obtain approval for fairness-accuracy balance",
+      "Block deployment if fairness thresholds not met"
+    ],
+    "evidence": [
+      "Fairness Validation Report (RPT-AI-DATA-004)",
+      "Fairness metrics dashboard",
+      "Trade-off analysis",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-010",
+    "name": "Data Lineage Documentation",
+    "type": "detective",
+    "frequency": "Continuous updates",
+    "riskLevel": "medium",
+    "objective": "Document complete data lineage from source to AI model to enable traceability, support audits, facilitate troubleshooting, and demonstrate data governance compliance.",
+    "requirements": [
+      "Document data lineage for all datasets",
+      "Maintain lineage in data catalog",
+      "Update lineage with each transformation",
+      "Enable lineage traceability (source to model)",
+      "Provide lineage reports on demand",
+      "Maintain lineage for 10 years"
+    ],
+    "evidence": [
+      "Data Lineage Documentation (DOC-AI-DATA-003)",
+      "Data catalog with lineage",
+      "Lineage diagrams",
+      "Transformation logs",
+      "Lineage reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-011",
+    "name": "Data Provenance Verification",
+    "type": "preventive",
+    "frequency": "Per dataset acquisition",
+    "riskLevel": "high",
+    "objective": "Establish and verify data provenance for all AI datasets to ensure legal compliance, protect intellectual property, and enable regulatory compliance, in compliance with GDPR and data protection requirements.",
+    "requirements": [
+      "Verify data source for all datasets",
+      "Document licensing terms",
+      "Obtain and document consent (where required)",
+      "Establish legal basis for processing",
+      "Maintain third-party agreements",
+      "Conduct provenance audits annually"
+    ],
+    "evidence": [
+      "Data Provenance Records (REC-AI-DATA-001)",
+      "Licenses and agreements",
+      "Consent records",
+      "Legal basis documentation",
+      "Third-party agreement records",
+      "Annual provenance audit reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-012",
+    "name": "Data Catalog Management",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Maintain comprehensive data catalog for all AI datasets to enable data discovery, support data governance, facilitate compliance, and enable efficient data management.",
+    "requirements": [
+      "Create catalog entries for all datasets",
+      "Update catalog continuously",
+      "Enable search and discovery",
+      "Provide metadata management",
+      "Integrate with data governance tools",
+      "Maintain catalog accuracy"
+    ],
+    "evidence": [
+      "Data Catalog (CATALOG-AI-DATA-001)",
+      "Catalog completeness metrics",
+      "Usage reports",
+      "Catalog update logs"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-013",
+    "name": "Privacy Impact Assessment",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Conduct Data Protection Impact Assessment (DPIA) for high-risk AI systems processing personal data to identify and mitigate privacy risks, ensure GDPR compliance, and protect data subject rights.",
+    "requirements": [
+      "Determine if DPIA required",
+      "Conduct DPIA per GDPR Article 35",
+      "Identify privacy risks",
+      "Implement privacy controls",
+      "Obtain DPO approval",
+      "Consult supervisory authority if high risk",
+      "Review DPIA after substantial modifications"
+    ],
+    "evidence": [
+      "Data Protection Impact Assessment (DPIA-AI-XXX)",
+      "Privacy risk assessment",
+      "DPO approval records",
+      "Supervisory authority consultation records (if applicable)",
+      "Privacy control implementation records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-014",
+    "name": "Data Minimization",
+    "type": "preventive",
+    "frequency": "Per AI system, annually",
+    "riskLevel": "medium",
+    "objective": "Collect and process only data necessary for AI system purpose to comply with GDPR Article 5(1)(c) data minimization principle and reduce privacy risks.",
+    "requirements": [
+      "Define minimum data requirements",
+      "Justify each data element",
+      "Remove unnecessary data",
+      "Implement data minimization in pipelines",
+      "Review data scope regularly (annually)",
+      "Document minimization decisions"
+    ],
+    "evidence": [
+      "Data Minimization Assessment (ASSESS-AI-DATA-002)",
+      "Justification for each data element",
+      "Data reduction records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DATA-015",
+    "name": "Data Anonymization and Pseudonymization",
+    "type": "preventive",
+    "frequency": "Before training, for personal data",
+    "riskLevel": "high",
+    "objective": "Apply appropriate anonymization or pseudonymization techniques to protect privacy while enabling AI system development, balancing privacy protection with data utility.",
+    "requirements": [
+      "Assess need for anonymization/pseudonymization",
+      "Select appropriate technique",
+      "Implement technique",
+      "Validate effectiveness",
+      "Document approach",
+      "Assess re-identification risk"
+    ],
+    "evidence": [
+      "Anonymization/Pseudonymization Plan (PLAN-AI-DATA-002)",
+      "Implementation records",
+      "Effectiveness validation",
+      "Re-identification risk assessment",
+      "Privacy protection verification"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

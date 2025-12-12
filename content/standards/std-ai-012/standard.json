@@ -1,0 +1,99 @@
+{
+  "id": "std-ai-012",
+  "standardId": "STD-AI-012",
+  "title": "AI Post-Market Monitoring Standard",
+  "shortTitle": "Post Market",
+  "description": "This standard defines requirements for establishing and maintaining a post-market monitoring system for AI systems in operation in compliance with EU AI Act Article 72.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Product Director",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 72",
+    "Article 72(1)",
+    "Article 72(2)",
+    "Article 17(1)"
+  ],
+  "iso42001Clauses": [],
+  "category": "post-market-monitoring",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 5,
+  "kpis": [
+    {
+      "id": "KPI-PMM-001",
+      "name": "PMM System Coverage",
+      "definition": "% of high-risk AI with PMM system",
+      "target": "100%",
+      "measurementMethod": "(# with PMM / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-002",
+      "name": "PMM Plan Coverage",
+      "definition": "% of high-risk AI with PMM plan",
+      "target": "100%",
+      "measurementMethod": "(# with plan / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-003",
+      "name": "Data Collection Completeness",
+      "definition": "% of required data collected",
+      "target": "≥95%",
+      "measurementMethod": "(# data points collected / # required) × 100",
+      "frequency": "Daily",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-004",
+      "name": "Analysis Frequency",
+      "definition": "Frequency of performance analysis",
+      "target": "Monthly minimum",
+      "measurementMethod": "Count of analyses per month",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-005",
+      "name": "Corrective Action Closure",
+      "definition": "Average days to close corrective actions",
+      "target": "<30 days",
+      "measurementMethod": "Σ (closure days) / # actions",
+      "frequency": "Per action",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-006",
+      "name": "Performance Stability",
+      "definition": "Performance variation over time",
+      "target": "<5%",
+      "measurementMethod": "Standard deviation of performance",
+      "frequency": "Weekly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-007",
+      "name": "Issue Detection Time",
+      "definition": "Average time to detect issues",
+      "target": "<24 hours",
+      "measurementMethod": "Σ (detection time) / # issues",
+      "frequency": "Per issue",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-PMM-008",
+      "name": "Corrective Action Effectiveness",
+      "definition": "% of corrective actions effective",
+      "target": "≥90%",
+      "measurementMethod": "(# effective / # total actions) × 100",
+      "frequency": "Per action",
+      "owner": "Product Director"
+    }
+  ]
+}

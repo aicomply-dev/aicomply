@@ -1,0 +1,233 @@
+[
+  {
+    "id": "CLS-001",
+    "name": "Prohibited Practice Screening",
+    "type": "preventive",
+    "frequency": "Before development starts, before deployment, annually",
+    "riskLevel": "critical",
+    "objective": "Ensure no AI systems constitute prohibited practices under EU AI Act Article 5 by systematically screening all AI systems against the 8 prohibited practices before development or deployment, thereby preventing legal violations, regulatory penalties, and reputational damage.",
+    "requirements": [
+      "Complete Prohibited Practice Assessment Form (FORM-AI-CLS-001) for each AI system",
+      "Screen against all 8 prohibited practices defined in Article 5(1)(a-h)",
+      "Document assessment results with clear justification",
+      "Halt all development/deployment if any prohibited practice is identified",
+      "Obtain legal review for borderline or unclear cases"
+    ],
+    "evidence": [
+      "Completed FORM-AI-CLS-001 (Prohibited Practice Assessment Form)",
+      "Legal review records for borderline cases",
+      "Assessment approval by AI Act Program Manager",
+      "Halt decision documentation if prohibited practice identified"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-002",
+    "name": "High-Risk Classification (Annex I - Product Safety)",
+    "type": "preventive",
+    "frequency": "Initial classification, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Accurately identify AI systems that are safety components of products covered by Union harmonization legislation (Annex I) to ensure they undergo appropriate conformity assessment and meet product safety requirements.",
+    "requirements": [
+      "Review AI system against all 12 Annex I product categories",
+      "Determine if AI system is a \"safety component\" of the product",
+      "Assess if product requires third-party conformity assessment",
+      "Complete Annex I Assessment Form (FORM-AI-CLS-002)",
+      "Classify as HIGH-RISK (Annex I) if all three criteria are met"
+    ],
+    "evidence": [
+      "Completed FORM-AI-CLS-002 (Annex I Assessment Form)",
+      "Product documentation and specifications",
+      "Safety component determination with justification",
+      "Conformity assessment requirement verification"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-003",
+    "name": "High-Risk Classification (Annex III - Standalone Use Cases)",
+    "type": "preventive",
+    "frequency": "Initial classification, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Accurately identify AI systems that fall under Annex III high-risk use cases to ensure they comply with all EU AI Act requirements for high-risk systems, protecting fundamental rights and safety of persons.",
+    "requirements": [
+      "Review AI system against all 8 Annex III categories",
+      "Assess each specific use case within applicable categories",
+      "Complete Annex III Assessment Form (FORM-AI-CLS-003) with detailed justification",
+      "Obtain legal review for borderline cases",
+      "Classify as HIGH-RISK (Annex III) if any category applies"
+    ],
+    "evidence": [
+      "Completed FORM-AI-CLS-003 (Annex III Assessment Form)",
+      "Use case description and intended purpose documentation",
+      "Deployment context analysis",
+      "Legal review records for borderline cases",
+      "Classification decision with justification"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-004",
+    "name": "Classification Decision and Documentation",
+    "type": "preventive",
+    "frequency": "Per AI system, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Make definitive classification decisions based on comprehensive assessments and maintain complete documentation to ensure traceability, support audits, and enable appropriate compliance obligations for each AI system.",
+    "requirements": [
+      "Execute decision tree systematically for each AI system",
+      "Document decision at each step with justification",
+      "Complete Classification Decision Record (REC-AI-CLS-001)",
+      "Obtain AI Governance Committee approval for HIGH-RISK classifications",
+      "Trigger applicable compliance obligations based on classification"
+    ],
+    "evidence": [
+      "Classification Decision Record (REC-AI-CLS-001)",
+      "All assessment forms (FORM-AI-CLS-001, -002, -003)",
+      "Decision tree execution documentation",
+      "AI Governance Committee approval for high-risk systems",
+      "Classification certificate"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-005",
+    "name": "Classification Register Maintenance",
+    "type": "detective",
+    "frequency": "Continuous updates, monthly reviews",
+    "riskLevel": "medium",
+    "objective": "Maintain a comprehensive, current, and accurate register of all AI system classifications to enable effective oversight, compliance monitoring, audit support, and regulatory reporting.",
+    "requirements": [
+      "Create register entry within 5 business days of classification decision",
+      "Update register within 2 business days of any status change",
+      "Conduct monthly register review for completeness and accuracy",
+      "Generate quarterly register reports for AI Governance Committee",
+      "Provide register access to internal audit and competent authorities",
+      "Archive decommissioned AI system records (retain for 10 years)"
+    ],
+    "evidence": [
+      "AI System Classification Register (REC-AI-CLS-002)",
+      "Monthly register review records",
+      "Quarterly reports to AI Governance Committee",
+      "Register update audit trail",
+      "Access logs for register"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-006",
+    "name": "Periodic Classification Review",
+    "type": "detective",
+    "frequency": "Annually (minimum)",
+    "riskLevel": "medium",
+    "objective": "Ensure all AI system classifications remain accurate and current through systematic annual reviews, identifying any changes in AI systems, intended purposes, deployment contexts, or regulatory requirements that necessitate reclassification.",
+    "requirements": [
+      "Schedule annual review for each AI system (based on last classification date)",
+      "Re-assess against current Article 5, Annex I, and Annex III criteria",
+      "Review for changes in: intended purpose, deployment context, functionality, user population",
+      "Review for regulatory updates (EU AI Act guidance, implementing acts)",
+      "Document review results in Annual Classification Review Record",
+      "Update classification if changes identified",
+      "Obtain approval for any reclassifications"
+    ],
+    "evidence": [
+      "Annual review schedule",
+      "Annual Classification Review Records (per AI system)",
+      "Updated classifications (if changed)",
+      "AI Governance Committee approval for reclassifications",
+      "Annual review completion report"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-007",
+    "name": "Event-Triggered Reclassification",
+    "type": "detective",
+    "frequency": "As triggered by events",
+    "riskLevel": "high",
+    "objective": "Ensure AI system classifications are reassessed immediately when triggering events occur that may affect the classification, preventing operation of AI systems under incorrect classifications and associated compliance gaps.",
+    "requirements": [
+      "Monitor systems and processes for reclassification triggers",
+      "Log trigger event within 1 business day of identification",
+      "Initiate reclassification assessment within required timeframe",
+      "Conduct full classification assessment (all three: Article 5, Annex I, Annex III)",
+      "Document reclassification decision",
+      "Update Classification Register",
+      "Communicate changes to stakeholders",
+      "Halt deployment if reclassification increases risk level until compliance gaps addressed"
+    ],
+    "evidence": [
+      "Trigger event log",
+      "Trigger event documentation",
+      "Reclassification assessment records",
+      "Updated Classification Decision Record",
+      "Updated Classification Register entry",
+      "Stakeholder communication records",
+      "Deployment hold records (if applicable)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-008",
+    "name": "Classification Change Management",
+    "type": "corrective",
+    "frequency": "Per reclassification",
+    "riskLevel": "high",
+    "objective": "Manage classification changes through formal change control to ensure compliance obligations are appropriately updated, gaps are identified and addressed, and all stakeholders are informed of classification changes and their implications.",
+    "requirements": [],
+    "evidence": [
+      "Classification Change Request (CR-AI-CLS-XXX)",
+      "Classification Change Impact Assessment",
+      "Gap Analysis Report",
+      "Remediation Plan",
+      "AI Governance Committee approval records",
+      "Updated Classification Register",
+      "Stakeholder communication records",
+      "Remediation completion verification"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CLS-009",
+    "name": "Classification Documentation Package",
+    "type": "detective",
+    "frequency": "Per classification, 10-year retention",
+    "riskLevel": "medium",
+    "objective": "Maintain complete, organized, and accessible documentation packages for all classification decisions to support audits, regulatory inspections, and demonstrate due diligence in classification processes.",
+    "requirements": [
+      "Create documentation package within 5 business days of classification decision",
+      "Store in approved document management system with access controls",
+      "Apply 10-year retention policy automatically",
+      "Enable search and retrieval within 2 business days of request",
+      "Provide to competent authorities within 5 business days of request",
+      "Backup documentation packages in disaster recovery system",
+      "Maintain audit trail of all access to documentation packages"
+    ],
+    "evidence": [
+      "Complete documentation packages (one per AI system)",
+      "Document management system records",
+      "Retention policy configuration",
+      "Access logs",
+      "Backup verification records",
+      "Authority request response records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

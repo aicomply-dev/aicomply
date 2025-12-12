@@ -1,0 +1,113 @@
+{
+  "id": 8,
+  "title": "Module 4 Assessment",
+  "description": "Test your understanding of AI Act governance and penalties.",
+  "type": "quiz",
+  "duration": 15,
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the maximum penalty for prohibited AI practices?",
+      "type": "mcq",
+      "options": [
+        "\u20ac7.5M or 1.5% turnover",
+        "\u20ac15M or 3% turnover",
+        "\u20ac35M or 7% turnover",
+        "\u20ac50M or 10% turnover"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 99 establishes that violations of Article 5 prohibited practices carry the highest penalty tier: up to \u20ac35 million or 7% of total worldwide annual turnover."
+    },
+    {
+      "id": 2,
+      "question": "Which body coordinates GPAI model enforcement at EU level?",
+      "type": "mcq",
+      "options": [
+        "AI Board",
+        "AI Office",
+        "Scientific Panel",
+        "Advisory Forum"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The AI Office, established within the Commission, coordinates enforcement of GPAI model provisions at the EU level."
+    },
+    {
+      "id": 3,
+      "question": "What must each Member State designate?",
+      "type": "mcq",
+      "options": [
+        "Only a notifying authority",
+        "Only market surveillance",
+        "At least one competent authority",
+        "No national authorities required"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Each Member State must designate or establish at least one national competent authority and a market surveillance authority."
+    },
+    {
+      "id": 4,
+      "question": "Which factor may REDUCE penalties?",
+      "type": "mcq",
+      "options": [
+        "Repeated violations",
+        "Intentional breach",
+        "Prompt corrective action",
+        "Obstruction of investigation"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Prompt corrective action is a mitigating factor that may reduce penalties. Cooperation, first infringement, and good faith efforts also reduce penalties."
+    },
+    {
+      "id": 5,
+      "question": "What triggers market surveillance activity?",
+      "type": "mcq",
+      "options": [
+        "Only scheduled audits",
+        "Only serious incidents",
+        "Multiple triggers including complaints",
+        "Only Commission request"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Market surveillance may be triggered by random sampling, complaints, incidents, information from other authorities, media reports, or post-market monitoring data."
+    },
+    {
+      "id": 6,
+      "question": "What must providers report regarding serious incidents?",
+      "type": "mcq",
+      "options": [
+        "Only to deployers",
+        "To market surveillance authorities",
+        "Only to the Commission",
+        "No reporting required"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Providers must report serious incidents to relevant market surveillance authorities within appropriate timeframes."
+    },
+    {
+      "id": 7,
+      "question": "How does the AI Act treat SME penalties?",
+      "type": "mcq",
+      "options": [
+        "Same as large companies",
+        "Lower cap applies",
+        "No penalties for SMEs",
+        "Higher penalties for SMEs"
+      ],
+      "correctAnswer": 1,
+      "explanation": "For SMEs and startups, the lower of the two penalty caps (\u20ac amount vs turnover percentage) applies, with proportionality considerations."
+    },
+    {
+      "id": 8,
+      "question": "What is the role of the AI Board?",
+      "type": "mcq",
+      "options": [
+        "Direct enforcement",
+        "Advisory to Commission",
+        "Only technical standards",
+        "No formal role"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The AI Board is an advisory body of national authority representatives that advises the Commission and contributes to consistent application across Member States."
+    }
+  ]
+}

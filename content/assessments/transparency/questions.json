@@ -1,0 +1,101 @@
+[
+  {
+    "id": "trans_1",
+    "question": "Is the AI system designed to ensure its operation is sufficiently transparent?",
+    "description": "Transparency by design",
+    "category": "transparency",
+    "article": "Article 13(1)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "guidance": "Deployers must be able to interpret system output and use it appropriately."
+  },
+  {
+    "id": "trans_2",
+    "question": "Are clear instructions for use provided to deployers?",
+    "description": "Instructions for use",
+    "category": "transparency",
+    "article": "Article 13(2)",
+    "weight": 8,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "User manual",
+      "Instructions for use document"
+    ]
+  },
+  {
+    "id": "trans_3",
+    "question": "Do instructions include information about provider identity and contact details?",
+    "description": "Provider identification",
+    "category": "transparency",
+    "article": "Article 13(3)(a)",
+    "weight": 6,
+    "answerType": "yes_no"
+  },
+  {
+    "id": "trans_4",
+    "question": "Do instructions include characteristics, capabilities, and limitations of AI system performance?",
+    "description": "Performance characteristics",
+    "category": "transparency",
+    "article": "Article 13(3)(b)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Must include accuracy levels, robustness, cybersecurity, and circumstances where risks may emerge."
+  },
+  {
+    "id": "trans_5",
+    "question": "Are any changes to the AI system pre-determined by the provider documented?",
+    "description": "Pre-determined change documentation",
+    "category": "transparency",
+    "article": "Article 13(3)(c)",
+    "weight": 6,
+    "answerType": "yes_no_na"
+  },
+  {
+    "id": "trans_6",
+    "question": "Are human oversight measures including technical measures clearly documented?",
+    "description": "Human oversight documentation",
+    "category": "transparency",
+    "article": "Article 13(3)(d)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Human oversight procedures"
+    ]
+  },
+  {
+    "id": "trans_7",
+    "question": "Are computational and hardware resources needed for operation specified?",
+    "description": "Resource requirements",
+    "category": "transparency",
+    "article": "Article 13(3)(e)",
+    "weight": 5,
+    "answerType": "yes_no"
+  },
+  {
+    "id": "trans_8",
+    "question": "Is the expected lifetime and maintenance measures documented?",
+    "description": "Lifetime and maintenance",
+    "category": "transparency",
+    "article": "Article 13(3)(f)",
+    "weight": 5,
+    "answerType": "yes_no"
+  },
+  {
+    "id": "trans_9",
+    "question": "Are input data specifications and requirements documented?",
+    "description": "Input data specifications",
+    "category": "transparency",
+    "article": "Article 13(3)(b)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "trans_10",
+    "question": "Are deployers informed of specific risks to groups likely to be affected?",
+    "description": "Affected group risk disclosure",
+    "category": "transparency",
+    "article": "Article 13(3)(b)(i)",
+    "weight": 8,
+    "answerType": "yes_no_partial"
+  }
+]

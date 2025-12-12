@@ -1,0 +1,134 @@
+[
+  {
+    "id": "LIT-001",
+    "name": "AI Literacy Training Curriculum Development",
+    "type": "preventive",
+    "frequency": "Initial development, annual review",
+    "riskLevel": "medium",
+    "objective": "Develop comprehensive AI literacy training curriculum with appropriate content for different roles and competency levels to ensure all staff have necessary AI knowledge and skills.",
+    "requirements": [
+      "Develop training curricula for all levels",
+      "Create training materials",
+      "Obtain subject matter expert review",
+      "Pilot training",
+      "Refine based on feedback",
+      "Review and update annually"
+    ],
+    "evidence": [
+      "Training curricula",
+      "Training materials",
+      "Training content library",
+      "Training modules",
+      "Assessments",
+      "Review records",
+      "Pilot feedback"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LIT-002",
+    "name": "Training Delivery",
+    "type": "preventive",
+    "frequency": "Per training session, ongoing",
+    "riskLevel": "medium",
+    "objective": "Deliver AI literacy training using appropriate methods to ensure all staff receive required training and achieve competency.",
+    "requirements": [
+      "Schedule training sessions",
+      "Deliver training per curriculum",
+      "Track attendance",
+      "Conduct assessments",
+      "Issue certificates",
+      "Document delivery"
+    ],
+    "evidence": [
+      "Training schedule",
+      "Attendance records",
+      "Assessment results",
+      "Training certificates",
+      "Delivery records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LIT-003",
+    "name": "Training Tracking and Completion",
+    "type": "detective",
+    "frequency": "Continuous, quarterly reviews",
+    "riskLevel": "medium",
+    "objective": "Track training completion and monitor training effectiveness to ensure all staff complete required training and training achieves its objectives.",
+    "requirements": [
+      "Maintain training records",
+      "Track completion rates",
+      "Monitor assessment scores",
+      "Monitor training effectiveness",
+      "Identify training gaps",
+      "Generate reports",
+      "Address gaps"
+    ],
+    "evidence": [
+      "Training management system records",
+      "Completion reports",
+      "Effectiveness metrics",
+      "Gap analysis",
+      "Training reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LIT-004",
+    "name": "Competency Assessment",
+    "type": "detective",
+    "frequency": "Per training, annually",
+    "riskLevel": "medium",
+    "objective": "Assess and verify AI competency to ensure staff have appropriate knowledge and skills for their roles.",
+    "requirements": [
+      "Conduct competency assessments",
+      "Evaluate results",
+      "Provide feedback",
+      "Identify development needs",
+      "Track competency levels",
+      "Update competency records"
+    ],
+    "evidence": [
+      "Assessment records",
+      "Competency evaluations",
+      "Development plans",
+      "Competency tracking records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LIT-005",
+    "name": "Ongoing Development and Continuous Learning",
+    "type": "preventive",
+    "frequency": "Ongoing, annually",
+    "riskLevel": "low",
+    "objective": "Provide ongoing development and continuous learning opportunities to ensure staff maintain and enhance AI competency.",
+    "requirements": [
+      "Provide annual refresher training",
+      "Communicate regulatory updates",
+      "Offer training on new AI systems",
+      "Provide continuous learning opportunities",
+      "Support professional development",
+      "Track ongoing learning"
+    ],
+    "evidence": [
+      "Refresher training records",
+      "Update communications",
+      "Development activity logs",
+      "Learning resource usage",
+      "Professional development records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

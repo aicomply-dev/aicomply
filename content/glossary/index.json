@@ -1,0 +1,52 @@
+[
+  {
+    "id": "core-concepts",
+    "title": "Core Concepts",
+    "termCount": 8
+  },
+  {
+    "id": "actors-roles",
+    "title": "Actors & Roles",
+    "termCount": 8
+  },
+  {
+    "id": "risk-classification",
+    "title": "Risk Classification",
+    "termCount": 12
+  },
+  {
+    "id": "compliance-assessment",
+    "title": "Compliance & Assessment",
+    "termCount": 9
+  },
+  {
+    "id": "documentation",
+    "title": "Documentation",
+    "termCount": 4
+  },
+  {
+    "id": "requirements",
+    "title": "Requirements",
+    "termCount": 7
+  },
+  {
+    "id": "governance",
+    "title": "Governance",
+    "termCount": 5
+  },
+  {
+    "id": "technical",
+    "title": "Technical",
+    "termCount": 6
+  },
+  {
+    "id": "enforcement",
+    "title": "Enforcement",
+    "termCount": 4
+  },
+  {
+    "id": "gpai",
+    "title": "GPAI",
+    "termCount": 7
+  }
+]

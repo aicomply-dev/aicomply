@@ -1,0 +1,68 @@
+[
+  {
+    "id": "ai-office",
+    "term": "AI Office",
+    "definition": "The Commission body established to support the implementation and enforcement of the AI Act, particularly regarding general-purpose AI models, and to coordinate AI governance across the EU.",
+    "article": "Article 64",
+    "category": "Governance",
+    "related": [
+      "European Commission",
+      "GPAI",
+      "AI Board"
+    ],
+    "keyPoints": [
+      "Commission body",
+      "Oversees GPAI compliance",
+      "Coordinates enforcement",
+      "Develops guidance"
+    ]
+  },
+  {
+    "id": "ai-board",
+    "term": "European Artificial Intelligence Board",
+    "definition": "An advisory body composed of representatives from Member States established to assist the Commission and Member States in ensuring consistent application of the AI Act across the Union.",
+    "article": "Article 65",
+    "category": "Governance",
+    "related": [
+      "AI Office",
+      "Member States",
+      "Coordination"
+    ]
+  },
+  {
+    "id": "national-competent-authority",
+    "term": "National Competent Authority",
+    "definition": "The notifying authority and the market surveillance authority designated by each Member State for the purpose of the AI Act. Member States may designate more than one competent authority.",
+    "article": "Article 70",
+    "category": "Governance",
+    "related": [
+      "Market Surveillance",
+      "Notifying Authority",
+      "Enforcement"
+    ]
+  },
+  {
+    "id": "market-surveillance-authority",
+    "term": "Market Surveillance Authority",
+    "definition": "The national authority carrying out market surveillance activities and enforcement of the AI Act, with powers to investigate, request information, and take corrective measures.",
+    "article": "Article 70",
+    "category": "Governance",
+    "related": [
+      "National Competent Authority",
+      "Enforcement",
+      "Penalties"
+    ]
+  },
+  {
+    "id": "scientific-panel",
+    "term": "Scientific Panel of Independent Experts",
+    "definition": "A panel of independent experts established to support the enforcement of the AI Act, particularly in relation to general-purpose AI models, providing technical expertise and assessments.",
+    "article": "Article 68",
+    "category": "Governance",
+    "related": [
+      "AI Office",
+      "GPAI",
+      "Systemic Risk"
+    ]
+  }
+]

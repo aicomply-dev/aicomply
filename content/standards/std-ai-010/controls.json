@@ -1,0 +1,334 @@
+[
+  {
+    "id": "CA-001",
+    "name": "Technical Documentation Preparation for Conformity Assessment",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system",
+    "riskLevel": "high",
+    "objective": "Prepare complete technical documentation per Annex IV for Annex VI internal control conformity assessment to ensure all required documentation is available for compliance verification.",
+    "requirements": [
+      "Create technical documentation (per STD-AI-004)",
+      "Verify completeness against Annex IV checklist",
+      "Obtain technical review",
+      "Obtain legal review",
+      "Obtain final approval",
+      "Archive documentation"
+    ],
+    "evidence": [
+      "Complete technical documentation package",
+      "Annex IV completeness checklist",
+      "Review records",
+      "Approval records",
+      "Archive records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-002",
+    "name": "Compliance Verification",
+    "type": "preventive",
+    "frequency": "Per conformity assessment",
+    "riskLevel": "high",
+    "objective": "Verify AI system compliance with all EU AI Act requirements to ensure system meets all regulatory obligations before market placement.",
+    "requirements": [
+      "Review all compliance evidence",
+      "Verify each requirement met",
+      "Document verification results",
+      "Address any gaps",
+      "Obtain compliance sign-off",
+      "Block market placement if non-compliant"
+    ],
+    "evidence": [
+      "Compliance Verification Checklist (CHK-AI-CA-001)",
+      "Verification records",
+      "Gap analysis (if applicable)",
+      "Remediation records",
+      "Compliance sign-off"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-003",
+    "name": "Conformity Assessment Report",
+    "type": "preventive",
+    "frequency": "Per conformity assessment",
+    "riskLevel": "high",
+    "objective": "Prepare conformity assessment report documenting compliance for Annex VI internal control procedure to provide evidence of conformity assessment completion.",
+    "requirements": [
+      "Compile assessment results",
+      "Prepare conformity assessment report",
+      "Review report for accuracy",
+      "Obtain approval",
+      "Archive report",
+      "Maintain for 10 years"
+    ],
+    "evidence": [
+      "Conformity Assessment Report (RPT-AI-CA-XXX)",
+      "Supporting documentation",
+      "Review records",
+      "Approval records",
+      "Archive records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-004",
+    "name": "Notified Body Selection",
+    "type": "preventive",
+    "frequency": "Per Annex VII assessment",
+    "riskLevel": "high",
+    "objective": "Select and engage qualified notified body for Annex VII conformity assessment to ensure competent third-party assessment for Annex I product safety AI systems.",
+    "requirements": [
+      "Identify candidate notified bodies",
+      "Evaluate against criteria",
+      "Select notified body",
+      "Negotiate contract",
+      "Engage notified body",
+      "Document selection"
+    ],
+    "evidence": [
+      "Notified body evaluation",
+      "Selection justification",
+      "Contract with notified body",
+      "Engagement records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-005",
+    "name": "QMS Assessment Preparation",
+    "type": "preventive",
+    "frequency": "Per Annex VII assessment",
+    "riskLevel": "high",
+    "objective": "Prepare for notified body QMS assessment to ensure QMS is ready for third-party evaluation.",
+    "requirements": [
+      "Review QMS implementation",
+      "Conduct pre-assessment audit",
+      "Remediate findings",
+      "Compile QMS documentation package",
+      "Schedule notified body assessment",
+      "Brief notified body"
+    ],
+    "evidence": [
+      "QMS documentation package",
+      "Internal audit report",
+      "Remediation records",
+      "Assessment schedule",
+      "Briefing records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-006",
+    "name": "Technical Documentation Assessment Preparation",
+    "type": "preventive",
+    "frequency": "Per Annex VII assessment",
+    "riskLevel": "high",
+    "objective": "Prepare technical documentation for notified body review to ensure complete and accurate documentation is available for Annex VII assessment.",
+    "requirements": [
+      "Review technical documentation",
+      "Verify completeness",
+      "Address gaps",
+      "Compile documentation package",
+      "Submit to notified body",
+      "Track submission"
+    ],
+    "evidence": [
+      "Technical documentation package",
+      "Internal review records",
+      "Submission records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-007",
+    "name": "Notified Body Assessment Support",
+    "type": "preventive",
+    "frequency": "Per Annex VII assessment",
+    "riskLevel": "high",
+    "objective": "Support notified body during assessment and respond to findings to ensure successful Annex VII conformity assessment.",
+    "requirements": [
+      "Provide requested information",
+      "Support on-site assessment",
+      "Address notified body findings",
+      "Obtain assessment report",
+      "Obtain certificate (if compliant)",
+      "Archive assessment records"
+    ],
+    "evidence": [
+      "Notified body assessment report",
+      "Findings and responses",
+      "EU-type examination certificate (if applicable)",
+      "Correspondence with notified body",
+      "Archive records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-008",
+    "name": "EU Declaration of Conformity Preparation",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, per substantial modification",
+    "riskLevel": "high",
+    "objective": "Prepare EU Declaration of Conformity with all required elements per Article 47 to provide formal declaration of compliance.",
+    "requirements": [
+      "Complete declaration template",
+      "Verify all required elements included",
+      "Review for accuracy",
+      "Obtain legal review",
+      "Obtain authorized signature",
+      "Date declaration"
+    ],
+    "evidence": [
+      "EU Declaration of Conformity (DOC-AI-CONFORM-XXX)",
+      "Declaration template",
+      "Review records",
+      "Signature authorization"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-009",
+    "name": "EU Declaration of Conformity Review and Approval",
+    "type": "preventive",
+    "frequency": "Per declaration",
+    "riskLevel": "high",
+    "objective": "Review and approve EU Declaration of Conformity before issuance to ensure accuracy, completeness, and legal compliance.",
+    "requirements": [
+      "Conduct legal review",
+      "Verify accuracy",
+      "Obtain executive approval",
+      "Sign declaration",
+      "Date declaration",
+      "Archive declaration"
+    ],
+    "evidence": [
+      "Review checklist",
+      "Legal approval",
+      "Executive approval",
+      "Signed declaration",
+      "Archive records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-010",
+    "name": "EU Declaration of Conformity Availability",
+    "type": "preventive",
+    "frequency": "Continuous, 10-year retention",
+    "riskLevel": "medium",
+    "objective": "Keep EU Declaration of Conformity available per Article 47(2) to ensure availability to competent authorities for 10 years.",
+    "requirements": [
+      "Store declaration securely",
+      "Maintain for 10 years",
+      "Provide translations if needed",
+      "Update when AI system changes",
+      "Respond to authority requests",
+      "Document availability"
+    ],
+    "evidence": [
+      "Declaration storage records",
+      "Retention compliance",
+      "Translation records (if applicable)",
+      "Authority request responses",
+      "Update records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-011",
+    "name": "CE Marking Affixing",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system",
+    "riskLevel": "high",
+    "objective": "Affix CE marking to high-risk AI system per Article 48 to indicate EU conformity.",
+    "requirements": [
+      "Determine where to affix CE marking",
+      "Design CE marking display",
+      "Affix CE marking",
+      "Verify visibility and legibility",
+      "Document CE marking",
+      "Verify before market placement"
+    ],
+    "evidence": [
+      "CE marking placement documentation",
+      "CE marking images",
+      "Instructions for use with CE marking",
+      "Verification records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-012",
+    "name": "CE Marking Compliance",
+    "type": "preventive",
+    "frequency": "Per CE marking",
+    "riskLevel": "high",
+    "objective": "Ensure CE marking complies with all rules per Article 48(2-5) to maintain regulatory compliance.",
+    "requirements": [
+      "Verify conformity before affixing CE marking",
+      "Ensure provider responsibility clear",
+      "Avoid confusing markings",
+      "Prepare evidence for authorities",
+      "Monitor CE marking compliance"
+    ],
+    "evidence": [
+      "Conformity verification",
+      "CE marking authorization",
+      "Evidence package for authorities"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "CA-013",
+    "name": "Conformity Assessment Maintenance",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Maintain conformity throughout AI system lifecycle and reassess when substantial modifications occur to ensure ongoing compliance.",
+    "requirements": [
+      "Establish compliance monitoring process",
+      "Track modifications",
+      "Track regulatory updates",
+      "Verify certificate validity",
+      "Verify CE marking",
+      "Report compliance status"
+    ],
+    "evidence": [
+      "Compliance monitoring records",
+      "Modification tracking",
+      "Regulatory update log",
+      "Certificate validity tracking",
+      "Modification assessment records",
+      "New conformity assessment (if needed)",
+      "Updated documentation"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

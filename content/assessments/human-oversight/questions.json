@@ -1,0 +1,116 @@
+[
+  {
+    "id": "oversight_1",
+    "question": "Is the AI system designed to be effectively overseen by natural persons?",
+    "description": "Human oversight design",
+    "category": "human-oversight",
+    "article": "Article 14(1)",
+    "weight": 10,
+    "answerType": "yes_no_partial",
+    "guidance": "Must be designed to allow human oversight during use."
+  },
+  {
+    "id": "oversight_2",
+    "question": "Are appropriate human-machine interface tools provided to enable oversight?",
+    "description": "Interface tools for oversight",
+    "category": "human-oversight",
+    "article": "Article 14(1)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Interface documentation",
+      "Oversight tool specifications"
+    ]
+  },
+  {
+    "id": "oversight_3",
+    "question": "Does oversight aim to prevent or minimize risks to health, safety, or fundamental rights?",
+    "description": "Oversight risk prevention purpose",
+    "category": "human-oversight",
+    "article": "Article 14(2)",
+    "weight": 9,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "oversight_4",
+    "question": "Are human overseers enabled to fully understand the AI system's capabilities and limitations?",
+    "description": "Capability understanding",
+    "category": "human-oversight",
+    "article": "Article 14(4)(a)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Overseers must be able to properly monitor operation."
+  },
+  {
+    "id": "oversight_5",
+    "question": "Can human overseers properly detect and address automation bias?",
+    "description": "Automation bias awareness",
+    "category": "human-oversight",
+    "article": "Article 14(4)(b)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Especially relevant where decisions affect natural persons."
+  },
+  {
+    "id": "oversight_6",
+    "question": "Can human overseers correctly interpret the AI system's output?",
+    "description": "Output interpretability",
+    "category": "human-oversight",
+    "article": "Article 14(4)(c)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Taking into account relevant tools and methods for interpretation."
+  },
+  {
+    "id": "oversight_7",
+    "question": "Can human overseers decide not to use the AI system in any particular situation?",
+    "description": "Decision to not use system",
+    "category": "human-oversight",
+    "article": "Article 14(4)(d)",
+    "weight": 7,
+    "answerType": "yes_no"
+  },
+  {
+    "id": "oversight_8",
+    "question": "Can human overseers disregard, override, or reverse the AI system's output?",
+    "description": "Override capability",
+    "category": "human-oversight",
+    "article": "Article 14(4)(d)",
+    "weight": 9,
+    "answerType": "yes_no",
+    "guidance": "Critical for maintaining human control over AI decisions."
+  },
+  {
+    "id": "oversight_9",
+    "question": "Can human overseers interrupt or stop the AI system operation?",
+    "description": "System interruption capability",
+    "category": "human-oversight",
+    "article": "Article 14(4)(e)",
+    "weight": 9,
+    "answerType": "yes_no",
+    "guidance": "Must be able to stop system using a 'stop' button or similar procedure."
+  },
+  {
+    "id": "oversight_10",
+    "question": "Are human overseers adequately trained to perform their oversight duties?",
+    "description": "Overseer training",
+    "category": "human-oversight",
+    "article": "Article 14(2)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Training materials",
+      "Competency records"
+    ]
+  },
+  {
+    "id": "oversight_11",
+    "question": "Is the level of human oversight commensurate with the risks and context of use?",
+    "description": "Proportionate oversight",
+    "category": "human-oversight",
+    "article": "Article 14(2)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "Higher risks require more intensive oversight measures."
+  }
+]

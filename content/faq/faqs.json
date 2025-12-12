@@ -1,0 +1,86 @@
+[
+  {
+    "id": "1",
+    "question": "What is the EU AI Act?",
+    "answer": "The EU AI Act is the world's first comprehensive legal framework for artificial intelligence. It establishes a risk-based approach to regulating AI systems, categorizing them into four risk levels: prohibited, high-risk, limited risk, and minimal risk. The regulation aims to ensure AI systems in the EU are safe, transparent, traceable, non-discriminatory, and environmentally friendly.",
+    "category": "general"
+  },
+  {
+    "id": "2",
+    "question": "When does the EU AI Act come into force?",
+    "answer": "The EU AI Act entered into force on August 1, 2024. However, different provisions have different application dates:\n\n• February 2, 2025: Prohibitions on unacceptable risk AI practices\n• August 2, 2025: Requirements for general-purpose AI models\n• August 2, 2026: Full application of high-risk AI system requirements\n• August 2, 2027: Requirements for certain high-risk AI systems in Annex I",
+    "category": "timeline"
+  },
+  {
+    "id": "3",
+    "question": "Does the EU AI Act apply to my organization?",
+    "answer": "The EU AI Act applies to:\n\n• Providers (developers) of AI systems placed on the EU market\n• Deployers (users) of AI systems within the EU\n• Providers and deployers outside the EU whose AI systems are used in the EU\n• Importers and distributors of AI systems\n\nThe Act applies regardless of whether the organization is based in the EU, as long as the AI system affects people in the EU.",
+    "category": "scope"
+  },
+  {
+    "id": "4",
+    "question": "What are the penalties for non-compliance?",
+    "answer": "The EU AI Act establishes significant penalties for non-compliance:\n\n• Up to €35 million or 7% of global annual turnover for prohibited AI practices\n• Up to €15 million or 3% of global annual turnover for other violations\n• Up to €7.5 million or 1.5% of global annual turnover for providing incorrect information\n\nFor SMEs and startups, the lower of the two amounts applies. Member States may also impose additional penalties.",
+    "category": "enforcement"
+  },
+  {
+    "id": "5",
+    "question": "What constitutes a 'high-risk' AI system?",
+    "answer": "High-risk AI systems are defined in two ways:\n\n1. AI systems that are safety components of products covered by EU harmonization legislation (Annex I)\n\n2. Stand-alone AI systems in sensitive areas listed in Annex III, including:\n• Biometric identification\n• Critical infrastructure management\n• Education and vocational training\n• Employment and workers management\n• Access to essential services\n• Law enforcement\n• Migration and border control\n• Administration of justice",
+    "category": "compliance"
+  },
+  {
+    "id": "6",
+    "question": "What documentation is required for high-risk AI systems?",
+    "answer": "Providers of high-risk AI systems must prepare and maintain:\n\n• Technical documentation demonstrating compliance\n• Instructions for use for deployers\n• Risk management system documentation\n• Data governance documentation\n• Records of automatic logging\n• EU Declaration of Conformity\n• Quality management system documentation\n\nThis documentation must be kept for 10 years after the AI system is placed on the market.",
+    "category": "compliance"
+  },
+  {
+    "id": "7",
+    "question": "Are there any AI practices that are completely prohibited?",
+    "answer": "Yes, the following AI practices are prohibited:\n\n• Subliminal manipulation causing harm\n• Exploitation of vulnerabilities (age, disability, social situation)\n• Social scoring by public authorities\n• Real-time remote biometric identification in public spaces (with limited exceptions)\n• Untargeted scraping for facial recognition databases\n• Emotion recognition in workplaces and education (with exceptions)\n• Biometric categorization based on sensitive attributes\n• Predictive policing based solely on profiling",
+    "category": "compliance"
+  },
+  {
+    "id": "8",
+    "question": "How do I determine the risk classification of my AI system?",
+    "answer": "To determine risk classification:\n\n1. First check if your AI system falls under prohibited practices (Article 5)\n2. Check if it's a safety component of products in Annex I\n3. Check if it falls into high-risk categories in Annex III\n4. If not high-risk, check if it has transparency obligations (chatbots, deepfakes, emotion recognition)\n5. If none of the above, it's likely minimal risk\n\nWe recommend using our Risk Classification Assessment tool for a guided evaluation.",
+    "category": "scope"
+  },
+  {
+    "id": "9",
+    "question": "How is the AI Act different from GDPR?",
+    "answer": "GDPR regulates personal data processing and sets rules for data protection rights. The EU AI Act regulates AI systems themselves with a risk-based approach even when no personal data is processed. High-risk AI systems must meet Articles 9-15 requirements (risk management, data governance, documentation, logging, transparency, human oversight, accuracy/robustness), and GDPR may apply in parallel when personal data is involved.",
+    "category": "general"
+  },
+  {
+    "id": "10",
+    "question": "Are open-source AI models exempt from the AI Act?",
+    "answer": "Open-source models are not fully exempt. If a model is released under a free and open-source license without monetization, some GPAI obligations may not apply. However, providers and deployers must still avoid prohibited practices and meet transparency obligations. Any high-risk system built on an open-source model must still comply with Articles 9-15.",
+    "category": "scope"
+  },
+  {
+    "id": "11",
+    "question": "What evidence should deployers keep for high-risk AI systems?",
+    "answer": "Deployers should retain: instructions for use from the provider; records of human oversight procedures; incident and near-miss logs; change/configuration history; sampled input/output logs where lawful; monitoring metrics; and evidence of user disclosures when transparency obligations apply. Keep evidence aligned to Articles 13-15 and your quality management system.",
+    "category": "compliance"
+  },
+  {
+    "id": "12",
+    "question": "How should startups or SMEs prepare for the AI Act?",
+    "answer": "Start with a lightweight inventory and risk screening; pick one pilot system to implement Article 9-15 controls; adopt templates for technical documentation and instructions for use; set up basic logging and monitoring; assign an owner; and watch for national sandbox opportunities (Article 57) to ease compliance.",
+    "category": "organizations"
+  },
+  {
+    "id": "13",
+    "question": "Who enforces the AI Act and how?",
+    "answer": "National competent authorities and notified bodies oversee compliance. The European AI Office coordinates cross-border issues and systemic GPAI oversight. Market surveillance authorities can request documentation, conduct inspections, and order corrective actions or withdrawal. Penalties follow Article 99 with significant fines for prohibited practices and serious violations.",
+    "category": "enforcement"
+  },
+  {
+    "id": "14",
+    "question": "What should I prioritize before August 2025?",
+    "answer": "Before August 2025, you should: (1) screen for prohibited practices; (2) identify GPAI exposure and transparency obligations; (3) complete an initial risk classification; (4) begin building the Article 9-15 control set for likely high-risk systems; and (5) prepare user-facing transparency notices for chatbots, deepfakes, and emotion recognition.",
+    "category": "timeline"
+  }
+]

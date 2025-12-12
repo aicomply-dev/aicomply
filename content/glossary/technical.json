@@ -1,0 +1,74 @@
+[
+  {
+    "id": "training-data",
+    "term": "Training Data",
+    "definition": "Data used for training an AI system through fitting its learnable parameters. Training data must meet quality requirements for high-risk AI systems.",
+    "article": "Article 3(29)",
+    "category": "Technical",
+    "related": [
+      "Validation Data",
+      "Testing Data",
+      "Data Governance"
+    ]
+  },
+  {
+    "id": "validation-data",
+    "term": "Validation Data",
+    "definition": "Data used for providing an evaluation of the trained AI system and for tuning its non-learnable parameters and its learning process to prevent underfitting or overfitting.",
+    "article": "Article 3(30)",
+    "category": "Technical",
+    "related": [
+      "Training Data",
+      "Testing Data",
+      "Overfitting"
+    ]
+  },
+  {
+    "id": "testing-data",
+    "term": "Testing Data",
+    "definition": "Data used for providing an independent evaluation of the AI system to confirm expected performance before placing on the market or putting into service.",
+    "article": "Article 3(31)",
+    "category": "Technical",
+    "related": [
+      "Training Data",
+      "Validation Data",
+      "Performance"
+    ]
+  },
+  {
+    "id": "input-data",
+    "term": "Input Data",
+    "definition": "Data provided to or directly acquired by an AI system on the basis of which the system produces an output.",
+    "article": "Article 3(32)",
+    "category": "Technical",
+    "related": [
+      "Output",
+      "AI System",
+      "Inference"
+    ]
+  },
+  {
+    "id": "biometric-data",
+    "term": "Biometric Data",
+    "definition": "Personal data resulting from specific technical processing relating to the physical, physiological or behavioural characteristics of a natural person, such as facial images or dactyloscopic data.",
+    "article": "Article 3(33)",
+    "category": "Technical",
+    "related": [
+      "Biometric Identification",
+      "GDPR",
+      "Special Categories"
+    ]
+  },
+  {
+    "id": "deep-fake",
+    "term": "Deep Fake",
+    "definition": "AI-generated or manipulated image, audio or video content that resembles existing persons, objects, places, entities or events and would falsely appear to a person to be authentic or truthful.",
+    "article": "Article 3(60)",
+    "category": "Technical",
+    "related": [
+      "Transparency Obligations",
+      "Synthetic Media",
+      "Disclosure"
+    ]
+  }
+]

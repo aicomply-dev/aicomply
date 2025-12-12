@@ -1,0 +1,105 @@
+[
+  {
+    "id": "risk-management-system",
+    "term": "Risk Management System",
+    "definition": "A continuous iterative process planned and run throughout the entire lifecycle of a high-risk AI system, requiring regular systematic updating. It shall identify and analyse known and reasonably foreseeable risks, estimate and evaluate risks, and adopt risk management measures.",
+    "article": "Article 9",
+    "category": "Requirements",
+    "related": [
+      "High-Risk AI System",
+      "Technical Documentation",
+      "Residual Risk"
+    ],
+    "keyPoints": [
+      "Continuous throughout lifecycle",
+      "Iterative process",
+      "Systematic updating required",
+      "Must address foreseeable risks"
+    ]
+  },
+  {
+    "id": "data-governance",
+    "term": "Data Governance",
+    "definition": "Requirements for training, validation and testing data sets used for high-risk AI systems, including requirements for relevance, representativeness, accuracy, completeness, and appropriateness for the intended purpose.",
+    "article": "Article 10",
+    "category": "Requirements",
+    "related": [
+      "Training Data",
+      "Bias",
+      "Data Quality",
+      "GDPR"
+    ],
+    "keyPoints": [
+      "Data quality requirements",
+      "Bias examination mandatory",
+      "Statistical properties must be appropriate",
+      "Documentation of data choices"
+    ]
+  },
+  {
+    "id": "human-oversight",
+    "term": "Human Oversight",
+    "definition": "Measures designed to be implemented by the deployer, or identified by the provider, to enable natural persons to oversee the functioning of a high-risk AI system, understand its capabilities and limitations, monitor operation, and intervene or interrupt when necessary.",
+    "article": "Article 14",
+    "category": "Requirements",
+    "related": [
+      "High-Risk AI System",
+      "Deployer",
+      "Automation Bias"
+    ],
+    "keyPoints": [
+      "Built into system design",
+      "Prevents automation bias",
+      "Enables intervention",
+      "Appropriate to context"
+    ]
+  },
+  {
+    "id": "accuracy",
+    "term": "Accuracy",
+    "definition": "High-risk AI systems shall be designed and developed in such a way that they achieve an appropriate level of accuracy, robustness and cybersecurity, as declared by the provider.",
+    "article": "Article 15(1)",
+    "category": "Requirements",
+    "related": [
+      "Robustness",
+      "Cybersecurity",
+      "Performance Metrics"
+    ]
+  },
+  {
+    "id": "robustness",
+    "term": "Robustness",
+    "definition": "The ability of a high-risk AI system to maintain its level of performance when facing conditions not anticipated during development, including errors, faults, inconsistencies, or adversarial attacks.",
+    "article": "Article 15(4)",
+    "category": "Requirements",
+    "related": [
+      "Accuracy",
+      "Cybersecurity",
+      "Adversarial Attacks"
+    ]
+  },
+  {
+    "id": "cybersecurity",
+    "term": "Cybersecurity",
+    "definition": "High-risk AI systems shall be designed and developed so that they achieve an appropriate level of cybersecurity and are resilient against attempts to alter their use, outputs or performance.",
+    "article": "Article 15(5)",
+    "category": "Requirements",
+    "related": [
+      "Robustness",
+      "Data Poisoning",
+      "Model Manipulation"
+    ]
+  },
+  {
+    "id": "transparency-requirements",
+    "term": "Transparency Requirements",
+    "definition": "High-risk AI systems shall be designed and developed in such a way as to ensure that their operation is sufficiently transparent to enable deployers to interpret a system's output and use it appropriately.",
+    "article": "Article 13",
+    "category": "Requirements",
+    "related": [
+      "Instructions for Use",
+      "Explainability",
+      "Deployer"
+    ]
+  }
+]

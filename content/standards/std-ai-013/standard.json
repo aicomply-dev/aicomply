@@ -1,0 +1,90 @@
+{
+  "id": "std-ai-013",
+  "standardId": "STD-AI-013",
+  "title": "AI Incident Management Standard",
+  "shortTitle": "Incident Management",
+  "description": "This standard defines requirements for reporting serious incidents and malfunctions to competent authorities in compliance with EU AI Act Article 73.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "AI Risk Manager",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 73",
+    "Article 73(2)",
+    "Article 73(1)",
+    "Article 3"
+  ],
+  "iso42001Clauses": [],
+  "category": "incident-management",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 5,
+  "kpis": [
+    {
+      "id": "KPI-INC-001",
+      "name": "Serious Incident Reporting Timeliness",
+      "definition": "% of serious incidents reported within 15 days",
+      "target": "100%",
+      "measurementMethod": "(# reported within 15 days / # total serious incidents) × 100",
+      "frequency": "Per incident",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-002",
+      "name": "Incident Detection Time",
+      "definition": "Average time to detect incidents",
+      "target": "<1 hour",
+      "measurementMethod": "Σ (detection time) / # incidents",
+      "frequency": "Per incident",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-003",
+      "name": "Investigation Completion",
+      "definition": "Average days to complete investigation",
+      "target": "<10 days",
+      "measurementMethod": "Σ (investigation days) / # investigations",
+      "frequency": "Per incident",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-004",
+      "name": "Corrective Action Closure",
+      "definition": "Average days to close corrective actions",
+      "target": "<30 days",
+      "measurementMethod": "Σ (closure days) / # actions",
+      "frequency": "Per action",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-005",
+      "name": "Lessons Learned Documentation",
+      "definition": "% of incidents with lessons learned",
+      "target": "100%",
+      "measurementMethod": "(# with lessons learned / # total incidents) × 100",
+      "frequency": "Per incident",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-006",
+      "name": "Incident Report Completeness",
+      "definition": "% of reports with all required elements",
+      "target": "100%",
+      "measurementMethod": "(# complete / # total reports) × 100",
+      "frequency": "Per report",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-INC-007",
+      "name": "Regulatory Submission Confirmation",
+      "definition": "% of submissions with confirmation",
+      "target": "100%",
+      "measurementMethod": "(# with confirmation / # total submissions) × 100",
+      "frequency": "Per submission",
+      "owner": "Legal"
+    }
+  ]
+}

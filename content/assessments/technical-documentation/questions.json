@@ -1,0 +1,115 @@
+[
+  {
+    "id": "tech_doc_1",
+    "question": "Is technical documentation drawn up before the AI system is placed on the market or put into service?",
+    "description": "Documentation timing",
+    "category": "technical-documentation",
+    "article": "Article 11(1)",
+    "weight": 9,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "Technical documentation package"
+    ]
+  },
+  {
+    "id": "tech_doc_2",
+    "question": "Is the technical documentation kept up to date throughout the system lifecycle?",
+    "description": "Documentation maintenance",
+    "category": "technical-documentation",
+    "article": "Article 11(1)",
+    "weight": 8,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "tech_doc_3",
+    "question": "Does documentation contain a general description of the AI system and its intended purpose?",
+    "description": "System description completeness",
+    "category": "technical-documentation",
+    "article": "Annex IV, 1",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "System overview document"
+    ]
+  },
+  {
+    "id": "tech_doc_4",
+    "question": "Is information about elements of the AI system and development process documented?",
+    "description": "Development process documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 2",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Architecture documentation",
+      "Development methodology"
+    ]
+  },
+  {
+    "id": "tech_doc_5",
+    "question": "Is detailed information about monitoring, functioning, and control documented?",
+    "description": "Operational documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 3",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "tech_doc_6",
+    "question": "Is the risk management system fully described?",
+    "description": "Risk management documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 4",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Risk management documentation"
+    ]
+  },
+  {
+    "id": "tech_doc_7",
+    "question": "Are changes made during the AI system lifecycle documented?",
+    "description": "Change documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 5",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Change log",
+      "Version control records"
+    ]
+  },
+  {
+    "id": "tech_doc_8",
+    "question": "Are harmonised standards or common specifications applied documented?",
+    "description": "Standards compliance documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 6",
+    "weight": 6,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "tech_doc_9",
+    "question": "Is the EU declaration of conformity available?",
+    "description": "Declaration of conformity",
+    "category": "technical-documentation",
+    "article": "Annex IV, 7",
+    "weight": 8,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "EU Declaration of Conformity"
+    ]
+  },
+  {
+    "id": "tech_doc_10",
+    "question": "Is a description of the post-market monitoring system included?",
+    "description": "Post-market monitoring documentation",
+    "category": "technical-documentation",
+    "article": "Annex IV, 8",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Post-market monitoring plan"
+    ]
+  }
+]

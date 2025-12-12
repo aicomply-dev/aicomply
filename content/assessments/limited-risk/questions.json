@@ -1,0 +1,62 @@
+[
+  {
+    "id": "limited_1",
+    "question": "Does the AI system interact directly with natural persons (e.g., chatbot, virtual assistant)?",
+    "description": "Human-AI interaction systems",
+    "category": "limited-risk",
+    "subcategory": "transparency",
+    "article": "Article 50(1)",
+    "weight": 4,
+    "riskTrigger": "limited-risk",
+    "answerType": "yes_no",
+    "guidance": "Users must be informed they are interacting with an AI system unless obvious from context."
+  },
+  {
+    "id": "limited_2",
+    "question": "Does the AI system generate synthetic audio, image, video, or text content?",
+    "description": "Content generation systems",
+    "category": "limited-risk",
+    "subcategory": "transparency",
+    "article": "Article 50(2)",
+    "weight": 4,
+    "riskTrigger": "limited-risk",
+    "answerType": "yes_no",
+    "guidance": "AI-generated content must be marked as artificially generated or manipulated."
+  },
+  {
+    "id": "limited_3",
+    "question": "Does the AI system enable emotion recognition or biometric categorization?",
+    "description": "Emotion/biometric systems (not prohibited)",
+    "category": "limited-risk",
+    "subcategory": "transparency",
+    "article": "Article 50(3)",
+    "weight": 4,
+    "riskTrigger": "limited-risk",
+    "answerType": "yes_no",
+    "guidance": "Persons exposed must be informed of system operation."
+  },
+  {
+    "id": "limited_4",
+    "question": "Does the AI system generate or manipulate images, audio, or video constituting deep fakes?",
+    "description": "Deep fake generation",
+    "category": "limited-risk",
+    "subcategory": "transparency",
+    "article": "Article 50(4)",
+    "weight": 4,
+    "riskTrigger": "limited-risk",
+    "answerType": "yes_no",
+    "guidance": "Deep fakes must be labeled as artificially generated or manipulated."
+  },
+  {
+    "id": "limited_5",
+    "question": "Does the AI system generate text published to inform the public on matters of public interest?",
+    "description": "Public information text generation",
+    "category": "limited-risk",
+    "subcategory": "transparency",
+    "article": "Article 50(4)",
+    "weight": 4,
+    "riskTrigger": "limited-risk",
+    "answerType": "yes_no",
+    "guidance": "Unless subject to human editorial review and control, must be labeled as AI-generated."
+  }
+]

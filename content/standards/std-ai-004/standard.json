@@ -1,0 +1,123 @@
+{
+  "id": "std-ai-004",
+  "standardId": "STD-AI-004",
+  "title": "AI Technical Documentation Standard",
+  "shortTitle": "Technical Documentation",
+  "description": "This standard defines requirements for creating and maintaining comprehensive technical documentation for high-risk AI systems in compliance with EU AI Act Article 11 and Annex IV.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Chief Technology Officer",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 11",
+    "Article 53",
+    "Article 18",
+    "Article 3(23)",
+    "Article 3(40)",
+    "Article 3(35)",
+    "Article 3(22)",
+    "Article 3(26)",
+    "Article 3(27)",
+    "Annex I"
+  ],
+  "iso42001Clauses": [],
+  "category": "documentation",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 10,
+  "kpis": [
+    {
+      "id": "KPI-DOC-001",
+      "name": "Documentation Completeness",
+      "definition": "% of high-risk AI with complete Annex IV documentation",
+      "target": "100%",
+      "measurementMethod": "(# high-risk AI with complete docs / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-002",
+      "name": "Documentation Currency",
+      "definition": "% of documentation current (< 1 year old)",
+      "target": "100%",
+      "measurementMethod": "(# current docs / # total docs) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-003",
+      "name": "Review Completion",
+      "definition": "% of annual reviews completed on time",
+      "target": "100%",
+      "measurementMethod": "(# reviews on time / # scheduled reviews) × 100",
+      "frequency": "Quarterly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-004",
+      "name": "Authority Response Time",
+      "definition": "Average days to respond to authority requests",
+      "target": "< 5 days",
+      "measurementMethod": "Σ (response date - request date) / # requests",
+      "frequency": "Per request",
+      "owner": "Legal"
+    },
+    {
+      "id": "KPI-DOC-005",
+      "name": "Approval Cycle Time",
+      "definition": "Average days from submission to approval",
+      "target": "< 10 days",
+      "measurementMethod": "Σ (approval date - submission date) / # submissions",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-006",
+      "name": "Documentation Quality Score",
+      "definition": "Average quality score across all documentation",
+      "target": "≥ 90%",
+      "measurementMethod": "Composite score from quality criteria",
+      "frequency": "Quarterly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-007",
+      "name": "Version Control Compliance",
+      "definition": "% of documentation with proper version control",
+      "target": "100%",
+      "measurementMethod": "(# docs with version control / # total docs) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-008",
+      "name": "Update Timeliness",
+      "definition": "% of documentation updates completed within 30 days",
+      "target": "100%",
+      "measurementMethod": "(# updates within 30 days / # total updates) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-DOC-009",
+      "name": "Access Control Compliance",
+      "definition": "% of documentation with proper access controls",
+      "target": "100%",
+      "measurementMethod": "(# docs with access controls / # total docs) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security"
+    },
+    {
+      "id": "KPI-DOC-010",
+      "name": "Template Usage",
+      "definition": "% of documentation using standardized templates",
+      "target": "100%",
+      "measurementMethod": "(# docs using templates / # total docs) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    }
+  ]
+}

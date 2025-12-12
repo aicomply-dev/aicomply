@@ -1,0 +1,116 @@
+{
+  "id": "std-ai-009",
+  "standardId": "STD-AI-009",
+  "title": "AI Quality Management Standard",
+  "shortTitle": "Quality Management",
+  "description": "This standard defines requirements for establishing and maintaining a Quality Management System (QMS) for high-risk AI systems in compliance with EU AI Act Article 17.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Quality Director",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 17",
+    "Article 17(1)",
+    "Article 9"
+  ],
+  "iso42001Clauses": [],
+  "category": "quality-management",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 15,
+  "kpis": [
+    {
+      "id": "KPI-QMS-001",
+      "name": "QMS Documentation Completeness",
+      "definition": "% of Article 17 elements documented",
+      "target": "100%",
+      "measurementMethod": "(# elements documented / # total elements) × 100",
+      "frequency": "Monthly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-002",
+      "name": "Design Review Completion",
+      "definition": "% of required reviews completed",
+      "target": "100%",
+      "measurementMethod": "(# reviews completed / # required reviews) × 100",
+      "frequency": "Monthly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-003",
+      "name": "Test Pass Rate",
+      "definition": "% of tests passed first time",
+      "target": "≥95%",
+      "measurementMethod": "(# tests passed / # total tests) × 100",
+      "frequency": "Per release",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-004",
+      "name": "CAPA Closure Rate",
+      "definition": "% of CAPAs closed on time",
+      "target": "≥90%",
+      "measurementMethod": "(# CAPAs closed on time / # total CAPAs) × 100",
+      "frequency": "Monthly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-005",
+      "name": "Defect Escape Rate",
+      "definition": "% of defects found post-release",
+      "target": "<5%",
+      "measurementMethod": "(# defects post-release / # total defects) × 100",
+      "frequency": "Per release",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-006",
+      "name": "Audit Findings Closure",
+      "definition": "% of audit findings closed on time",
+      "target": "100%",
+      "measurementMethod": "(# findings closed on time / # total findings) × 100",
+      "frequency": "Quarterly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-007",
+      "name": "Management Review Completion",
+      "definition": "% of scheduled reviews completed",
+      "target": "100%",
+      "measurementMethod": "(# reviews completed / # scheduled reviews) × 100",
+      "frequency": "Annually",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-008",
+      "name": "Design Verification Completion",
+      "definition": "% of designs verified",
+      "target": "100%",
+      "measurementMethod": "(# designs verified / # total designs) × 100",
+      "frequency": "Monthly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-009",
+      "name": "Design Validation Completion",
+      "definition": "% of designs validated before deployment",
+      "target": "100%",
+      "measurementMethod": "(# designs validated / # designs deployed) × 100",
+      "frequency": "Monthly",
+      "owner": "Quality Director"
+    },
+    {
+      "id": "KPI-QMS-010",
+      "name": "QMS Effectiveness Score",
+      "definition": "Composite QMS effectiveness score",
+      "target": "≥90%",
+      "measurementMethod": "Weighted average of effectiveness metrics",
+      "frequency": "Quarterly",
+      "owner": "Quality Director"
+    }
+  ]
+}

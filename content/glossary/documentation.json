@@ -1,0 +1,56 @@
+[
+  {
+    "id": "technical-documentation",
+    "term": "Technical Documentation",
+    "definition": "Documentation required under Article 11 that enables national competent authorities and notified bodies to assess the compliance of the high-risk AI system with the requirements set out in this Regulation.",
+    "article": "Article 11",
+    "category": "Documentation",
+    "related": [
+      "Conformity Assessment",
+      "Annex IV",
+      "Record-Keeping"
+    ],
+    "keyPoints": [
+      "Must be prepared before market placement",
+      "Kept up to date",
+      "Content specified in Annex IV",
+      "Retained for 10 years"
+    ]
+  },
+  {
+    "id": "instructions-for-use",
+    "term": "Instructions for Use",
+    "definition": "Information provided by the provider to inform the deployer of an AI system's intended purpose and proper use, including the specific geographical, behavioural or functional settings within which the high-risk AI system is intended to be used.",
+    "article": "Article 13",
+    "category": "Documentation",
+    "related": [
+      "Technical Documentation",
+      "Intended Purpose",
+      "Deployer"
+    ]
+  },
+  {
+    "id": "logging-capabilities",
+    "term": "Logging Capabilities",
+    "definition": "Automatic recording of events (logs) while high-risk AI systems are operating, enabling traceability of the AI system's functioning throughout its lifecycle.",
+    "article": "Article 12",
+    "category": "Documentation",
+    "related": [
+      "Traceability",
+      "High-Risk AI System",
+      "Audit Trail"
+    ]
+  },
+  {
+    "id": "eu-database",
+    "term": "EU Database for High-Risk AI Systems",
+    "definition": "A database established and maintained by the Commission containing information about high-risk AI systems registered by providers before placing them on the market or putting them into service.",
+    "article": "Article 71",
+    "category": "Documentation",
+    "related": [
+      "Registration",
+      "High-Risk AI System",
+      "Transparency"
+    ]
+  }
+]

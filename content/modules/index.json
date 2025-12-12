@@ -1,0 +1,62 @@
+[
+  {
+    "id": "DPezKRhycejyZtp-wHy6o",
+    "slug": "ai-act-fundamentals",
+    "title": "AI Act Fundamentals",
+    "description": "Learn the basics of the EU AI Act including its purpose, scope, key definitions, risk classification framework, prohibited practices, and implementation timeline.",
+    "category": "fundamentals",
+    "difficulty": "beginner",
+    "duration": 88,
+    "order": 1,
+    "isPublished": true,
+    "chapterCount": 8
+  },
+  {
+    "id": "0VU_FI0ZRlUSl3OvTEyTS",
+    "slug": "high-risk-ai-compliance",
+    "title": "High-Risk AI Compliance",
+    "description": "Master the comprehensive requirements for high-risk AI systems including risk management, data governance, technical documentation, logging, transparency, human oversight, conformity assessment, and provider/deployer obligations.",
+    "category": "compliance",
+    "difficulty": "intermediate",
+    "duration": 160,
+    "order": 2,
+    "isPublished": true,
+    "chapterCount": 12
+  },
+  {
+    "id": "PpUB1Xif7PE9RklrBfEDb",
+    "slug": "gpai-compliance",
+    "title": "GPAI Compliance",
+    "description": "Understand General-Purpose AI model requirements including provider obligations, systemic risk classification, downstream relationships, codes of practice, and real-world implementation strategies.",
+    "category": "compliance",
+    "difficulty": "intermediate",
+    "duration": 103,
+    "order": 3,
+    "isPublished": true,
+    "chapterCount": 8
+  },
+  {
+    "id": "2ww_o3htHJz2kmkYaAxwZ",
+    "slug": "governance-penalties",
+    "title": "Governance & Penalties",
+    "description": "Navigate the EU AI Act's governance structure, national competent authorities, penalty framework, market surveillance, post-market monitoring, and develop effective compliance strategies.",
+    "category": "governance",
+    "difficulty": "intermediate",
+    "duration": 94,
+    "order": 4,
+    "isPublished": true,
+    "chapterCount": 8
+  },
+  {
+    "id": "CAY1OeEbeP3wsTUDl0fFr",
+    "slug": "innovation-pathways",
+    "title": "Innovation Pathways",
+    "description": "Explore regulatory sandboxes, real-world testing frameworks, codes of conduct, SME and startup support measures, and strategies for balancing innovation with compliance.",
+    "category": "innovation",
+    "difficulty": "intermediate",
+    "duration": 96,
+    "order": 5,
+    "isPublished": true,
+    "chapterCount": 8
+  }
+]

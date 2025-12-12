@@ -1,0 +1,119 @@
+{
+  "id": "std-ai-006",
+  "standardId": "STD-AI-006",
+  "title": "AI Transparency Standard",
+  "shortTitle": "Transparency",
+  "description": "This standard defines requirements for providing clear, comprehensive information to deployers and users about AI system capabilities and limitations in compliance with EU AI Act Articles 13 and 50.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Product Director",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 50",
+    "Article 13",
+    "Article 13(3)",
+    "Article 50(1)",
+    "Article 3(4)",
+    "Annex I"
+  ],
+  "iso42001Clauses": [],
+  "category": "transparency",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 5,
+  "kpis": [
+    {
+      "id": "KPI-TRANS-001",
+      "name": "Instructions for Use Completeness",
+      "definition": "% of high-risk AI with complete Instructions for Use",
+      "target": "100%",
+      "measurementMethod": "(# high-risk AI with IFU / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-002",
+      "name": "Instructions for Use Currency",
+      "definition": "% of Instructions for Use current (< 1 year old)",
+      "target": "100%",
+      "measurementMethod": "(# current IFU / # total IFU) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-003",
+      "name": "Transparency Notice Display Rate",
+      "definition": "% of user interactions with disclosure",
+      "target": "100%",
+      "measurementMethod": "(# interactions with disclosure / # total interactions) × 100",
+      "frequency": "Daily",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-004",
+      "name": "User Awareness",
+      "definition": "% of users aware of AI use (survey)",
+      "target": "≥90%",
+      "measurementMethod": "Survey results",
+      "frequency": "Quarterly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-005",
+      "name": "Update Timeliness",
+      "definition": "% of updates completed within 30 days",
+      "target": "100%",
+      "measurementMethod": "(# updates within 30 days / # total updates) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-006",
+      "name": "Explanation Availability",
+      "definition": "% of AI systems with explanation capability",
+      "target": "100%",
+      "measurementMethod": "(# AI systems with explanations / # total AI systems) × 100",
+      "frequency": "Quarterly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-007",
+      "name": "Accessibility Compliance",
+      "definition": "% of notices meeting WCAG 2.1 AA",
+      "target": "100%",
+      "measurementMethod": "(# compliant notices / # total notices) × 100",
+      "frequency": "Quarterly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-008",
+      "name": "Deployer Acknowledgment Rate",
+      "definition": "% of deployers acknowledging Instructions for Use",
+      "target": "100%",
+      "measurementMethod": "(# acknowledgments / # deployers) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-009",
+      "name": "Explanation Usage Rate",
+      "definition": "% of users requesting explanations",
+      "target": "≥10%",
+      "measurementMethod": "(# explanation requests / # total decisions) × 100",
+      "frequency": "Monthly",
+      "owner": "Product Director"
+    },
+    {
+      "id": "KPI-TRANS-010",
+      "name": "User Satisfaction (Transparency)",
+      "definition": "User satisfaction score with transparency",
+      "target": "≥4.0/5.0",
+      "measurementMethod": "User survey score",
+      "frequency": "Quarterly",
+      "owner": "Product Director"
+    }
+  ]
+}

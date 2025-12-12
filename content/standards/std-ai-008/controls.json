@@ -1,0 +1,214 @@
+[
+  {
+    "id": "ARS-001",
+    "name": "Accuracy Requirements Definition",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, during design phase",
+    "riskLevel": "high",
+    "objective": "Define accuracy requirements based on intended purpose per Article 15(1) to ensure AI systems achieve appropriate accuracy levels for their use case, enabling safe and effective deployment.",
+    "requirements": [
+      "Define accuracy requirements based on intended purpose",
+      "Select appropriate metrics",
+      "Set accuracy thresholds",
+      "Document requirements",
+      "Obtain AI System Owner approval",
+      "Review and update annually"
+    ],
+    "evidence": [
+      "Accuracy Requirements Document (DOC-AI-ARS-001)",
+      "Metrics definitions",
+      "Threshold specifications",
+      "Approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-002",
+    "name": "Accuracy Testing",
+    "type": "preventive",
+    "frequency": "Before deployment, after model updates",
+    "riskLevel": "high",
+    "objective": "Test AI system accuracy before deployment to verify it meets defined accuracy requirements, ensuring safe and effective operation.",
+    "requirements": [
+      "Plan accuracy testing",
+      "Prepare representative test data",
+      "Execute tests across all use cases",
+      "Test for all user groups",
+      "Calculate all defined metrics",
+      "Verify threshold compliance",
+      "Document test results",
+      "Block deployment if thresholds not met"
+    ],
+    "evidence": [
+      "Accuracy Test Plan (PLAN-AI-ARS-001)",
+      "Test results (TEST-AI-ARS-001)",
+      "Analysis reports",
+      "Threshold compliance verification",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-003",
+    "name": "Accuracy Monitoring",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Monitor accuracy in production to detect accuracy degradation, identify issues early, and enable timely corrective actions to maintain AI system performance.",
+    "requirements": [
+      "Implement accuracy monitoring",
+      "Set up alerting for threshold breaches",
+      "Monitor continuously",
+      "Track accuracy trends",
+      "Investigate accuracy issues",
+      "Implement corrective actions",
+      "Document monitoring results"
+    ],
+    "evidence": [
+      "Accuracy monitoring dashboard",
+      "Alert logs",
+      "Trend analysis reports",
+      "Investigation records",
+      "Corrective action records",
+      "Monthly accuracy reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-004",
+    "name": "Robustness Requirements",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, during design phase",
+    "riskLevel": "high",
+    "objective": "Define robustness requirements per Article 15(2) to ensure AI systems are resilient to errors, faults, inconsistencies, and adversarial conditions, maintaining performance across diverse scenarios.",
+    "requirements": [
+      "Define robustness requirements",
+      "Establish robustness metrics",
+      "Set robustness thresholds",
+      "Document requirements",
+      "Obtain approval",
+      "Review and update annually"
+    ],
+    "evidence": [
+      "Robustness Requirements Document (DOC-AI-ARS-002)",
+      "Metrics and thresholds",
+      "Approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-005",
+    "name": "Robustness Testing",
+    "type": "preventive",
+    "frequency": "Before deployment, after model updates",
+    "riskLevel": "high",
+    "objective": "Test AI system robustness to verify it meets defined robustness requirements, ensuring resilience to errors, faults, and adversarial conditions.",
+    "requirements": [
+      "Plan robustness testing",
+      "Execute all test types",
+      "Analyze results",
+      "Verify compliance with requirements",
+      "Document results",
+      "Block deployment if requirements not met"
+    ],
+    "evidence": [
+      "Robustness Test Plan (PLAN-AI-ARS-002)",
+      "Test results (TEST-AI-ARS-002)",
+      "Analysis reports",
+      "Compliance verification",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-006",
+    "name": "Model Drift Detection",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Monitor for data drift and concept drift to detect performance degradation early and enable timely model updates or retraining to maintain AI system performance.",
+    "requirements": [
+      "Implement drift detection",
+      "Monitor continuously",
+      "Alert on drift detection",
+      "Investigate drift causes",
+      "Retrain or update model if needed",
+      "Document drift events and responses"
+    ],
+    "evidence": [
+      "Drift detection configuration",
+      "Drift monitoring dashboard",
+      "Alert logs",
+      "Drift investigation records",
+      "Retraining records",
+      "Monthly drift reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-007",
+    "name": "Cybersecurity Requirements",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, during design phase",
+    "riskLevel": "high",
+    "objective": "Define cybersecurity requirements and assess AI-specific security threats per Article 15(3) to ensure AI systems are resilient against cybersecurity threats and protect against AI-specific attack vectors.",
+    "requirements": [
+      "Define security requirements",
+      "Conduct threat modeling",
+      "Assess AI-specific threats",
+      "Implement security controls",
+      "Test security controls",
+      "Document security architecture"
+    ],
+    "evidence": [
+      "Security Requirements Document (DOC-AI-ARS-003)",
+      "Threat model",
+      "AI threat assessment",
+      "Security control documentation",
+      "Test results"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "ARS-008",
+    "name": "Security Testing",
+    "type": "preventive",
+    "frequency": "Before deployment, annually, after security updates",
+    "riskLevel": "high",
+    "objective": "Test AI system security to verify it meets security requirements and is resilient against cybersecurity threats, including AI-specific attack vectors.",
+    "requirements": [
+      "Plan security testing",
+      "Execute all test types",
+      "Remediate findings",
+      "Verify remediation",
+      "Document results",
+      "Block deployment if critical vulnerabilities found"
+    ],
+    "evidence": [
+      "Security Test Plan (PLAN-AI-ARS-003)",
+      "Test results (TEST-AI-ARS-003)",
+      "Remediation records",
+      "Verification results",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

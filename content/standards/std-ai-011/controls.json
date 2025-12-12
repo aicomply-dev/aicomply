@@ -1,0 +1,80 @@
+[
+  {
+    "id": "REG-001",
+    "name": "Registration Information Gathering",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system",
+    "riskLevel": "high",
+    "objective": "Gather and verify all required registration information per Article 49(1) to ensure complete and accurate registration data is available before submission to EU database.",
+    "requirements": [
+      "Gather all required information",
+      "Verify information accuracy",
+      "Compile registration package",
+      "Review for completeness",
+      "Obtain approvals",
+      "Archive registration package"
+    ],
+    "evidence": [
+      "Registration information package",
+      "Verification records",
+      "Approval records",
+      "Archive records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "REG-002",
+    "name": "Registration Submission",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, before market placement",
+    "riskLevel": "high",
+    "objective": "Submit registration to EU database before market placement per Article 49 to ensure high-risk AI systems are registered before being placed on the market.",
+    "requirements": [
+      "Access EU database portal",
+      "Complete registration form",
+      "Submit registration",
+      "Verify submission",
+      "Obtain confirmation",
+      "Record registration number",
+      "Block market placement if not registered"
+    ],
+    "evidence": [
+      "Registration submission records",
+      "Confirmation from EU database",
+      "Registration number",
+      "Market placement authorization"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "REG-003",
+    "name": "Registration Updates",
+    "type": "detective",
+    "frequency": "As needed, when changes occur",
+    "riskLevel": "medium",
+    "objective": "Update registration when changes occur to ensure registration information remains accurate and current throughout AI system lifecycle.",
+    "requirements": [
+      "Monitor for update triggers",
+      "Assess if update required",
+      "Prepare update information",
+      "Update registration",
+      "Submit updates",
+      "Obtain confirmation",
+      "Document update"
+    ],
+    "evidence": [
+      "Update trigger detection records",
+      "Update assessment records",
+      "Update submission records",
+      "Submission confirmations",
+      "Update documentation"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

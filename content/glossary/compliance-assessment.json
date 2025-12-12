@@ -1,0 +1,130 @@
+[
+  {
+    "id": "conformity-assessment",
+    "term": "Conformity Assessment",
+    "definition": "The process demonstrating whether the requirements of this Regulation relating to a high-risk AI system have been fulfilled. Conformity assessment may be based on internal control or involve a third-party assessment by a notified body.",
+    "article": "Article 43",
+    "category": "Compliance & Assessment",
+    "related": [
+      "CE Marking",
+      "Notified Body",
+      "Technical Documentation",
+      "Internal Control"
+    ],
+    "keyPoints": [
+      "Required before market placement",
+      "Internal or third-party options",
+      "Based on harmonised standards",
+      "Results in CE marking"
+    ]
+  },
+  {
+    "id": "ce-marking",
+    "term": "CE Marking",
+    "definition": "A marking by which a provider indicates that an AI system is in conformity with the requirements of this Regulation and other applicable Union harmonisation legislation providing for its affixing.",
+    "article": "Article 3(24)",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Conformity Assessment",
+      "EU Declaration of Conformity",
+      "Market Access"
+    ]
+  },
+  {
+    "id": "eu-declaration-conformity",
+    "term": "EU Declaration of Conformity",
+    "definition": "A document drawn up by the provider stating that the high-risk AI system complies with the requirements of this Regulation. The declaration must be kept for 10 years after the AI system has been placed on the market.",
+    "article": "Article 47",
+    "category": "Compliance & Assessment",
+    "related": [
+      "CE Marking",
+      "Conformity Assessment",
+      "Provider"
+    ]
+  },
+  {
+    "id": "fundamental-rights-impact-assessment",
+    "term": "Fundamental Rights Impact Assessment (FRIA)",
+    "definition": "An assessment carried out by deployers of high-risk AI systems that are bodies governed by public law, or private entities providing public services, and deployers using AI for credit scoring or risk assessment in life/health insurance.",
+    "article": "Article 27",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Deployer",
+      "High-Risk AI System",
+      "Fundamental Rights",
+      "DPIA"
+    ],
+    "keyPoints": [
+      "Required for certain deployers",
+      "Assess impact on fundamental rights",
+      "Must be done before first use",
+      "Complements DPIA under GDPR"
+    ]
+  },
+  {
+    "id": "quality-management-system",
+    "term": "Quality Management System",
+    "definition": "A system implemented by providers of high-risk AI systems to ensure compliance with this Regulation, documented in a systematic and orderly manner in the form of written policies, procedures and instructions.",
+    "article": "Article 17",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Provider",
+      "High-Risk AI System",
+      "ISO Standards"
+    ]
+  },
+  {
+    "id": "post-market-monitoring",
+    "term": "Post-Market Monitoring",
+    "definition": "All activities carried out by providers of AI systems to collect and review experience gained from the use of AI systems they place on the market or put into service for the purpose of identifying any need to immediately apply corrective or preventive actions.",
+    "article": "Article 72",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Provider",
+      "Serious Incident",
+      "Market Surveillance"
+    ]
+  },
+  {
+    "id": "ai-regulatory-sandbox",
+    "term": "AI Regulatory Sandbox",
+    "definition": "A controlled framework set up by a competent authority which offers providers or prospective providers of AI systems the possibility to develop, train, validate and test an innovative AI system under regulatory supervision for a limited time.",
+    "article": "Article 57",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Competent Authority",
+      "Innovation",
+      "Testing"
+    ],
+    "keyPoints": [
+      "Controlled testing environment",
+      "Regulatory supervision",
+      "Limited time period",
+      "Supports innovation"
+    ]
+  },
+  {
+    "id": "harmonised-standard",
+    "term": "Harmonised Standard",
+    "definition": "A European standard adopted on the basis of a request made by the Commission for the application of Union harmonisation legislation.",
+    "article": "Article 3(28)",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Conformity Assessment",
+      "Presumption of Conformity",
+      "CEN/CENELEC"
+    ]
+  },
+  {
+    "id": "common-specification",
+    "term": "Common Specification",
+    "definition": "A set of technical specifications providing means to comply with certain requirements established under this Regulation, adopted by the Commission where harmonised standards do not exist or are insufficient.",
+    "article": "Article 41",
+    "category": "Compliance & Assessment",
+    "related": [
+      "Harmonised Standard",
+      "Technical Specification",
+      "Commission"
+    ]
+  }
+]

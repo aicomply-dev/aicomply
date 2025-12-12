@@ -1,0 +1,478 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Complete color redesign with vibrant, modern palette */
+:root {
+  --background: oklch(0.995 0.002 270);
+  --foreground: oklch(0.145 0.03 270);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0.03 270);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0.03 270);
+  --primary: oklch(0.488 0.243 264);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.965 0.015 270);
+  --secondary-foreground: oklch(0.35 0.08 264);
+  --muted: oklch(0.97 0.008 270);
+  --muted-foreground: oklch(0.45 0.03 270);
+  --accent: oklch(0.696 0.17 162);
+  --accent-foreground: oklch(0.145 0.03 162);
+  --destructive: oklch(0.577 0.215 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.915 0.01 270);
+  --input: oklch(0.915 0.01 270);
+  --ring: oklch(0.488 0.243 264);
+  --chart-1: oklch(0.488 0.243 264);
+  --chart-2: oklch(0.696 0.17 162);
+  --chart-3: oklch(0.769 0.188 70);
+  --chart-4: oklch(0.577 0.215 27);
+  --chart-5: oklch(0.627 0.265 303);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0.005 270);
+  --sidebar-foreground: oklch(0.145 0.03 270);
+  --sidebar-primary: oklch(0.488 0.243 264);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.965 0.015 270);
+  --sidebar-accent-foreground: oklch(0.35 0.08 264);
+  --sidebar-border: oklch(0.915 0.01 270);
+  --sidebar-ring: oklch(0.488 0.243 264);
+}
+
+@theme inline {
+  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Typography / Prose Styles for Markdown Content */
+@layer components {
+  .prose {
+    color: var(--foreground);
+    max-width: 65ch;
+    line-height: 1.75;
+  }
+
+  .prose.max-w-none {
+    max-width: none;
+  }
+
+  /* Headings */
+  .prose h1 {
+    color: var(--foreground);
+    font-weight: 800;
+    font-size: 2.25em;
+    margin-top: 0;
+    margin-bottom: 0.8888889em;
+    line-height: 1.1111111;
+    letter-spacing: -0.02em;
+  }
+
+  .prose h2 {
+    color: var(--foreground);
+    font-weight: 700;
+    font-size: 1.5em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    line-height: 1.3333333;
+    letter-spacing: -0.01em;
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prose h3 {
+    color: var(--foreground);
+    font-weight: 600;
+    font-size: 1.25em;
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    line-height: 1.6;
+  }
+
+  .prose h4 {
+    color: var(--foreground);
+    font-weight: 600;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+  }
+
+  /* Paragraphs */
+  .prose p {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .prose p:first-child {
+    margin-top: 0;
+  }
+
+  /* Links */
+  .prose a {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .prose a:hover {
+    color: var(--accent);
+  }
+
+  /* Bold and Strong */
+  .prose strong {
+    color: var(--foreground);
+    font-weight: 600;
+  }
+
+  /* Emphasis/Italic */
+  .prose em {
+    font-style: italic;
+  }
+
+  /* Enhanced Lists - Clean alignment */
+  .prose ul.styled-ul {
+    list-style: disc;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+
+  .prose ul.styled-ul > li {
+    margin: 0.35em 0;
+    padding-left: 0.25em;
+    line-height: 1.6;
+  }
+
+  .prose ul.styled-ul > li::marker {
+    color: var(--primary);
+  }
+
+  .prose ol.styled-ol {
+    list-style: decimal;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+  }
+
+  .prose ol.styled-ol > li {
+    margin: 0.35em 0;
+    padding-left: 0.25em;
+    line-height: 1.6;
+  }
+
+  .prose ol.styled-ol > li::marker {
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  /* Checklist Styles */
+  .prose ul.styled-checklist {
+    list-style: none;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 0;
+  }
+
+  .prose ul.styled-checklist > li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75em;
+    padding: 0.75em 1em;
+    margin-bottom: 0.5em;
+    border-radius: 0.75em;
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+  }
+
+  .prose ul.styled-checklist > li:hover {
+    border-color: var(--primary);
+    box-shadow: 0 2px 8px -2px var(--primary);
+  }
+
+  .prose ul.styled-checklist > li.checked {
+    background: linear-gradient(135deg, oklch(0.696 0.17 162 / 0.1), oklch(0.696 0.17 162 / 0.05));
+    border-color: var(--accent);
+  }
+
+  .prose ul.styled-checklist > li .checkbox {
+    flex-shrink: 0;
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 0.125em;
+    border-radius: 0.25em;
+    border: 2px solid var(--muted-foreground);
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .prose ul.styled-checklist > li.checked .checkbox {
+    background: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .prose ul.styled-checklist > li.checked .checkbox svg {
+    color: white;
+    width: 0.75em;
+    height: 0.75em;
+  }
+
+  /* Fallback plain lists (keeping original styles) */
+  .prose ul:not(.styled-ul):not(.styled-checklist) {
+    list-style-type: disc;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+  }
+
+  .prose ol:not(.styled-ol) {
+    list-style-type: decimal;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+    padding-left: 1.625em;
+  }
+
+  .prose ul:not(.styled-ul):not(.styled-checklist) > li,
+  .prose ol:not(.styled-ol) > li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    padding-left: 0.375em;
+  }
+
+  .prose ul:not(.styled-ul):not(.styled-checklist) > li::marker {
+    color: var(--muted-foreground);
+  }
+
+  .prose ol:not(.styled-ol) > li::marker {
+    font-weight: 500;
+    color: var(--primary);
+  }
+
+  .prose ul ul,
+  .prose ul ol,
+  .prose ol ul,
+  .prose ol ol {
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+  }
+
+  /* Blockquotes */
+  .prose blockquote {
+    font-style: italic;
+    border-left: 4px solid var(--primary);
+    padding-left: 1em;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+    color: var(--muted-foreground);
+    background: linear-gradient(to right, var(--muted), transparent);
+    padding: 1em 1em 1em 1.5em;
+    border-radius: 0 0.5em 0.5em 0;
+  }
+
+  .prose blockquote p:first-of-type::before {
+    content: none;
+  }
+
+  .prose blockquote p:last-of-type::after {
+    content: none;
+  }
+
+  /* Code */
+  .prose code {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.875em;
+    background-color: var(--muted);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+  }
+
+  .prose code::before,
+  .prose code::after {
+    content: none;
+  }
+
+  .prose pre {
+    color: var(--foreground);
+    background-color: var(--muted);
+    overflow-x: auto;
+    font-weight: 400;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    margin-top: 1.7142857em;
+    margin-bottom: 1.7142857em;
+    border-radius: 0.75em;
+    padding: 1em 1.25em;
+    border: 1px solid var(--border);
+  }
+
+  .prose pre code {
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 0;
+    padding: 0;
+    font-weight: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+  }
+
+  /* Horizontal Rules */
+  .prose hr {
+    border-color: var(--border);
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  /* Tables */
+  .prose table {
+    width: 100%;
+    table-layout: auto;
+    text-align: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 0.875em;
+    line-height: 1.7142857;
+    border-collapse: collapse;
+    border-radius: 0.5em;
+    overflow: hidden;
+  }
+
+  .prose thead {
+    border-bottom: 2px solid var(--border);
+    background-color: var(--muted);
+  }
+
+  .prose thead th {
+    color: var(--foreground);
+    font-weight: 600;
+    vertical-align: bottom;
+    padding: 0.75em 1em;
+  }
+
+  .prose tbody tr {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .prose tbody tr:last-child {
+    border-bottom-width: 0;
+  }
+
+  .prose tbody td {
+    vertical-align: baseline;
+    padding: 0.75em 1em;
+  }
+
+  /* Images */
+  .prose img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    border-radius: 0.5em;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  }
+
+  .prose figure {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .prose figcaption {
+    color: var(--muted-foreground);
+    font-size: 0.875em;
+    line-height: 1.4285714;
+    margin-top: 0.8571429em;
+    text-align: center;
+  }
+
+  /* Dark mode adjustments */
+  .dark .prose {
+    color: var(--foreground);
+  }
+
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose strong {
+    color: var(--foreground);
+  }
+
+  .dark .prose blockquote {
+    border-left-color: var(--primary);
+    background: linear-gradient(to right, oklch(0.25 0.02 270 / 0.5), transparent);
+  }
+
+  .dark .prose pre {
+    background-color: oklch(0.2 0.02 270);
+    border-color: oklch(0.3 0.02 270);
+  }
+
+  .dark .prose code {
+    background-color: oklch(0.25 0.02 270);
+  }
+
+  .dark .prose thead {
+    background-color: oklch(0.2 0.02 270);
+  }
+
+  /* prose-neutral variant (compatibility) */
+  .prose-neutral h2,
+  .prose-neutral h3,
+  .prose-neutral h4 {
+    color: var(--foreground);
+  }
+
+  /* prose-invert for dark mode (compatibility) */
+  .dark .prose-invert {
+    color: var(--foreground);
+  }
+}

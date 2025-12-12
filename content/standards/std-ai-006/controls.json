@@ -1,0 +1,140 @@
+[
+  {
+    "id": "TRANS-001",
+    "name": "Instructions for Use Content",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Provide comprehensive instructions for use to deployers per Article 13(3) to ensure deployers understand AI system characteristics, capabilities, limitations, and proper use, enabling safe and effective deployment.",
+    "requirements": [
+      "Create Instructions for Use per Article 13(3)",
+      "Include all required elements",
+      "Use clear, understandable language",
+      "Obtain legal review",
+      "Obtain Product Director approval",
+      "Distribute to deployers before deployment",
+      "Maintain distribution records"
+    ],
+    "evidence": [
+      "Instructions for Use document (TECH-AI-IFU-XXX)",
+      "Completeness checklist (completed)",
+      "Legal review records",
+      "Approval records",
+      "Distribution records",
+      "Deployer acknowledgment records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "TRANS-002",
+    "name": "Instructions for Use Updates",
+    "type": "preventive",
+    "frequency": "As triggered by changes",
+    "riskLevel": "medium",
+    "objective": "Keep Instructions for Use current and accurate by updating them when AI system changes occur, ensuring deployers always have current information about AI system capabilities, limitations, and risks.",
+    "requirements": [
+      "Monitor for update triggers",
+      "Assess impact on Instructions for Use",
+      "Update affected sections",
+      "Maintain version history",
+      "Obtain approval for updates",
+      "Communicate updates to deployers",
+      "Track deployer acknowledgments",
+      "Update within 30 days of change"
+    ],
+    "evidence": [
+      "Updated Instructions for Use (versioned)",
+      "Update notifications sent",
+      "Deployer acknowledgments",
+      "Version history",
+      "Approval records",
+      "Update completion records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "TRANS-003",
+    "name": "AI Disclosure to Users",
+    "type": "preventive",
+    "frequency": "Continuous, at each user interaction",
+    "riskLevel": "high",
+    "objective": "Ensure users are aware they are interacting with AI per Article 50 to enable informed decision-making and protect user rights, preventing deception and ensuring transparency.",
+    "requirements": [
+      "Implement AI disclosure notices",
+      "Display prominently (before or at interaction)",
+      "Use clear, understandable language",
+      "Obtain user acknowledgment (where required)",
+      "Document disclosure",
+      "Monitor disclosure effectiveness"
+    ],
+    "evidence": [
+      "Transparency notices (NOTICE-AI-TRANS-XXX)",
+      "Disclosure screenshots/recordings",
+      "User acknowledgment logs",
+      "Disclosure effectiveness metrics",
+      "Accessibility verification records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "TRANS-004",
+    "name": "Transparency Notice Design",
+    "type": "preventive",
+    "frequency": "Per AI system, continuous monitoring",
+    "riskLevel": "medium",
+    "objective": "Design and implement effective transparency notices that are clear, prominent, accessible, and understandable to ensure users are properly informed about AI use.",
+    "requirements": [
+      "Design transparency notices",
+      "Test with users (usability testing)",
+      "Implement in UI/UX",
+      "Verify visibility and prominence",
+      "Test accessibility (WCAG 2.1 AA)",
+      "Monitor effectiveness",
+      "Update based on feedback"
+    ],
+    "evidence": [
+      "Transparency notice designs",
+      "User testing results",
+      "Implementation verification",
+      "Accessibility test results",
+      "Effectiveness metrics",
+      "User feedback records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "TRANS-005",
+    "name": "Decision Explainability",
+    "type": "preventive",
+    "frequency": "On-demand, when requested",
+    "riskLevel": "medium",
+    "objective": "Enable users to understand AI decisions by providing explanations when requested, supporting user rights to explanation and enabling informed decision-making.",
+    "requirements": [
+      "Implement explanation capability",
+      "Design explanation format",
+      "Test understandability with users",
+      "Enable on-demand access",
+      "Monitor explanation usage",
+      "Improve explanations based on feedback"
+    ],
+    "evidence": [
+      "Explanation capability documentation",
+      "Explanation examples",
+      "User testing results",
+      "Explanation usage metrics",
+      "User feedback records",
+      "Improvement records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

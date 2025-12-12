@@ -1,0 +1,123 @@
+{
+  "id": "std-ai-002",
+  "standardId": "STD-AI-002",
+  "title": "AI Risk Management Standard",
+  "shortTitle": "Risk Management",
+  "description": "This standard defines the requirements for establishing, implementing, and maintaining a comprehensive AI risk management system throughout the AI system lifecycle in compliance with EU AI Act Article 9 and aligned with ISO/IEC 42001 and NIST AI RMF.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "AI Risk Manager",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 9",
+    "Article 9(1)",
+    "Article 10(5)",
+    "Article 13",
+    "Article 50",
+    "Article 73",
+    "Article 9(2)",
+    "Article 9(3)",
+    "Article 9(4)",
+    "Article 9(5)"
+  ],
+  "iso42001Clauses": [],
+  "category": "risk-management",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 14,
+  "kpis": [
+    {
+      "id": "KPI-RM-001",
+      "name": "Risk Assessment Coverage",
+      "definition": "% of AI systems with current risk assessment",
+      "target": "100%",
+      "measurementMethod": "(# AI systems with risk assessment / # total AI systems) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-002",
+      "name": "Risk Assessment Timeliness",
+      "definition": "% of risk assessments completed by target date",
+      "target": "100%",
+      "measurementMethod": "(# assessments on time / # total assessments) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-003",
+      "name": "High/Critical Risk Treatment",
+      "definition": "% of high/critical risks with approved treatment plans",
+      "target": "100%",
+      "measurementMethod": "(# high/critical risks with treatment / # high/critical risks) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-004",
+      "name": "Control Implementation Rate",
+      "definition": "% of planned controls implemented",
+      "target": "100%",
+      "measurementMethod": "(# controls implemented / # planned controls) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-005",
+      "name": "Residual Risk Acceptance",
+      "definition": "% of residual risks acceptable (0 unacceptable)",
+      "target": "100%",
+      "measurementMethod": "(# acceptable residual risks / # total residual risks) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-006",
+      "name": "Risk Review Completion",
+      "definition": "% of scheduled reviews completed on time",
+      "target": "100%",
+      "measurementMethod": "(# reviews completed on time / # scheduled reviews) × 100",
+      "frequency": "Quarterly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-007",
+      "name": "Risk Monitoring Coverage",
+      "definition": "% of AI systems with active risk monitoring",
+      "target": "100%",
+      "measurementMethod": "(# AI systems with monitoring / # total AI systems) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-008",
+      "name": "Risk Indicator Threshold Breaches",
+      "definition": "Number of threshold breaches per month",
+      "target": "< 5",
+      "measurementMethod": "Count of threshold breaches",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-009",
+      "name": "Risk Reporting Timeliness",
+      "definition": "% of risk reports generated per schedule",
+      "target": "100%",
+      "measurementMethod": "(# reports on time / # scheduled reports) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Risk Manager"
+    },
+    {
+      "id": "KPI-RM-010",
+      "name": "Risk Management Effectiveness",
+      "definition": "Overall risk management system effectiveness score",
+      "target": "≥ 90%",
+      "measurementMethod": "Composite score from effectiveness metrics",
+      "frequency": "Annually",
+      "owner": "AI Risk Manager"
+    }
+  ]
+}

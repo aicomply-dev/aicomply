@@ -1,0 +1,105 @@
+{
+  "id": "std-ai-010",
+  "standardId": "STD-AI-010",
+  "title": "AI Conformity Assessment Standard",
+  "shortTitle": "Conformity Assessment",
+  "description": "This standard defines requirements for conducting conformity assessment of high-risk AI systems before market placement, in compliance with EU AI Act Article 43 and Annexes VI & VII.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Chief Legal Officer",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 43",
+    "Article 47",
+    "Article 48",
+    "Article 9",
+    "Article 10",
+    "Article 11",
+    "Article 12",
+    "Article 13",
+    "Article 14",
+    "Article 15"
+  ],
+  "iso42001Clauses": [],
+  "category": "conformity-assessment",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 13,
+  "kpis": [
+    {
+      "id": "KPI-CA-001",
+      "name": "Conformity Assessment Completion",
+      "definition": "% of high-risk AI assessed before market placement",
+      "target": "100%",
+      "measurementMethod": "(# assessed / # high-risk AI) × 100",
+      "frequency": "Per system",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-002",
+      "name": "EU Declaration of Conformity Coverage",
+      "definition": "% of high-risk AI with declaration",
+      "target": "100%",
+      "measurementMethod": "(# with declaration / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-003",
+      "name": "CE Marking Compliance",
+      "definition": "% of high-risk AI with proper CE marking",
+      "target": "100%",
+      "measurementMethod": "(# with CE marking / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-004",
+      "name": "Assessment Timeliness",
+      "definition": "Average days to complete assessment",
+      "target": "< 90 days",
+      "measurementMethod": "Σ (assessment days) / # assessments",
+      "frequency": "Per assessment",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-005",
+      "name": "Substantial Modification Reassessment",
+      "definition": "% of substantial modifications reassessed",
+      "target": "100%",
+      "measurementMethod": "(# reassessed / # substantial modifications) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-006",
+      "name": "Notified Body Findings",
+      "definition": "Number of major findings from notified body",
+      "target": "0",
+      "measurementMethod": "Count of major findings",
+      "frequency": "Per assessment",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-007",
+      "name": "Declaration Accuracy",
+      "definition": "% of declarations with no errors",
+      "target": "100%",
+      "measurementMethod": "(# error-free / # total declarations) × 100",
+      "frequency": "Per declaration",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-CA-008",
+      "name": "Technical Documentation Completeness",
+      "definition": "% of assessments with complete documentation",
+      "target": "100%",
+      "measurementMethod": "(# complete / # assessments) × 100",
+      "frequency": "Per assessment",
+      "owner": "Chief Legal Officer"
+    }
+  ]
+}

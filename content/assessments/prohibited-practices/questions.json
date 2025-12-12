@@ -1,0 +1,245 @@
+[
+  {
+    "id": "prohibited_1",
+    "question": "Does the AI system evaluate or classify natural persons based on their social behavior or personality characteristics?",
+    "description": "Social scoring by public authorities or on their behalf",
+    "category": "prohibited",
+    "subcategory": "social-scoring",
+    "article": "Article 5(1)(c)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "This includes any system that creates a 'social score' based on behavior, social status, or personality that leads to detrimental treatment.",
+    "evidenceRequired": [
+      "System functionality documentation",
+      "Use case descriptions"
+    ]
+  },
+  {
+    "id": "prohibited_2",
+    "question": "Could the social evaluation lead to detrimental or unfavorable treatment in contexts unrelated to the original data collection?",
+    "description": "Cross-context negative consequences from social scoring",
+    "category": "prohibited",
+    "subcategory": "social-scoring",
+    "article": "Article 5(1)(c)(i)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "For example, using data from social media behavior to deny access to public services."
+  },
+  {
+    "id": "prohibited_3",
+    "question": "Is the detrimental treatment unjustified or disproportionate to the person's social behavior?",
+    "description": "Proportionality of consequences",
+    "category": "prohibited",
+    "subcategory": "social-scoring",
+    "article": "Article 5(1)(c)(ii)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no"
+  },
+  {
+    "id": "prohibited_4",
+    "question": "Does the AI system deploy subliminal techniques beyond a person's consciousness?",
+    "description": "Use of techniques that manipulate without awareness",
+    "category": "prohibited",
+    "subcategory": "manipulation",
+    "article": "Article 5(1)(a)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Subliminal techniques are those designed to operate below the threshold of conscious perception."
+  },
+  {
+    "id": "prohibited_5",
+    "question": "Does the AI system use purposefully manipulative or deceptive techniques to materially distort behavior?",
+    "description": "Intentional manipulation causing significant behavioral change",
+    "category": "prohibited",
+    "subcategory": "manipulation",
+    "article": "Article 5(1)(a)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "This includes dark patterns, deceptive design, or manipulative interfaces that impair decision-making."
+  },
+  {
+    "id": "prohibited_6",
+    "question": "Could this manipulation cause or be reasonably likely to cause significant harm to the person or others?",
+    "description": "Potential for physical, psychological, or financial harm",
+    "category": "prohibited",
+    "subcategory": "manipulation",
+    "article": "Article 5(1)(a)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no"
+  },
+  {
+    "id": "prohibited_7",
+    "question": "Does the AI system exploit vulnerabilities of persons due to their age (children or elderly)?",
+    "description": "Targeting age-related vulnerabilities",
+    "category": "prohibited",
+    "subcategory": "exploitation",
+    "article": "Article 5(1)(b)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Systems that take advantage of limited cognitive abilities or experience of young or elderly persons."
+  },
+  {
+    "id": "prohibited_8",
+    "question": "Does the AI system exploit vulnerabilities due to disability?",
+    "description": "Targeting disability-related vulnerabilities",
+    "category": "prohibited",
+    "subcategory": "exploitation",
+    "article": "Article 5(1)(b)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no"
+  },
+  {
+    "id": "prohibited_9",
+    "question": "Does the AI system exploit specific social or economic situations to materially distort behavior?",
+    "description": "Targeting socioeconomic vulnerabilities",
+    "category": "prohibited",
+    "subcategory": "exploitation",
+    "article": "Article 5(1)(b)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "For example, predatory lending AI targeting financially distressed individuals."
+  },
+  {
+    "id": "prohibited_10",
+    "question": "Is the AI system used for real-time remote biometric identification in publicly accessible spaces?",
+    "description": "Live biometric identification in public",
+    "category": "prohibited",
+    "subcategory": "biometric",
+    "article": "Article 5(1)(h)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Real-time means identification happens instantaneously or with minimal delay, in public spaces like streets, parks, or transit stations."
+  },
+  {
+    "id": "prohibited_11",
+    "question": "Is this system used for law enforcement purposes?",
+    "description": "Law enforcement use of real-time biometric ID",
+    "category": "prohibited",
+    "subcategory": "biometric",
+    "article": "Article 5(1)(h)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Limited exceptions exist for specific law enforcement scenarios (Article 5(2)).",
+    "followUp": [
+      "prohibited_12",
+      "prohibited_13"
+    ]
+  },
+  {
+    "id": "prohibited_12",
+    "question": "If for law enforcement, is it strictly necessary for targeted search for specific victims or missing persons?",
+    "description": "Exception: victim/missing person search",
+    "category": "prohibited",
+    "subcategory": "biometric",
+    "article": "Article 5(2)(a)",
+    "weight": -5,
+    "answerType": "yes_no_na",
+    "guidance": "This exception may apply but requires prior judicial authorization."
+  },
+  {
+    "id": "prohibited_13",
+    "question": "If for law enforcement, is it for preventing imminent threat to life or terrorist attack?",
+    "description": "Exception: imminent threat prevention",
+    "category": "prohibited",
+    "subcategory": "biometric",
+    "article": "Article 5(2)(b)(c)",
+    "weight": -5,
+    "answerType": "yes_no_na",
+    "guidance": "This exception requires strict necessity and prior authorization where feasible."
+  },
+  {
+    "id": "prohibited_14",
+    "question": "Does the AI system infer emotions of natural persons in workplace settings?",
+    "description": "Workplace emotion recognition",
+    "category": "prohibited",
+    "subcategory": "emotion-recognition",
+    "article": "Article 5(1)(f)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Emotion recognition in workplace is prohibited except for medical or safety reasons.",
+    "followUp": [
+      "prohibited_15"
+    ]
+  },
+  {
+    "id": "prohibited_15",
+    "question": "If workplace emotion recognition, is it solely for medical or safety reasons?",
+    "description": "Exception: medical/safety purposes",
+    "category": "prohibited",
+    "subcategory": "emotion-recognition",
+    "article": "Article 5(1)(f)",
+    "weight": -5,
+    "answerType": "yes_no_na",
+    "guidance": "Medical reasons include detecting driver fatigue. Safety reasons include monitoring for dangerous conditions."
+  },
+  {
+    "id": "prohibited_16",
+    "question": "Does the AI system infer emotions of natural persons in educational institutions?",
+    "description": "Education emotion recognition",
+    "category": "prohibited",
+    "subcategory": "emotion-recognition",
+    "article": "Article 5(1)(f)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Emotion recognition in educational settings is generally prohibited."
+  },
+  {
+    "id": "prohibited_17",
+    "question": "Does the AI system categorize natural persons based on biometric data to deduce race or ethnic origin?",
+    "description": "Biometric inference of protected characteristics",
+    "category": "prohibited",
+    "subcategory": "biometric-categorization",
+    "article": "Article 5(1)(g)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no"
+  },
+  {
+    "id": "prohibited_18",
+    "question": "Does the AI system use biometric data to infer political opinions, trade union membership, religious beliefs, or sexual orientation?",
+    "description": "Biometric inference of sensitive personal data",
+    "category": "prohibited",
+    "subcategory": "biometric-categorization",
+    "article": "Article 5(1)(g)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no"
+  },
+  {
+    "id": "prohibited_19",
+    "question": "Does the AI system create or expand facial recognition databases through untargeted scraping?",
+    "description": "Untargeted facial image collection",
+    "category": "prohibited",
+    "subcategory": "facial-database",
+    "article": "Article 5(1)(e)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "Untargeted scraping from internet or CCTV footage for facial recognition databases is prohibited."
+  },
+  {
+    "id": "prohibited_20",
+    "question": "Does the AI system make risk assessments of natural persons to predict criminal offenses based solely on profiling or personality traits?",
+    "description": "Individual predictive policing",
+    "category": "prohibited",
+    "subcategory": "predictive-policing",
+    "article": "Article 5(1)(d)",
+    "weight": 10,
+    "riskTrigger": "prohibited",
+    "answerType": "yes_no",
+    "guidance": "AI that predicts whether a specific person will commit a crime based on profiling is prohibited."
+  }
+]

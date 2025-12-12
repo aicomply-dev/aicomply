@@ -1,0 +1,112 @@
+[
+  {
+    "id": "provider",
+    "term": "Provider",
+    "definition": "A natural or legal person, public authority, agency or other body that develops an AI system or a general-purpose AI model or that has an AI system or a general-purpose AI model developed and places it on the market or puts the AI system into service under its own name or trademark, whether for payment or free of charge.",
+    "article": "Article 3(3)",
+    "category": "Actors & Roles",
+    "related": [
+      "Deployer",
+      "Distributor",
+      "Importer",
+      "Authorised Representative"
+    ],
+    "keyPoints": [
+      "Develops or commissions AI system",
+      "Places on market under own name",
+      "Primary compliance responsibility",
+      "Applies regardless of payment"
+    ]
+  },
+  {
+    "id": "deployer",
+    "term": "Deployer",
+    "definition": "A natural or legal person, public authority, agency or other body using an AI system under its authority except where the AI system is used in the course of a personal non-professional activity.",
+    "article": "Article 3(4)",
+    "category": "Actors & Roles",
+    "related": [
+      "Provider",
+      "User",
+      "Operator",
+      "Fundamental Rights Impact Assessment"
+    ],
+    "keyPoints": [
+      "Uses AI under own authority",
+      "Excludes personal use",
+      "Has specific obligations for high-risk AI",
+      "Must conduct FRIA in certain cases"
+    ]
+  },
+  {
+    "id": "authorised-representative",
+    "term": "Authorised Representative",
+    "definition": "A natural or legal person located or established in the Union who has received and accepted a written mandate from a provider of an AI system or a general-purpose AI model to, respectively, perform and carry out on its behalf the obligations and procedures established by this Regulation.",
+    "article": "Article 3(5)",
+    "category": "Actors & Roles",
+    "related": [
+      "Provider",
+      "Non-EU Provider",
+      "Market Surveillance"
+    ]
+  },
+  {
+    "id": "importer",
+    "term": "Importer",
+    "definition": "A natural or legal person located or established in the Union that places on the market an AI system that bears the name or trademark of a natural or legal person established in a third country.",
+    "article": "Article 3(6)",
+    "category": "Actors & Roles",
+    "related": [
+      "Provider",
+      "Distributor",
+      "Third Country"
+    ]
+  },
+  {
+    "id": "distributor",
+    "term": "Distributor",
+    "definition": "A natural or legal person in the supply chain, other than the provider or the importer, that makes an AI system available on the Union market.",
+    "article": "Article 3(7)",
+    "category": "Actors & Roles",
+    "related": [
+      "Provider",
+      "Importer",
+      "Supply Chain"
+    ]
+  },
+  {
+    "id": "operator",
+    "term": "Operator",
+    "definition": "A provider, product manufacturer, deployer, authorised representative, importer or distributor.",
+    "article": "Article 3(8)",
+    "category": "Actors & Roles",
+    "related": [
+      "Provider",
+      "Deployer",
+      "Supply Chain"
+    ]
+  },
+  {
+    "id": "affected-person",
+    "term": "Affected Person",
+    "definition": "A natural person who is subject to or otherwise affected by an AI system.",
+    "article": "Article 3(53)",
+    "category": "Actors & Roles",
+    "related": [
+      "Fundamental Rights",
+      "Transparency",
+      "Right to Explanation"
+    ]
+  },
+  {
+    "id": "notified-body",
+    "term": "Notified Body",
+    "definition": "A conformity assessment body notified in accordance with this Regulation and other relevant Union harmonisation legislation.",
+    "article": "Article 3(22)",
+    "category": "Actors & Roles",
+    "related": [
+      "Conformity Assessment",
+      "Third-Party Assessment",
+      "CE Marking"
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+[
+  {
+    "id": "ai-governance-policy",
+    "title": "AI Governance Policy",
+    "description": "Comprehensive AI governance policy template aligned with EU AI Act requirements",
+    "version": "1.0",
+    "category": "governance",
+    "euAiActArticles": ["Article 9", "Article 10", "Article 11", "Article 12", "Article 13", "Article 14", "Article 15"],
+    "templatePath": "templates/ai-governance-policy.md"
+  }
+]

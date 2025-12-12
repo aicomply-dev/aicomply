@@ -1,0 +1,123 @@
+{
+  "id": "std-ai-003",
+  "standardId": "STD-AI-003",
+  "title": "AI Data Governance Standard",
+  "shortTitle": "Data Governance",
+  "description": "This standard defines requirements for AI training, validation, and testing datasets to ensure they meet quality, relevance, representativeness, and bias mitigation standards in compliance with EU AI Act Article 10.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Chief Data Officer",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 10",
+    "Article 10(2)",
+    "Article 10(3)",
+    "Article 10(4)",
+    "Article 35",
+    "Article 5(1)",
+    "Article 9",
+    "Article 4(5)",
+    "Article 10(5)",
+    "Article 25"
+  ],
+  "iso42001Clauses": [],
+  "category": "data-governance",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 15,
+  "kpis": [
+    {
+      "id": "KPI-DATA-001",
+      "name": "Data Quality Requirements Coverage",
+      "definition": "% of AI systems with documented quality requirements",
+      "target": "100%",
+      "measurementMethod": "(# AI systems with requirements / # total AI systems) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-002",
+      "name": "Data Quality Threshold Compliance",
+      "definition": "% of datasets meeting quality thresholds",
+      "target": "≥95%",
+      "measurementMethod": "(# datasets meeting thresholds / # total datasets) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-003",
+      "name": "Bias Assessment Coverage",
+      "definition": "% of high-risk AI with bias assessment",
+      "target": "100%",
+      "measurementMethod": "(# high-risk AI with bias assessment / # high-risk AI) × 100",
+      "frequency": "Quarterly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-004",
+      "name": "Fairness Metric Compliance",
+      "definition": "% of AI systems meeting fairness thresholds",
+      "target": "100%",
+      "measurementMethod": "(# AI systems meeting thresholds / # total AI systems) × 100",
+      "frequency": "Quarterly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-005",
+      "name": "Lineage Completeness",
+      "definition": "% of datasets with complete lineage",
+      "target": "100%",
+      "measurementMethod": "(# datasets with complete lineage / # total datasets) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-006",
+      "name": "DPIA Completion",
+      "definition": "% of required DPIAs completed",
+      "target": "100%",
+      "measurementMethod": "(# DPIAs completed / # required DPIAs) × 100",
+      "frequency": "Quarterly",
+      "owner": "Data Protection Officer"
+    },
+    {
+      "id": "KPI-DATA-007",
+      "name": "Data Minimization Compliance",
+      "definition": "% of AI systems with minimization assessment",
+      "target": "100%",
+      "measurementMethod": "(# AI systems with assessment / # total AI systems) × 100",
+      "frequency": "Quarterly",
+      "owner": "Data Protection Officer"
+    },
+    {
+      "id": "KPI-DATA-008",
+      "name": "Privacy Protection Coverage",
+      "definition": "% of personal data with privacy protection",
+      "target": "100%",
+      "measurementMethod": "(# datasets with protection / # datasets with personal data) × 100",
+      "frequency": "Monthly",
+      "owner": "Data Protection Officer"
+    },
+    {
+      "id": "KPI-DATA-009",
+      "name": "Data Catalog Completeness",
+      "definition": "% of datasets in catalog with all mandatory fields",
+      "target": "100%",
+      "measurementMethod": "(# complete catalog entries / # total datasets) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Data Officer"
+    },
+    {
+      "id": "KPI-DATA-010",
+      "name": "Quality Issue Resolution Time",
+      "definition": "Average days to resolve quality issues",
+      "target": "< 5 days",
+      "measurementMethod": "Σ (resolution date - issue date) / # issues",
+      "frequency": "Monthly",
+      "owner": "Chief Data Officer"
+    }
+  ]
+}

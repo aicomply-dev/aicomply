@@ -1,0 +1,75 @@
+{
+  "id": "std-ai-011",
+  "standardId": "STD-AI-011",
+  "title": "AI Registration Standard",
+  "shortTitle": "Registration",
+  "description": "This standard defines requirements for registering high-risk AI systems in the EU database before market placement in compliance with EU AI Act Articles 49 and 60.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Chief Legal Officer",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 49",
+    "Article 49(1)",
+    "Article 60",
+    "Article 43",
+    "Article 3",
+    "Annex III",
+    "Annex V"
+  ],
+  "iso42001Clauses": [],
+  "category": "registration",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 3,
+  "kpis": [
+    {
+      "id": "KPI-REG-001",
+      "name": "Registration Completion",
+      "definition": "% of high-risk AI registered before market placement",
+      "target": "100%",
+      "measurementMethod": "(# registered / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-REG-002",
+      "name": "Registration Accuracy",
+      "definition": "% of registrations with no errors",
+      "target": "100%",
+      "measurementMethod": "(# error-free / # total registrations) × 100",
+      "frequency": "Per registration",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-REG-003",
+      "name": "Update Timeliness",
+      "definition": "Average days to update registration",
+      "target": "< 30 days",
+      "measurementMethod": "Σ (update days) / # updates",
+      "frequency": "Per update",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-REG-004",
+      "name": "Update Coverage",
+      "definition": "% of required updates completed",
+      "target": "100%",
+      "measurementMethod": "(# updates completed / # required updates) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    },
+    {
+      "id": "KPI-REG-005",
+      "name": "Registration Number Tracking",
+      "definition": "% of registrations with recorded numbers",
+      "target": "100%",
+      "measurementMethod": "(# with numbers / # total registrations) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Legal Officer"
+    }
+  ]
+}

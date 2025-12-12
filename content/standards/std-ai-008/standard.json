@@ -1,0 +1,118 @@
+{
+  "id": "std-ai-008",
+  "standardId": "STD-AI-008",
+  "title": "AI Accuracy, Robustness and Security Standard",
+  "shortTitle": "Accuracy, Robustness",
+  "description": "This standard defines requirements for ensuring AI systems achieve appropriate levels of accuracy, robustness, and cybersecurity in compliance with EU AI Act Article 15.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "Chief Technology Officer",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 15",
+    "Article 15(1)",
+    "Article 15(2)",
+    "Article 15(3)",
+    "Annex I"
+  ],
+  "iso42001Clauses": [],
+  "category": "technical-requirements",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 8,
+  "kpis": [
+    {
+      "id": "KPI-ARS-001",
+      "name": "Accuracy Requirements Coverage",
+      "definition": "% of high-risk AI with accuracy requirements",
+      "target": "100%",
+      "measurementMethod": "(# AI with requirements / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-002",
+      "name": "Accuracy Threshold Compliance",
+      "definition": "% of AI systems meeting accuracy thresholds",
+      "target": "100%",
+      "measurementMethod": "(# AI meeting thresholds / # total AI) × 100",
+      "frequency": "Daily",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-003",
+      "name": "Accuracy Stability",
+      "definition": "Accuracy variation over time",
+      "target": "< 2%",
+      "measurementMethod": "Standard deviation of accuracy",
+      "frequency": "Weekly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-004",
+      "name": "Robustness Requirements Coverage",
+      "definition": "% of high-risk AI with robustness requirements",
+      "target": "100%",
+      "measurementMethod": "(# AI with requirements / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-005",
+      "name": "Robustness Score",
+      "definition": "Composite robustness score",
+      "target": "≥90%",
+      "measurementMethod": "Weighted average of robustness metrics",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-006",
+      "name": "Drift Detection Coverage",
+      "definition": "% of AI systems with drift detection",
+      "target": "100%",
+      "measurementMethod": "(# AI with drift detection / # total AI) × 100",
+      "frequency": "Monthly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-007",
+      "name": "Drift Detection Rate",
+      "definition": "Number of drift events detected",
+      "target": "Monitor trends",
+      "measurementMethod": "Count of drift events",
+      "frequency": "Weekly",
+      "owner": "Chief Technology Officer"
+    },
+    {
+      "id": "KPI-ARS-008",
+      "name": "Security Requirements Coverage",
+      "definition": "% of high-risk AI with security requirements",
+      "target": "100%",
+      "measurementMethod": "(# AI with requirements / # high-risk AI) × 100",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-ARS-009",
+      "name": "Security Vulnerability Count",
+      "definition": "Number of critical vulnerabilities",
+      "target": "0",
+      "measurementMethod": "Count of critical vulnerabilities",
+      "frequency": "Monthly",
+      "owner": "IT Security Manager"
+    },
+    {
+      "id": "KPI-ARS-010",
+      "name": "Security Testing Completion",
+      "definition": "% of required security tests completed",
+      "target": "100%",
+      "measurementMethod": "(# tests completed / # required tests) × 100",
+      "frequency": "Quarterly",
+      "owner": "IT Security Manager"
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "PMM-001",
+    "name": "Post-Market Monitoring System Establishment",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, before market placement",
+    "riskLevel": "high",
+    "objective": "Establish post-market monitoring system per Article 72(1) to actively and systematically collect data, analyze performance in real-world conditions, identify risks and opportunities for improvement, and enable corrective actions.",
+    "requirements": [
+      "Design PMM system architecture",
+      "Implement data collection mechanisms",
+      "Set up analysis processes",
+      "Enable corrective action workflows",
+      "Integrate with risk management (STD-AI-002)",
+      "Integrate with quality management (STD-AI-009)",
+      "Test system functionality",
+      "Obtain approval"
+    ],
+    "evidence": [
+      "PMM System Documentation (DOC-AI-PMM-001)",
+      "System architecture",
+      "Integration documentation",
+      "Test results",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "PMM-002",
+    "name": "Post-Market Monitoring Plan Creation",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, before market placement",
+    "riskLevel": "high",
+    "objective": "Create and maintain post-market monitoring plan per Article 72(2) to define strategy, methods, and procedures for post-market monitoring.",
+    "requirements": [
+      "Create PMM plan",
+      "Define data collection strategy",
+      "Identify data sources",
+      "Establish analysis methods",
+      "Define corrective action procedures",
+      "Define reporting procedures",
+      "Define review and update procedures",
+      "Obtain approval",
+      "Review and update annually"
+    ],
+    "evidence": [
+      "Post-Market Monitoring Plan (PLAN-AI-PMM-XXX)",
+      "Data collection strategy",
+      "Data source inventory",
+      "Analysis methods documentation",
+      "Corrective action procedures",
+      "Reporting procedures",
+      "Approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "PMM-003",
+    "name": "Performance Data Collection",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Collect and manage performance data systematically to enable performance analysis and identify issues early.",
+    "requirements": [
+      "Implement data collection per plan",
+      "Monitor data quality",
+      "Store data securely",
+      "Maintain data retention",
+      "Analyze data regularly",
+      "Report data collection status"
+    ],
+    "evidence": [
+      "Data collection records",
+      "Data quality reports",
+      "Data storage records",
+      "Data retention records",
+      "Analysis reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "PMM-004",
+    "name": "Performance Monitoring and Analysis",
+    "type": "detective",
+    "frequency": "Continuous, monthly analysis",
+    "riskLevel": "medium",
+    "objective": "Monitor AI system performance in real-world conditions and analyze trends to identify issues and opportunities for improvement.",
+    "requirements": [
+      "Track metrics continuously",
+      "Compare to baselines",
+      "Alert on deviations",
+      "Investigate issues",
+      "Report trends",
+      "Update baselines as needed"
+    ],
+    "evidence": [
+      "Performance dashboard",
+      "Metrics reports (monthly)",
+      "Trend analysis reports",
+      "Investigation records",
+      "Alert logs"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "PMM-005",
+    "name": "Corrective Actions Based on Monitoring",
+    "type": "corrective",
+    "frequency": "As needed",
+    "riskLevel": "medium",
+    "objective": "Implement corrective actions based on post-market monitoring results to address performance issues and improve AI system quality.",
+    "requirements": [
+      "Monitor for performance issues",
+      "Investigate root causes",
+      "Plan corrective actions",
+      "Implement actions",
+      "Verify effectiveness",
+      "Update documentation",
+      "Report to management"
+    ],
+    "evidence": [
+      "Issue logs",
+      "Root cause analyses",
+      "Corrective action plans",
+      "Implementation records",
+      "Verification records",
+      "Documentation updates"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

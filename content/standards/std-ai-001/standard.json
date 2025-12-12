@@ -1,0 +1,123 @@
+{
+  "id": "std-ai-001",
+  "standardId": "STD-AI-001",
+  "title": "AI System Classification Standard",
+  "shortTitle": "System Classification",
+  "description": "This standard defines the requirements and process for classifying AI systems according to EU AI Act risk categories (prohibited, high-risk, limited-risk, minimal-risk) to ensure appropriate compliance obligations are applied to each AI system throughout its lifecycle.",
+  "version": "1.0",
+  "effectiveDate": "2025-08-01",
+  "nextReviewDate": "2026-08-01",
+  "reviewFrequency": "Annually or upon regulatory change",
+  "owner": "AI Act Program Manager",
+  "parentPolicy": "POL-AI-001 - Artificial Intelligence Policy",
+  "euAiActArticles": [
+    "Article 3",
+    "Article 5",
+    "Article 5(1)",
+    "Article 50",
+    "Article 73",
+    "Article 3(1)",
+    "Article 6",
+    "Article 3(3)",
+    "Article 3(4)",
+    "Article 3(14)"
+  ],
+  "iso42001Clauses": [],
+  "category": "classification",
+  "applicability": "All AI systems",
+  "status": "draft",
+  "progress": 0,
+  "controlCount": 9,
+  "kpis": [
+    {
+      "id": "KPI-CLS-001",
+      "name": "Classification Completeness",
+      "definition": "% of AI systems with current, valid classification",
+      "target": "100%",
+      "measurementMethod": "(# AI systems classified / # total AI systems) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Act Program Manager"
+    },
+    {
+      "id": "KPI-CLS-002",
+      "name": "Classification Timeliness",
+      "definition": "Average business days from classification request to decision",
+      "target": "< 10 days",
+      "measurementMethod": "Σ (classification date - request date) / # classifications",
+      "frequency": "Monthly",
+      "owner": "AI Act Program Manager"
+    },
+    {
+      "id": "KPI-CLS-003",
+      "name": "Annual Review Completion Rate",
+      "definition": "% of AI systems reviewed annually on schedule",
+      "target": "100%",
+      "measurementMethod": "(# annual reviews completed on time / # annual reviews due) × 100",
+      "frequency": "Quarterly",
+      "owner": "AI Act Program Manager"
+    },
+    {
+      "id": "KPI-CLS-004",
+      "name": "Reclassification Responsiveness",
+      "definition": "% of triggered reclassifications completed within SLA",
+      "target": "100%",
+      "measurementMethod": "(# reclassifications within SLA / # reclassification triggers) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Act Program Manager"
+    },
+    {
+      "id": "KPI-CLS-005",
+      "name": "High-Risk Compliance Rate",
+      "definition": "% of high-risk AI systems with full compliance to required standards",
+      "target": "100%",
+      "measurementMethod": "(# high-risk AI fully compliant / # high-risk AI systems) × 100",
+      "frequency": "Quarterly",
+      "owner": "Compliance Officer"
+    },
+    {
+      "id": "KPI-CLS-006",
+      "name": "Prohibited Practice Prevention",
+      "definition": "Number of prohibited practices in development or operation",
+      "target": "0 (Zero tolerance)",
+      "measurementMethod": "Count of prohibited AI systems",
+      "frequency": "Continuous",
+      "owner": "AI Governance Committee"
+    },
+    {
+      "id": "KPI-CLS-007",
+      "name": "Classification Accuracy",
+      "definition": "% of classifications validated as accurate in audits",
+      "target": "≥ 95%",
+      "measurementMethod": "(# accurate classifications in sample / # classifications audited) × 100",
+      "frequency": "Annually",
+      "owner": "Internal Audit"
+    },
+    {
+      "id": "KPI-CLS-008",
+      "name": "Documentation Package Completeness",
+      "definition": "% of AI systems with complete documentation packages",
+      "target": "100%",
+      "measurementMethod": "(# complete documentation packages / # AI systems) × 100",
+      "frequency": "Monthly",
+      "owner": "Document Control"
+    },
+    {
+      "id": "KPI-CLS-009",
+      "name": "Authority Response Time",
+      "definition": "Average business days to respond to authority documentation requests",
+      "target": "< 5 days",
+      "measurementMethod": "Σ (response date - request date) / # requests",
+      "frequency": "Per request",
+      "owner": "Legal"
+    },
+    {
+      "id": "KPI-CLS-010",
+      "name": "Classification Register Accuracy",
+      "definition": "% of Classification Register fields complete and accurate",
+      "target": "100%",
+      "measurementMethod": "(# complete/accurate records / # total records) × 100",
+      "frequency": "Monthly",
+      "owner": "AI Act Program Manager"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+[
+  {
+    "id": "accuracy_1",
+    "question": "Is the AI system designed to achieve an appropriate level of accuracy?",
+    "description": "Accuracy by design",
+    "category": "accuracy-robustness",
+    "article": "Article 15(1)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "guidance": "Accuracy must be appropriate for the intended purpose."
+  },
+  {
+    "id": "accuracy_2",
+    "question": "Are accuracy levels declared in instructions for use?",
+    "description": "Accuracy declaration",
+    "category": "accuracy-robustness",
+    "article": "Article 15(1)",
+    "weight": 8,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "Accuracy metrics",
+      "Performance test results"
+    ]
+  },
+  {
+    "id": "accuracy_3",
+    "question": "Is the AI system resilient to errors, faults, or inconsistencies in input data?",
+    "description": "Input resilience",
+    "category": "accuracy-robustness",
+    "article": "Article 15(2)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "guidance": "System should handle imperfect inputs appropriately."
+  },
+  {
+    "id": "accuracy_4",
+    "question": "Is the AI system resilient to errors or inconsistencies arising from system/environment interaction?",
+    "description": "Environment interaction resilience",
+    "category": "accuracy-robustness",
+    "article": "Article 15(2)",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "guidance": "Including interactions with other AI systems."
+  },
+  {
+    "id": "accuracy_5",
+    "question": "Are technical redundancy solutions implemented including backup or fail-safe mechanisms?",
+    "description": "Redundancy mechanisms",
+    "category": "accuracy-robustness",
+    "article": "Article 15(2)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Redundancy design documentation",
+      "Failover procedures"
+    ]
+  },
+  {
+    "id": "accuracy_6",
+    "question": "Is the AI system resilient against unauthorized attempts to alter its use, outputs, or performance?",
+    "description": "Adversarial robustness",
+    "category": "accuracy-robustness",
+    "article": "Article 15(3)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "guidance": "Must be protected against adversarial attacks."
+  },
+  {
+    "id": "accuracy_7",
+    "question": "Is the system resilient against attempts to exploit system vulnerabilities by third parties?",
+    "description": "Vulnerability exploitation protection",
+    "category": "accuracy-robustness",
+    "article": "Article 15(3)",
+    "weight": 9,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "accuracy_8",
+    "question": "Are technical solutions in place to address AI-specific vulnerabilities (data poisoning, adversarial examples, model inversion)?",
+    "description": "AI-specific security",
+    "category": "accuracy-robustness",
+    "article": "Article 15(4)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Security assessment",
+      "Vulnerability testing results"
+    ]
+  },
+  {
+    "id": "accuracy_9",
+    "question": "Are appropriate cybersecurity measures implemented to protect against attacks?",
+    "description": "Cybersecurity measures",
+    "category": "accuracy-robustness",
+    "article": "Article 15(5)",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Security policy",
+      "Penetration testing results"
+    ]
+  },
+  {
+    "id": "accuracy_10",
+    "question": "Are regular security assessments performed on the AI system?",
+    "description": "Security assessment frequency",
+    "category": "accuracy-robustness",
+    "article": "Article 15(5)",
+    "weight": 7,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Security audit reports"
+    ]
+  }
+]

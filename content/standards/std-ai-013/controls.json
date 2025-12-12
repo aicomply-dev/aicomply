@@ -1,0 +1,132 @@
+[
+  {
+    "id": "INC-001",
+    "name": "Incident Detection and Classification",
+    "type": "detective",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Detect incidents and classify them as serious or not per Article 73(1) to ensure serious incidents are identified promptly and reported to authorities.",
+    "requirements": [
+      "Implement detection mechanisms",
+      "Monitor continuously",
+      "Triage incidents",
+      "Escalate serious incidents immediately",
+      "Document all incidents"
+    ],
+    "evidence": [
+      "Incident detection logs",
+      "Severity assessments",
+      "Classification records",
+      "Escalation records",
+      "Notification records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "INC-002",
+    "name": "Immediate Incident Response",
+    "type": "corrective",
+    "frequency": "As needed, within 24 hours",
+    "riskLevel": "critical",
+    "objective": "Respond immediately to serious incidents and notify stakeholders per Article 73 to ensure rapid response and proper escalation.",
+    "requirements": [
+      "Assess severity immediately",
+      "Notify stakeholders per timeline",
+      "Initiate incident response",
+      "Contain incident",
+      "Document all actions"
+    ],
+    "evidence": [
+      "Incident assessment",
+      "Notification records",
+      "Response initiation records",
+      "Containment records",
+      "Action logs"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "INC-003",
+    "name": "Incident Investigation and Report Preparation",
+    "type": "corrective",
+    "frequency": "Per serious incident, within 10 days",
+    "riskLevel": "high",
+    "objective": "Investigate serious incidents and prepare serious incident report per Article 73(2) to provide complete information to competent authorities.",
+    "requirements": [
+      "Conduct investigation",
+      "Gather all relevant information",
+      "Conduct root cause analysis",
+      "Assess impact",
+      "Document findings",
+      "Prepare investigation report"
+    ],
+    "evidence": [
+      "Investigation report",
+      "Root cause analysis",
+      "Impact assessment",
+      "Serious incident report (RPT-AI-INC-XXX)",
+      "Legal review records",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "INC-004",
+    "name": "Regulatory Reporting",
+    "type": "corrective",
+    "frequency": "Per serious incident, within 15 days",
+    "riskLevel": "critical",
+    "objective": "Submit serious incident report to competent authority within 15 days per Article 73(2) to comply with regulatory reporting obligations.",
+    "requirements": [
+      "Submit to competent authority",
+      "Use official reporting channel",
+      "Provide all required information",
+      "Obtain confirmation of receipt",
+      "Respond to follow-up questions",
+      "Document submission"
+    ],
+    "evidence": [
+      "Submission records",
+      "Confirmation receipts",
+      "Authority correspondence",
+      "Follow-up responses"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "INC-005",
+    "name": "Incident Follow-Up and Corrective Actions",
+    "type": "corrective",
+    "frequency": "Per incident, ongoing",
+    "riskLevel": "medium",
+    "objective": "Follow up on incidents and implement corrective actions to prevent recurrence and improve AI system safety.",
+    "requirements": [
+      "Plan corrective actions",
+      "Implement actions",
+      "Verify effectiveness",
+      "Update documentation",
+      "Communicate to stakeholders",
+      "Track to closure"
+    ],
+    "evidence": [
+      "Corrective action plans",
+      "Implementation records",
+      "Verification results",
+      "Documentation updates",
+      "Lessons learned reports",
+      "Process updates",
+      "Communication records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

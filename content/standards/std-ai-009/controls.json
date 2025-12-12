@@ -1,0 +1,396 @@
+[
+  {
+    "id": "QMS-001",
+    "name": "Quality Management System Documentation",
+    "type": "preventive",
+    "frequency": "Initial establishment, annual review",
+    "riskLevel": "high",
+    "objective": "Document QMS systematically and orderly per Article 17(1) to ensure comprehensive quality management framework is established, maintained, and continuously improved.",
+    "requirements": [
+      "Create AI Quality Manual",
+      "Document all QMS procedures",
+      "Develop work instructions",
+      "Define record requirements",
+      "Obtain executive approval",
+      "Review and update annually"
+    ],
+    "evidence": [
+      "AI Quality Manual (MANUAL-AI-QMS-001)",
+      "QMS procedure library",
+      "Work instructions",
+      "Record templates",
+      "Approval records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-002",
+    "name": "Quality Policy and Objectives",
+    "type": "preventive",
+    "frequency": "Annual review",
+    "riskLevel": "medium",
+    "objective": "Establish quality policy and measurable quality objectives to guide QMS implementation and provide direction for quality improvement.",
+    "requirements": [
+      "Define quality policy",
+      "Set quality objectives (cascaded to functions)",
+      "Communicate to organization",
+      "Monitor objective achievement",
+      "Review and update annually",
+      "Report to management"
+    ],
+    "evidence": [
+      "AI Quality Policy (POLICY-AI-QMS-001)",
+      "Quality Objectives (OBJ-AI-QMS-001)",
+      "Communication records",
+      "Objective tracking dashboard",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-003",
+    "name": "QMS Roles and Responsibilities",
+    "type": "preventive",
+    "frequency": "Annual review",
+    "riskLevel": "medium",
+    "objective": "Define clear roles and responsibilities for QMS to ensure accountability and effective QMS implementation.",
+    "requirements": [
+      "Define QMS organizational structure",
+      "Document roles and responsibilities",
+      "Assign qualified personnel",
+      "Provide QMS training",
+      "Review assignments annually",
+      "Update as needed"
+    ],
+    "evidence": [
+      "QMS organizational chart",
+      "Role descriptions",
+      "Assignment records",
+      "Training records",
+      "Annual review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-004",
+    "name": "Design Planning",
+    "type": "preventive",
+    "frequency": "Per AI system",
+    "riskLevel": "high",
+    "objective": "Plan and control AI system design and development per Article 17(1)(b) to ensure systematic design process with appropriate reviews, verification, and validation.",
+    "requirements": [
+      "Create design and development plan",
+      "Define design phases",
+      "Identify review/verification/validation points",
+      "Assign responsibilities",
+      "Allocate resources",
+      "Obtain approval",
+      "Update as needed"
+    ],
+    "evidence": [
+      "Design and Development Plan (PLAN-AI-DESIGN-XXX)",
+      "Design phase definitions",
+      "Responsibility matrix",
+      "Resource allocation",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-005",
+    "name": "Design Inputs",
+    "type": "preventive",
+    "frequency": "Per AI system, per major update",
+    "riskLevel": "high",
+    "objective": "Define and document design inputs to ensure all requirements are captured, reviewed, and approved before design begins.",
+    "requirements": [
+      "Gather design inputs from stakeholders",
+      "Document all requirements",
+      "Review for completeness and clarity",
+      "Resolve ambiguities",
+      "Obtain approval",
+      "Maintain traceability"
+    ],
+    "evidence": [
+      "Design Input Specification (SPEC-AI-DESIGN-XXX)",
+      "Requirements traceability matrix",
+      "Review records",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-006",
+    "name": "Design Outputs",
+    "type": "preventive",
+    "frequency": "Per design phase",
+    "riskLevel": "high",
+    "objective": "Define and verify design outputs meet design inputs to ensure design is complete, correct, and ready for development.",
+    "requirements": [
+      "Create design outputs",
+      "Verify against design inputs",
+      "Conduct design reviews",
+      "Document verification",
+      "Obtain approval",
+      "Maintain traceability"
+    ],
+    "evidence": [
+      "Design Output Documentation (DOC-AI-DESIGN-XXX)",
+      "Design verification records",
+      "Design review records",
+      "Approval records",
+      "Traceability matrix"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-007",
+    "name": "Design Review",
+    "type": "preventive",
+    "frequency": "Per design phase",
+    "riskLevel": "high",
+    "objective": "Conduct systematic design reviews at appropriate stages to ensure design quality, identify issues early, and enable informed decisions.",
+    "requirements": [
+      "Schedule design reviews",
+      "Prepare review materials",
+      "Conduct reviews",
+      "Document findings and actions",
+      "Track action closure",
+      "Obtain approval to proceed",
+      "Block progression if issues not resolved"
+    ],
+    "evidence": [
+      "Design Review Records (REC-AI-REVIEW-XXX)",
+      "Review findings",
+      "Action item tracking",
+      "Approval to proceed records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-008",
+    "name": "Design Verification",
+    "type": "preventive",
+    "frequency": "Per design phase",
+    "riskLevel": "high",
+    "objective": "Verify design outputs meet design inputs to ensure design correctness and completeness before proceeding to next phase.",
+    "requirements": [
+      "Plan verification activities",
+      "Execute verification",
+      "Document verification results",
+      "Address any failures",
+      "Obtain verification approval",
+      "Block progression if verification fails"
+    ],
+    "evidence": [
+      "Design Verification Plan (PLAN-AI-VERIFY-XXX)",
+      "Verification test results",
+      "Verification reports",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-009",
+    "name": "Design Validation",
+    "type": "preventive",
+    "frequency": "Before deployment, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Validate AI system meets user needs and intended use to ensure system is fit for purpose before deployment.",
+    "requirements": [
+      "Plan validation activities",
+      "Execute validation in realistic conditions",
+      "Collect and analyze results",
+      "Obtain user feedback",
+      "Document validation",
+      "Obtain approval",
+      "Block deployment if validation fails"
+    ],
+    "evidence": [
+      "Design Validation Plan (PLAN-AI-VALID-XXX)",
+      "Validation test results",
+      "User feedback",
+      "Validation report",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-010",
+    "name": "Design Transfer",
+    "type": "preventive",
+    "frequency": "Per AI system",
+    "riskLevel": "medium",
+    "objective": "Transfer design to development/production with appropriate controls to ensure design is correctly implemented.",
+    "requirements": [
+      "Create design transfer plan",
+      "Verify development readiness",
+      "Execute transfer",
+      "Verify transfer success",
+      "Obtain acceptance",
+      "Document transfer"
+    ],
+    "evidence": [
+      "Design Transfer Plan (PLAN-AI-TRANSFER-XXX)",
+      "Transfer verification records",
+      "Acceptance records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-011",
+    "name": "Design Change Control",
+    "type": "preventive",
+    "frequency": "As needed",
+    "riskLevel": "medium",
+    "objective": "Control and document design changes per Article 17(1)(a) to ensure changes are properly assessed, approved, and implemented.",
+    "requirements": [
+      "Submit change requests",
+      "Assess impact and risks",
+      "Review and approve changes",
+      "Implement changes",
+      "Verify changes",
+      "Update documentation",
+      "Notify stakeholders"
+    ],
+    "evidence": [
+      "Design Change Requests (DCR-AI-XXX)",
+      "Impact assessments",
+      "Change approvals",
+      "Verification records",
+      "Documentation updates"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-012",
+    "name": "Quality Assurance Program",
+    "type": "preventive",
+    "frequency": "Continuous",
+    "riskLevel": "medium",
+    "objective": "Establish comprehensive quality assurance program per Article 17(1)(c) to ensure quality throughout AI system lifecycle.",
+    "requirements": [
+      "Define QA program",
+      "Conduct process audits",
+      "Conduct product audits",
+      "Monitor quality metrics",
+      "Report quality status",
+      "Implement improvements"
+    ],
+    "evidence": [
+      "QA Program Plan (PLAN-AI-QA-001)",
+      "Audit schedules and reports",
+      "Quality metrics dashboard",
+      "Quality reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-013",
+    "name": "Testing Strategy and Execution",
+    "type": "preventive",
+    "frequency": "Per AI system, per release",
+    "riskLevel": "high",
+    "objective": "Implement comprehensive testing strategy per Article 17(1)(d) to ensure AI systems are tested before, during, and after development.",
+    "requirements": [
+      "Define testing strategy",
+      "Create test plans",
+      "Execute tests",
+      "Document results",
+      "Track defects",
+      "Obtain test approval",
+      "Block deployment if tests fail"
+    ],
+    "evidence": [
+      "Testing Strategy (STRATEGY-AI-TEST-001)",
+      "Test plans (PLAN-AI-TEST-XXX)",
+      "Test results (TEST-AI-TEST-XXX)",
+      "Defect logs",
+      "Test reports",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-014",
+    "name": "Corrective and Preventive Actions (CAPA)",
+    "type": "corrective/preventive",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Implement systematic CAPA system per Article 17(1)(a) to eliminate causes of nonconformities and prevent recurrence.",
+    "requirements": [
+      "Define CAPA process",
+      "Train staff on CAPA",
+      "Manage CAPA workflow",
+      "Track CAPA to closure",
+      "Review CAPA effectiveness",
+      "Report CAPA metrics"
+    ],
+    "evidence": [
+      "CAPA Procedure (PROC-AI-CAPA-001)",
+      "CAPA tracking system",
+      "CAPA records (CAPA-AI-XXX)",
+      "Root cause analysis records",
+      "Action plans",
+      "Verification records",
+      "Training records",
+      "CAPA effectiveness reviews"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "QMS-015",
+    "name": "Management Review and Continuous Improvement",
+    "type": "detective",
+    "frequency": "Annually minimum",
+    "riskLevel": "medium",
+    "objective": "Ensure QMS effectiveness through management review and drive continuous improvement to enhance QMS and AI system quality.",
+    "requirements": [
+      "Schedule management reviews",
+      "Prepare review materials",
+      "Conduct review meeting",
+      "Document decisions",
+      "Track action items",
+      "Communicate outcomes",
+      "Implement decisions"
+    ],
+    "evidence": [
+      "Management Review Records (REC-AI-MGT-REVIEW-XXX)",
+      "Review presentations",
+      "Decisions and action items",
+      "Follow-up tracking"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

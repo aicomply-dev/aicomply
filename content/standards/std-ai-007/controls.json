@@ -1,0 +1,117 @@
+[
+  {
+    "id": "HO-001",
+    "name": "Human Oversight Measures Design",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, during design phase",
+    "riskLevel": "high",
+    "objective": "Design AI systems with effective human oversight measures per Article 14(2) to enable humans to understand, interpret, override, and intervene in AI system operations, ensuring human control and preventing automation bias.",
+    "requirements": [
+      "Design oversight interface",
+      "Implement override capability",
+      "Enable intervention mechanisms",
+      "Provide stop functionality",
+      "Test oversight effectiveness",
+      "Document oversight design",
+      "Obtain approval before deployment"
+    ],
+    "evidence": [
+      "Human oversight design document",
+      "Interface specifications",
+      "Override mechanism documentation",
+      "Intervention mechanism documentation",
+      "Stop functionality documentation",
+      "Test results",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "HO-002",
+    "name": "Oversight Personnel Capabilities",
+    "type": "preventive",
+    "frequency": "Per oversight assignment, ongoing",
+    "riskLevel": "high",
+    "objective": "Ensure oversight personnel have necessary competence, training, authority, and resources per Article 14(4) to effectively perform oversight functions and make informed decisions about AI system use.",
+    "requirements": [
+      "Identify oversight personnel requirements",
+      "Assess personnel qualifications",
+      "Assign qualified personnel",
+      "Provide initial training",
+      "Grant necessary authority",
+      "Allocate adequate resources",
+      "Implement technical measures",
+      "Verify capabilities"
+    ],
+    "evidence": [
+      "Oversight personnel assignments",
+      "Qualification assessment records",
+      "Training records",
+      "Authority delegation records",
+      "Resource allocation records",
+      "Technical implementation records",
+      "Capability verification records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "HO-003",
+    "name": "Oversight Implementation and Operations",
+    "type": "detective",
+    "frequency": "Continuous, ongoing",
+    "riskLevel": "medium",
+    "objective": "Implement and maintain effective human oversight operations throughout AI system lifecycle, ensuring oversight personnel are available, trained, and performing oversight functions effectively.",
+    "requirements": [
+      "Maintain oversight personnel assignments",
+      "Provide ongoing training (annually minimum)",
+      "Monitor performance regularly",
+      "Review roles and responsibilities",
+      "Ensure adequate staffing levels",
+      "Conduct regular oversight reviews",
+      "Document oversight activities"
+    ],
+    "evidence": [
+      "Personnel assignment records",
+      "Ongoing training records",
+      "Performance review records",
+      "Oversight activity logs",
+      "Staffing analysis records",
+      "Review records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "HO-004",
+    "name": "Oversight Effectiveness Monitoring",
+    "type": "detective",
+    "frequency": "Monthly monitoring, quarterly reviews",
+    "riskLevel": "medium",
+    "objective": "Monitor oversight effectiveness, track metrics, analyze patterns, and implement improvements to ensure human oversight remains effective and achieves its objectives.",
+    "requirements": [
+      "Track oversight activities",
+      "Calculate effectiveness metrics",
+      "Analyze trends and patterns",
+      "Identify improvement opportunities",
+      "Implement improvements",
+      "Report to management",
+      "Conduct quarterly effectiveness reviews"
+    ],
+    "evidence": [
+      "Oversight activity logs",
+      "Metrics dashboard",
+      "Analysis reports (monthly)",
+      "Effectiveness reports (quarterly)",
+      "Improvement initiatives",
+      "Management reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

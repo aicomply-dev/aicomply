@@ -1,0 +1,139 @@
+[
+  {
+    "id": "LOG-001",
+    "name": "Automated Logging Requirements",
+    "type": "preventive",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Implement automated logging per Article 12(1) to capture all required log elements for high-risk AI systems, enabling traceability, auditability, and regulatory compliance.",
+    "requirements": [
+      "Implement automated logging (no manual intervention)",
+      "Capture all mandatory log elements",
+      "Capture additional operational elements",
+      "Log in real-time or near-real-time",
+      "Ensure logging cannot be disabled",
+      "Verify logging operational continuously"
+    ],
+    "evidence": [
+      "Logging configuration documentation",
+      "Logging infrastructure documentation",
+      "Log sample verification",
+      "Logging health monitoring records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LOG-002",
+    "name": "Logging Infrastructure",
+    "type": "preventive",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Implement robust, tamper-proof logging infrastructure with high availability to ensure reliable log capture, storage, and protection throughout the 10-year retention period.",
+    "requirements": [
+      "Implement logging framework",
+      "Configure log collection",
+      "Enable tamper protection (write-once storage)",
+      "Set up centralized storage",
+      "Implement high availability",
+      "Monitor logging health continuously",
+      "Alert on logging failures"
+    ],
+    "evidence": [
+      "Logging infrastructure documentation",
+      "Configuration records",
+      "Health monitoring dashboard",
+      "Availability metrics",
+      "Tamper protection verification",
+      "Integrity verification records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LOG-003",
+    "name": "10-Year Log Retention",
+    "type": "preventive",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Retain all logs for minimum 10 years per Article 12(2) with secure storage, backup, and retrieval capability to support audits, investigations, and regulatory compliance.",
+    "requirements": [
+      "Configure 10-year retention policy",
+      "Implement secure storage",
+      "Set up backup procedures (daily)",
+      "Enable archival for long-term storage",
+      "Test retrieval regularly (quarterly)",
+      "Monitor storage capacity",
+      "Plan for storage growth"
+    ],
+    "evidence": [
+      "Retention policy configuration",
+      "Storage capacity planning",
+      "Backup verification records",
+      "Retrieval test results",
+      "Archival records",
+      "Storage monitoring records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LOG-004",
+    "name": "Log Security and Access Control",
+    "type": "preventive",
+    "frequency": "Continuous, quarterly reviews",
+    "riskLevel": "high",
+    "objective": "Protect logs with encryption, access controls, and audit trails to prevent unauthorized access, modification, or deletion, ensuring log integrity and confidentiality throughout the retention period.",
+    "requirements": [
+      "Enable encryption (at rest and in transit)",
+      "Configure role-based access controls",
+      "Log all access to logs",
+      "Implement tamper detection",
+      "Verify integrity regularly (monthly)",
+      "Review access quarterly",
+      "Revoke unnecessary access"
+    ],
+    "evidence": [
+      "Encryption configuration",
+      "Access control matrix",
+      "Access audit logs",
+      "Integrity verification records",
+      "Quarterly access reviews",
+      "Tamper detection alerts (if any)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "LOG-005",
+    "name": "Log Analysis and Monitoring",
+    "type": "detective",
+    "frequency": "Continuous, regular analysis",
+    "riskLevel": "medium",
+    "objective": "Enable log analysis, monitoring, and investigation support to detect anomalies, support incident response, and provide insights for continuous improvement.",
+    "requirements": [
+      "Configure monitoring rules",
+      "Set up alerting",
+      "Conduct regular analysis (weekly)",
+      "Generate trend reports (monthly)",
+      "Support incident investigations",
+      "Document analysis findings",
+      "Review monitoring effectiveness (quarterly)"
+    ],
+    "evidence": [
+      "Monitoring dashboard",
+      "Alert configurations",
+      "Analysis reports (weekly)",
+      "Trend reports (monthly)",
+      "Investigation records",
+      "Monitoring effectiveness reviews (quarterly)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

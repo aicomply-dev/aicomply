@@ -1,0 +1,160 @@
+[
+  {
+    "id": "conform_1",
+    "question": "Has a conformity assessment procedure been completed before placing the system on market or putting it into service?",
+    "description": "Conformity assessment completion",
+    "category": "conformity-assessment",
+    "article": "Article 43(1)",
+    "weight": 10,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "Conformity assessment report",
+      "EU Declaration of Conformity"
+    ]
+  },
+  {
+    "id": "conform_2",
+    "question": "If the system is covered by Annex I legislation, has conformity been demonstrated under that legislation?",
+    "description": "Harmonised legislation conformity",
+    "category": "conformity-assessment",
+    "article": "Article 43(2)",
+    "weight": 8,
+    "answerType": "yes_no_na"
+  },
+  {
+    "id": "conform_3",
+    "question": "For Annex III high-risk systems, has internal control procedure (Annex VI) been followed?",
+    "description": "Internal control completion",
+    "category": "conformity-assessment",
+    "article": "Article 43(3)",
+    "weight": 9,
+    "answerType": "yes_no_na",
+    "guidance": "Most high-risk AI systems use internal control for conformity assessment."
+  },
+  {
+    "id": "conform_4",
+    "question": "For biometric systems under Annex III point 1, has third-party conformity assessment been performed?",
+    "description": "Biometric system third-party assessment",
+    "category": "conformity-assessment",
+    "article": "Article 43(4)",
+    "weight": 9,
+    "answerType": "yes_no_na",
+    "guidance": "Biometric identification and categorization systems require notified body involvement."
+  },
+  {
+    "id": "conform_5",
+    "question": "Has a quality management system been established, implemented, and maintained?",
+    "description": "Quality management system",
+    "category": "conformity-assessment",
+    "article": "Article 17",
+    "weight": 9,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "QMS documentation",
+      "QMS procedures"
+    ]
+  },
+  {
+    "id": "conform_6",
+    "question": "Does the quality management system ensure AI system compliance with the Regulation?",
+    "description": "QMS compliance scope",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)",
+    "weight": 8,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "conform_7",
+    "question": "Is there a documented strategy for regulatory compliance?",
+    "description": "Compliance strategy documentation",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(a)",
+    "weight": 7,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "Compliance strategy document"
+    ]
+  },
+  {
+    "id": "conform_8",
+    "question": "Are procedures for design, design control, and design verification documented?",
+    "description": "Design procedures",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(b)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "conform_9",
+    "question": "Are procedures for development, quality control, and quality assurance documented?",
+    "description": "Development and quality procedures",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(c)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "conform_10",
+    "question": "Is there a procedure for examination, testing, and validation before, during, and after development?",
+    "description": "Testing procedures",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(d)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Test procedures",
+      "Validation protocols"
+    ]
+  },
+  {
+    "id": "conform_11",
+    "question": "Are technical specifications applied documented (standards, common specifications)?",
+    "description": "Technical specifications",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(e)",
+    "weight": 6,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "conform_12",
+    "question": "Is there a post-market monitoring system implemented?",
+    "description": "Post-market monitoring",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(h)",
+    "weight": 8,
+    "answerType": "yes_no_partial",
+    "evidenceRequired": [
+      "Post-market monitoring plan"
+    ]
+  },
+  {
+    "id": "conform_13",
+    "question": "Are procedures for serious incident and malfunctioning reporting in place?",
+    "description": "Incident reporting procedures",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(i)",
+    "weight": 8,
+    "answerType": "yes_no",
+    "evidenceRequired": [
+      "Incident reporting procedure"
+    ]
+  },
+  {
+    "id": "conform_14",
+    "question": "Are corrective action procedures documented and implemented?",
+    "description": "Corrective action procedures",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(k)",
+    "weight": 7,
+    "answerType": "yes_no_partial"
+  },
+  {
+    "id": "conform_15",
+    "question": "Is there a system for communication with competent authorities?",
+    "description": "Authority communication system",
+    "category": "conformity-assessment",
+    "article": "Article 17(1)(j)",
+    "weight": 6,
+    "answerType": "yes_no"
+  }
+]

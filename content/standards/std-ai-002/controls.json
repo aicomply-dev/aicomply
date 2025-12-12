@@ -1,0 +1,352 @@
+[
+  {
+    "id": "RM-001",
+    "name": "Risk Management System Establishment",
+    "type": "preventive",
+    "frequency": "Initial establishment, annual review",
+    "riskLevel": "high",
+    "objective": "Establish a continuous, iterative AI risk management system integrated into the overall enterprise risk management framework to ensure systematic identification, assessment, treatment, and monitoring of AI-related risks throughout the AI system lifecycle in compliance with EU AI Act Article 9(1).",
+    "requirements": [
+      "Define AI risk management framework document",
+      "Establish AI risk governance structure",
+      "Define risk management roles and responsibilities",
+      "Integrate with Enterprise Risk Management (ERM)",
+      "Obtain AI Governance Committee approval",
+      "Review framework annually"
+    ],
+    "evidence": [
+      "AI Risk Management Framework Document (DOC-AI-RM-001)",
+      "Risk Management Governance Structure",
+      "Roles and Responsibilities Matrix",
+      "ERM Integration Documentation",
+      "AI Governance Committee Approval Records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-002",
+    "name": "Risk Management Lifecycle Integration",
+    "type": "preventive",
+    "frequency": "Per lifecycle phase, continuous",
+    "riskLevel": "high",
+    "objective": "Integrate risk management activities into each phase of the AI system lifecycle to ensure risks are identified, assessed, and managed at appropriate points, maintaining risk traceability from design through decommissioning.",
+    "requirements": [
+      "Define risk activities for each lifecycle phase",
+      "Create lifecycle-specific risk checklists",
+      "Assign risk responsibilities per phase",
+      "Document risk decisions at phase gates",
+      "Maintain risk traceability across phases",
+      "Block phase progression if risk gates not met"
+    ],
+    "evidence": [
+      "AI System Development Lifecycle Procedure (PROC-AI-DEV-001)",
+      "Risk Assessment Checklist per Lifecycle Phase (CHK-AI-RM-001)",
+      "Risk Assessment Records per AI System (REC-AI-RM-001)",
+      "Phase Gate Risk Review Records (REC-AI-RM-002)",
+      "Risk Traceability Matrix"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-003",
+    "name": "Risk Register Maintenance",
+    "type": "detective",
+    "frequency": "Monthly updates, quarterly reviews",
+    "riskLevel": "medium",
+    "objective": "Maintain a comprehensive AI risk register for all AI systems to enable effective risk oversight, tracking, and reporting, ensuring all identified risks are properly documented, assessed, and managed.",
+    "requirements": [
+      "Create AI risk register template",
+      "Populate risk register for each AI system",
+      "Update risk register monthly",
+      "Review risk register quarterly with AI Governance Committee",
+      "Archive closed risks annually (retain for 10 years)",
+      "Maintain audit trail of all changes"
+    ],
+    "evidence": [
+      "AI Risk Register (REC-AI-RM-003)",
+      "Quarterly Risk Register Review Report (RPT-AI-RM-001)",
+      "Risk Register Update Log (REC-AI-RM-004)",
+      "Archive records for closed risks"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-004",
+    "name": "Known and Foreseeable Risk Identification",
+    "type": "preventive",
+    "frequency": "Initial assessment, after substantial modifications, annually",
+    "riskLevel": "high",
+    "objective": "Systematically identify known and reasonably foreseeable risks related to health, safety, and fundamental rights for each AI system to ensure comprehensive risk coverage and enable appropriate risk treatment decisions.",
+    "requirements": [
+      "Conduct initial risk identification workshop",
+      "Use risk identification checklist (CHK-AI-RM-002)",
+      "Review historical incidents and near-misses",
+      "Consult subject matter experts",
+      "Review similar AI systems for lessons learned",
+      "Document all identified risks in risk register",
+      "Minimum 10 risks identified per high-risk AI system"
+    ],
+    "evidence": [
+      "Risk Identification Workshop Minutes (REC-AI-RM-005)",
+      "Risk Identification Checklist (completed) (CHK-AI-RM-002)",
+      "Risk Identification Report per AI System (RPT-AI-RM-002)",
+      "Subject Matter Expert Consultation Records (REC-AI-RM-006)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-005",
+    "name": "Risk Analysis and Evaluation",
+    "type": "preventive",
+    "frequency": "Per identified risk, after modifications",
+    "riskLevel": "high",
+    "objective": "Analyze and evaluate identified risks using a consistent risk assessment methodology to determine risk levels, prioritize risks for treatment, and enable informed risk management decisions.",
+    "requirements": [
+      "Assess likelihood for each identified risk",
+      "Assess impact for each identified risk",
+      "Calculate inherent risk score",
+      "Classify risk level",
+      "Prioritize risks for treatment",
+      "Document risk assessment in risk register",
+      "Escalate high and critical risks to AI Governance Committee"
+    ],
+    "evidence": [
+      "Risk Assessment Worksheets (per risk) (REC-AI-RM-007)",
+      "Risk Assessment Report (per AI system) (RPT-AI-RM-003)",
+      "Risk Prioritization Matrix (REC-AI-RM-008)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-006",
+    "name": "Bias and Discrimination Risk Assessment",
+    "type": "preventive",
+    "frequency": "Before training, after dataset updates, annually",
+    "riskLevel": "high",
+    "objective": "Specifically assess risks of bias and discrimination per EU AI Act Article 10(5) to prevent discriminatory outcomes and ensure fairness across all protected characteristics.",
+    "requirements": [
+      "Conduct bias risk assessment workshop",
+      "Analyze training data for bias",
+      "Calculate fairness metrics (see Appendix B)",
+      "Test for disparate impact",
+      "Document bias risks in risk register",
+      "Create mitigation plan for identified bias risks"
+    ],
+    "evidence": [
+      "Bias Risk Assessment Report (RPT-AI-RM-004)",
+      "Training Data Bias Analysis Report (RPT-AI-DATA-001)",
+      "Fairness Metrics Test Results (TEST-AI-RM-001)",
+      "Disparate Impact Analysis Report (RPT-AI-RM-005)",
+      "Bias Mitigation Plan"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-007",
+    "name": "Risk Treatment Strategy Selection",
+    "type": "preventive",
+    "frequency": "Per identified risk, after risk assessment",
+    "riskLevel": "high",
+    "objective": "Select and implement appropriate risk treatment strategies for each identified risk to reduce risks to acceptable levels, ensuring critical and high risks are properly mitigated before deployment.",
+    "requirements": [
+      "Review each risk in risk register",
+      "Select appropriate treatment strategy",
+      "Document treatment rationale",
+      "Obtain required approvals",
+      "Assign treatment owner and target date",
+      "Track treatment implementation",
+      "Block deployment if critical/high risks not treated"
+    ],
+    "evidence": [
+      "Risk Treatment Decision Records (REC-AI-RM-009)",
+      "Risk Treatment Plan (per AI system) (RPT-AI-RM-006)",
+      "Risk Treatment Approval Records (REC-AI-RM-010)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-008",
+    "name": "Risk Control Implementation",
+    "type": "preventive/detective/corrective",
+    "frequency": "Per mitigated risk, continuous operation",
+    "riskLevel": "high",
+    "objective": "Implement technical and organizational controls to mitigate identified risks, ensuring controls are designed, implemented, tested, and operational before deployment.",
+    "requirements": [
+      "Design controls for all mitigated risks",
+      "Implement controls before deployment",
+      "Test control effectiveness",
+      "Document controls in Controls Register",
+      "Link controls to risks in Risk Register",
+      "Train control operators",
+      "Monitor control operation continuously"
+    ],
+    "evidence": [
+      "Controls Register (REC-AI-CTRL-001)",
+      "Control Procedures (one per control) (PROC-AI-CTRL-XXX)",
+      "Control Testing Results (TEST-AI-CTRL-XXX)",
+      "Control Effectiveness Report (quarterly) (RPT-AI-CTRL-001)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-009",
+    "name": "Residual Risk Assessment",
+    "type": "detective",
+    "frequency": "After control implementation, before deployment",
+    "riskLevel": "high",
+    "objective": "Assess residual risk after control implementation and determine acceptability to ensure no unacceptable risks remain before deployment, protecting health, safety, and fundamental rights.",
+    "requirements": [
+      "Calculate residual risk for each mitigated risk",
+      "Assess residual risk acceptability",
+      "Obtain required approvals for acceptance",
+      "Document residual risk acceptance",
+      "Update risk register with residual risk scores",
+      "Block deployment if unacceptable residual risks remain"
+    ],
+    "evidence": [
+      "Residual Risk Assessment Records (REC-AI-RM-011)",
+      "Residual Risk Acceptance Records (REC-AI-RM-012)",
+      "Residual Risk Report (per AI system) (RPT-AI-RM-007)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-010",
+    "name": "Continuous Risk Monitoring",
+    "type": "detective",
+    "frequency": "Continuous, monthly reviews",
+    "riskLevel": "medium",
+    "objective": "Implement continuous monitoring of AI risks throughout the operational lifecycle to detect risk indicator threshold breaches, identify emerging risks, and enable timely risk response.",
+    "requirements": [
+      "Define risk indicators for each AI system",
+      "Implement automated monitoring",
+      "Set up alerting for threshold breaches",
+      "Review risk indicators monthly",
+      "Escalate threshold breaches per escalation criteria",
+      "Document monitoring results"
+    ],
+    "evidence": [
+      "Risk Monitoring Configuration (CFG-AI-RM-001)",
+      "Risk Indicator Monitoring Logs (REC-AI-RM-013)",
+      "Monthly Risk Monitoring Report (RPT-AI-RM-008)",
+      "Risk Threshold Breach Records (REC-AI-RM-014)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-011",
+    "name": "Periodic Risk Reviews",
+    "type": "detective",
+    "frequency": "Monthly, quarterly, annually, post-incident",
+    "riskLevel": "medium",
+    "objective": "Conduct periodic comprehensive risk reviews to ensure risk register remains current, controls remain effective, and emerging risks are identified and addressed.",
+    "requirements": [
+      "Schedule periodic risk reviews",
+      "Prepare risk review materials",
+      "Conduct risk review meetings",
+      "Document review outcomes",
+      "Track action items to completion",
+      "Update risk register based on review"
+    ],
+    "evidence": [
+      "Risk Review Meeting Minutes (REC-AI-RM-015)",
+      "Quarterly Risk Review Report (RPT-AI-RM-009)",
+      "Risk Review Action Item Tracker (REC-AI-RM-016)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-012",
+    "name": "Risk Management Effectiveness Assessment",
+    "type": "detective",
+    "frequency": "Annually",
+    "riskLevel": "medium",
+    "objective": "Assess the effectiveness of the AI risk management system annually to identify improvement opportunities, ensure continuous improvement, and demonstrate risk management maturity.",
+    "requirements": [
+      "Define effectiveness metrics",
+      "Collect metric data quarterly",
+      "Conduct annual effectiveness assessment",
+      "Report to AI Governance Committee",
+      "Implement improvement actions",
+      "Update risk management framework"
+    ],
+    "evidence": [
+      "Annual Risk Management Effectiveness Report (RPT-AI-RM-010)",
+      "Risk Management Metrics Dashboard (REC-AI-RM-017)",
+      "Risk Management Improvement Action Tracker (REC-AI-RM-018)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-013",
+    "name": "Risk Reporting",
+    "type": "detective",
+    "frequency": "Real-time, monthly, quarterly, annually, ad-hoc",
+    "riskLevel": "medium",
+    "objective": "Report AI risks to appropriate stakeholders per defined frequency and escalation criteria to ensure timely risk awareness, enable informed decision-making, and support regulatory compliance.",
+    "requirements": [
+      "Generate risk reports per schedule",
+      "Distribute reports to stakeholders",
+      "Escalate risks per criteria",
+      "Track escalation response",
+      "Archive risk reports (10-year retention)"
+    ],
+    "evidence": [
+      "Monthly Risk Report (RPT-AI-RM-011)",
+      "Quarterly Risk Report to AI Governance Committee (RPT-AI-RM-012)",
+      "Annual Risk Report to Board (RPT-AI-RM-013)",
+      "Risk Escalation Records (REC-AI-RM-019)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "RM-014",
+    "name": "Stakeholder Risk Communication",
+    "type": "preventive",
+    "frequency": "At deployment, continuous, as required",
+    "riskLevel": "medium",
+    "objective": "Communicate AI risks to relevant stakeholders including deployers, users, and affected persons to ensure transparency, enable informed use, and comply with EU AI Act transparency obligations.",
+    "requirements": [
+      "Develop stakeholder communication plan",
+      "Create communication materials",
+      "Deliver communications per plan",
+      "Track communication delivery",
+      "Update communications when risks change"
+    ],
+    "evidence": [
+      "Risk Communication Procedure (PROC-AI-RM-004)",
+      "Instructions for Use (per AI system) (TECH-AI-XXX)",
+      "Stakeholder Communication Records (REC-AI-RM-020)",
+      "Regulatory Risk Communications (CORR-AI-RM-001)"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

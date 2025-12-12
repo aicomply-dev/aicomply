@@ -1,0 +1,287 @@
+[
+  {
+    "id": "DOC-001",
+    "name": "Documentation Completeness",
+    "type": "preventive",
+    "frequency": "Per high-risk AI system, after substantial modifications",
+    "riskLevel": "high",
+    "objective": "Create complete technical documentation per Annex IV for all high-risk AI systems to demonstrate compliance with EU AI Act requirements and enable conformity assessment, in compliance with EU AI Act Article 11 and Annex IV.",
+    "requirements": [
+      "Use Annex IV template (TMPL-AI-DOC-001)",
+      "Complete all mandatory sections",
+      "Obtain technical reviews",
+      "Verify completeness against checklist",
+      "Obtain CTO approval",
+      "Block deployment if documentation incomplete"
+    ],
+    "evidence": [
+      "Complete technical documentation package",
+      "Annex IV completeness checklist (completed)",
+      "Review records",
+      "Approval signatures"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-002",
+    "name": "Documentation Quality",
+    "type": "preventive",
+    "frequency": "Per documentation package",
+    "riskLevel": "medium",
+    "objective": "Ensure technical documentation is clear, comprehensive, and accurate to enable effective use, support conformity assessment, and demonstrate compliance with EU AI Act requirements.",
+    "requirements": [
+      "Conduct technical peer review",
+      "Verify accuracy of technical details",
+      "Check consistency across sections",
+      "Validate all claims with evidence",
+      "Obtain quality approval",
+      "Block approval if quality criteria not met"
+    ],
+    "evidence": [
+      "Peer review records",
+      "Quality checklist (completed)",
+      "Accuracy verification records",
+      "Consistency review records",
+      "Traceability audit records",
+      "Evidence verification records",
+      "Approval records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-003",
+    "name": "Documentation Templates",
+    "type": "preventive",
+    "frequency": "Continuous use, annual review",
+    "riskLevel": "low",
+    "objective": "Use standardized templates aligned with Annex IV structure to ensure consistent, complete documentation across all high-risk AI systems and facilitate compliance verification.",
+    "requirements": [
+      "Maintain Annex IV documentation template (TMPL-AI-DOC-001)",
+      "Update template with regulatory changes",
+      "Train staff on template use",
+      "Enforce template usage (mandatory for high-risk AI)",
+      "Review template effectiveness annually",
+      "Version control template changes"
+    ],
+    "evidence": [
+      "Annex IV Documentation Template (TMPL-AI-DOC-001)",
+      "Template version history",
+      "Template usage records",
+      "Training records",
+      "Annual template reviews",
+      "Template update approvals"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-004",
+    "name": "Documentation Updates",
+    "type": "preventive",
+    "frequency": "As triggered by changes",
+    "riskLevel": "medium",
+    "objective": "Update technical documentation when changes occur to AI system to maintain accuracy and compliance throughout the AI system lifecycle, ensuring documentation reflects current system state.",
+    "requirements": [
+      "Monitor for update triggers",
+      "Assess documentation impact",
+      "Update affected sections",
+      "Maintain version history",
+      "Obtain approval for updates",
+      "Communicate changes to stakeholders",
+      "Update within 30 days of change"
+    ],
+    "evidence": [
+      "Change log",
+      "Updated documentation (versioned)",
+      "Impact assessments",
+      "Approval records",
+      "Stakeholder communications",
+      "Update completion records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-005",
+    "name": "Version Control",
+    "type": "detective",
+    "frequency": "Per documentation update",
+    "riskLevel": "medium",
+    "objective": "Maintain comprehensive version control for all technical documentation to enable traceability, support audits, and ensure ability to retrieve historical versions for compliance and troubleshooting.",
+    "requirements": [
+      "Assign version numbers systematically",
+      "Document changes in version log",
+      "Store all versions securely",
+      "Enable version retrieval",
+      "Track approval status",
+      "Maintain 10-year retention",
+      "Archive old versions per retention policy"
+    ],
+    "evidence": [
+      "Version control log",
+      "All documentation versions (stored)",
+      "Change descriptions",
+      "Approval tracking records",
+      "Version retrieval capability verification"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-006",
+    "name": "Annual Documentation Review",
+    "type": "detective",
+    "frequency": "Annually",
+    "riskLevel": "medium",
+    "objective": "Review all technical documentation annually for currency and accuracy to ensure documentation remains current, accurate, and compliant with evolving regulations and system changes.",
+    "requirements": [
+      "Schedule annual reviews (within 12 months of last review)",
+      "Review each Annex IV section systematically",
+      "Verify accuracy against current system",
+      "Update outdated information",
+      "Confirm compliance with current regulations",
+      "Document review results",
+      "Obtain approval",
+      "Update documentation if needed"
+    ],
+    "evidence": [
+      "Annual review schedule",
+      "Review checklists (completed)",
+      "Review findings",
+      "Updates made (if any)",
+      "Approval records",
+      "Review completion certificates"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-007",
+    "name": "Secure Storage",
+    "type": "preventive",
+    "frequency": "Continuous",
+    "riskLevel": "high",
+    "objective": "Store technical documentation securely with appropriate access controls to protect sensitive information, ensure availability, and comply with retention requirements per EU AI Act Article 18.",
+    "requirements": [
+      "Store documentation in approved system",
+      "Configure access controls",
+      "Enable encryption (at rest and in transit)",
+      "Implement backup procedures (daily backups)",
+      "Log all access",
+      "Enforce retention policy (10 years)",
+      "Test disaster recovery annually"
+    ],
+    "evidence": [
+      "Document management system records",
+      "Access control configuration",
+      "Encryption verification records",
+      "Backup logs",
+      "Disaster recovery test results",
+      "Access audit trail",
+      "Retention compliance records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-008",
+    "name": "Access Management",
+    "type": "preventive",
+    "frequency": "Continuous, quarterly reviews",
+    "riskLevel": "medium",
+    "objective": "Provide appropriate access to technical documentation per Article 53 to enable authorized access while protecting sensitive information and ensuring regulatory compliance.",
+    "requirements": [
+      "Define access roles and permissions",
+      "Grant access based on role",
+      "Review access quarterly",
+      "Revoke access when no longer needed",
+      "Log all access requests",
+      "Respond to authority requests within 5 days",
+      "Document all access grants/revocations"
+    ],
+    "evidence": [
+      "Access control matrix",
+      "Access grant/revoke records",
+      "Quarterly access reviews",
+      "Access logs",
+      "Authority request responses",
+      "Access review reports"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-009",
+    "name": "Documentation Availability",
+    "type": "preventive",
+    "frequency": "As requested",
+    "riskLevel": "high",
+    "objective": "Ensure technical documentation is available to competent authorities upon request per Article 53 to enable regulatory oversight and demonstrate compliance.",
+    "requirements": [
+      "Maintain documentation in accessible format",
+      "Respond to authority requests promptly",
+      "Provide complete documentation package",
+      "Track all requests and responses",
+      "Ensure language requirements met",
+      "Coordinate with legal team",
+      "Document all interactions"
+    ],
+    "evidence": [
+      "Authority request log",
+      "Response records",
+      "Documentation packages provided",
+      "Response time tracking",
+      "Language compliance verification",
+      "Legal coordination records"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  },
+  {
+    "id": "DOC-010",
+    "name": "Documentation Review and Approval",
+    "type": "preventive",
+    "frequency": "Per documentation package/update",
+    "riskLevel": "high",
+    "objective": "Ensure all technical documentation is reviewed and approved before use to verify quality, accuracy, completeness, and regulatory compliance.",
+    "requirements": [
+      "Assign qualified technical reviewers",
+      "Conduct detailed technical review",
+      "Document findings",
+      "Address all findings",
+      "Obtain reviewer sign-off",
+      "Submit to legal review",
+      "Address legal findings",
+      "Obtain legal approval",
+      "Route for appropriate approvals",
+      "Obtain all required signatures",
+      "Block use until approved"
+    ],
+    "evidence": [
+      "Technical review checklist",
+      "Review findings log",
+      "Resolution records",
+      "Reviewer sign-off",
+      "Legal review records",
+      "Compliance verification",
+      "Legal approval",
+      "Approval records",
+      "Signature log",
+      "Approval workflow tracking"
+    ],
+    "auditVerification": [],
+    "status": "not_started",
+    "progress": 0
+  }
+]

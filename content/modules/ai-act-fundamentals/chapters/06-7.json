@@ -1,0 +1,139 @@
+{
+  "id": 7,
+  "title": "Module 1 Knowledge Check",
+  "description": "Test your understanding of AI Act fundamentals.",
+  "type": "quiz",
+  "duration": 15,
+  "questions": [
+    {
+      "id": 1,
+      "question": "When did the EU AI Act enter into force?",
+      "type": "mcq",
+      "options": [
+        "January 2024",
+        "August 2024",
+        "January 2025",
+        "August 2025"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The EU AI Act entered into force on 1 August 2024, 20 days after its publication in the Official Journal on 12 July 2024."
+    },
+    {
+      "id": 2,
+      "question": "What approach does the AI Act take to regulation?",
+      "type": "mcq",
+      "options": [
+        "One-size-fits-all",
+        "Risk-based",
+        "Sector-specific",
+        "Self-regulatory"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The AI Act takes a risk-based approach, with requirements proportionate to the level of risk posed by the AI system."
+    },
+    {
+      "id": 3,
+      "question": "A US company's AI system is used by EU customers. Does the AI Act apply?",
+      "type": "mcq",
+      "options": [
+        "No, the company is outside the EU",
+        "Yes, if the output is used in the EU",
+        "Only if they have an EU office",
+        "Only for high-risk systems"
+      ],
+      "correctAnswer": 1,
+      "explanation": "The AI Act applies to providers outside the EU where the output of the AI system is used in the EU (Article 2(1)(c))."
+    },
+    {
+      "id": 4,
+      "question": "Which entity has the most extensive obligations under the AI Act?",
+      "type": "mcq",
+      "options": [
+        "Deployer",
+        "Importer",
+        "Provider",
+        "Distributor"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Providers (who develop AI systems or have them developed and place them on the market under their own name) bear the most extensive obligations including conformity assessment, technical documentation, and quality management."
+    },
+    {
+      "id": 5,
+      "question": "Which of these is a prohibited AI practice under Article 5?",
+      "type": "mcq",
+      "options": [
+        "AI-powered customer service chatbots",
+        "AI systems that infer emotions in the workplace",
+        "AI-based credit scoring systems",
+        "AI for weather prediction"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 5(1)(f) prohibits AI systems to infer emotions in workplace and education settings, except for medical or safety reasons."
+    },
+    {
+      "id": 6,
+      "question": "What is the maximum penalty for deploying prohibited AI?",
+      "type": "mcq",
+      "options": [
+        "\u20ac7.5 million or 1.5% turnover",
+        "\u20ac15 million or 3% turnover",
+        "\u20ac35 million or 7% turnover",
+        "\u20ac50 million or 10% turnover"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 99 establishes the highest penalty tier for prohibited practices: up to \u20ac35 million or 7% of total worldwide annual turnover, whichever is higher."
+    },
+    {
+      "id": 7,
+      "question": "When do prohibitions under Article 5 take effect?",
+      "type": "mcq",
+      "options": [
+        "August 1, 2024",
+        "February 2, 2025",
+        "August 2, 2025",
+        "August 2, 2026"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 113(3)(a) specifies that Chapters I and II (including Article 5 prohibitions) apply from February 2, 2025."
+    },
+    {
+      "id": 8,
+      "question": "Which of these AI use cases would be classified as high-risk under Annex III?",
+      "type": "mcq",
+      "options": [
+        "AI-powered video game NPCs",
+        "AI for recruitment and HR decision-making",
+        "AI-generated music playlists",
+        "AI spam filters for email"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Annex III Section 4 specifically lists AI systems for employment, including recruitment, job application filtering, and HR decisions as high-risk applications."
+    },
+    {
+      "id": 9,
+      "question": "When must GPAI (General-Purpose AI) providers comply with their obligations?",
+      "type": "mcq",
+      "options": [
+        "February 2, 2025",
+        "August 2, 2025",
+        "August 2, 2026",
+        "August 2, 2027"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 113(3)(b) specifies that Chapter V (GPAI model obligations) applies from August 2, 2025."
+    },
+    {
+      "id": 10,
+      "question": "How many risk tiers does the AI Act define?",
+      "type": "mcq",
+      "options": [
+        "Two (permitted and prohibited)",
+        "Three (low, medium, high)",
+        "Four (prohibited, high, limited, minimal)",
+        "Five (banned, critical, high, medium, low)"
+      ],
+      "correctAnswer": 2,
+      "explanation": "The AI Act defines four risk tiers: prohibited (banned entirely), high-risk (extensive requirements), limited risk (transparency obligations), and minimal risk (no mandatory requirements)."
+    }
+  ]
+}

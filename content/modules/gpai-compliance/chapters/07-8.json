@@ -1,0 +1,113 @@
+{
+  "id": 8,
+  "title": "Module 3 Assessment",
+  "description": "Test your understanding of GPAI compliance requirements.",
+  "type": "quiz",
+  "duration": 15,
+  "questions": [
+    {
+      "id": 1,
+      "question": "When do GPAI obligations come into effect?",
+      "type": "mcq",
+      "options": [
+        "February 2, 2025",
+        "August 2, 2025",
+        "August 2, 2026",
+        "August 2, 2027"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 113(3)(b) specifies that Chapter V (GPAI obligations) applies from August 2, 2025."
+    },
+    {
+      "id": 2,
+      "question": "What computational threshold creates a presumption of systemic risk?",
+      "type": "mcq",
+      "options": [
+        "10^20 FLOPS",
+        "10^23 FLOPS",
+        "10^25 FLOPS",
+        "10^28 FLOPS"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 51 establishes that 10^25 FLOPS (cumulative training compute) creates a presumption of systemic risk."
+    },
+    {
+      "id": 3,
+      "question": "What must all GPAI providers make publicly available?",
+      "type": "mcq",
+      "options": [
+        "Full model weights",
+        "Training data summary",
+        "Source code",
+        "Customer list"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 53(1)(d) requires GPAI providers to make publicly available a sufficiently detailed summary of training data content."
+    },
+    {
+      "id": 4,
+      "question": "What type of testing is required for systemic risk GPAI models?",
+      "type": "mcq",
+      "options": [
+        "Unit testing only",
+        "Performance benchmarks only",
+        "State-of-the-art adversarial testing",
+        "Customer satisfaction surveys"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 55(1)(a) requires providers of systemic risk GPAI models to perform model evaluations including state-of-the-art adversarial testing."
+    },
+    {
+      "id": 5,
+      "question": "Who develops codes of practice for GPAI compliance?",
+      "type": "mcq",
+      "options": [
+        "Only the Commission",
+        "Only GPAI providers",
+        "AI Office with stakeholder involvement",
+        "National authorities only"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 56 provides for codes of practice developed with AI Office encouragement and stakeholder involvement including providers, civil society, and scientific community."
+    },
+    {
+      "id": 6,
+      "question": "Can downstream providers delegate their AI Act obligations to GPAI providers?",
+      "type": "mcq",
+      "options": [
+        "Yes, completely",
+        "Yes, for documentation only",
+        "No, they have independent obligations",
+        "Only for systemic risk models"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Downstream providers cannot delegate away responsibility. When integrating GPAI models, they become responsible for the integrated AI system and must conduct their own conformity assessment if high-risk."
+    },
+    {
+      "id": 7,
+      "question": "When must existing GPAI models comply with new obligations?",
+      "type": "mcq",
+      "options": [
+        "Immediately upon entry into force",
+        "August 2, 2025",
+        "August 2, 2027",
+        "Never for existing models"
+      ],
+      "correctAnswer": 2,
+      "explanation": "Article 111 provides that GPAI models placed on market before August 2, 2025 must comply with new obligations by August 2, 2027."
+    },
+    {
+      "id": 8,
+      "question": "What must GPAI providers include in their copyright policy?",
+      "type": "mcq",
+      "options": [
+        "Only licensing fees",
+        "TDM opt-out compliance",
+        "User agreements only",
+        "No copyright requirements exist"
+      ],
+      "correctAnswer": 1,
+      "explanation": "Article 53(1)(c) requires GPAI providers to put in place a policy to comply with Union copyright law, including identifying and respecting text and data mining opt-outs."
+    }
+  ]
+}
