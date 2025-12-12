@@ -4,6 +4,7 @@ import { Inter, Geist_Mono } from "next/font/google"
 import { ErrorBoundary } from "@/components/error-boundary"
 import { AuthProvider } from "@/components/providers/auth-provider"
 import { CookieConsent } from "@/components/cookie-consent"
+import { GoogleAnalytics } from "@/components/google-analytics"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <GoogleAnalytics measurementId="G-FGJZMH09SE" />
         <AuthProvider>
           <ErrorBoundary>
             {children}
