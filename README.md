@@ -1,13 +1,51 @@
-# AI Comply - EU AI Act Compliance Platform
+<div align="center">
 
-Open-source platform for understanding, assessing, implementing, and delivering EU AI Act compliance.
+# AI Comply
 
-## 🚀 Quick Start
+### Open-Source EU AI Act Compliance Platform
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue)](https://www.typescriptlang.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-336791)](https://www.postgresql.org/)
+
+**[Live Demo](https://aicomply.dev)** · **[Report Bug](https://github.com/aicomply-dev/aicomply/issues)** · **[Request Feature](https://github.com/aicomply-dev/aicomply/issues)**
+
+</div>
+
+---
+
+## Overview
+
+AI Comply is a comprehensive open-source platform designed to help organizations understand, assess, and implement compliance with the **EU AI Act (Regulation 2024/1689)**. Built for organizations of all sizes, it provides structured guidance through the entire compliance journey.
+
+### Key Features
+
+- **📚 Understand** — Interactive learning modules, full EU AI Act text, glossary, FAQ, and global regulations comparison
+- **🔍 Assess** — AI system inventory, risk classification wizard, compliance assessments, gap analysis
+- **⚙️ Implement** — Policy frameworks, 14 standards, 114+ controls, procedures, checklists, forms, and records
+
+---
+
+## Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **Framework** | Next.js 16 (App Router, Turbopack) |
+| **Language** | TypeScript 5.7 |
+| **Database** | PostgreSQL 16 + Drizzle ORM |
+| **UI** | React 19, Tailwind CSS 4, shadcn/ui |
+| **Auth** | NextAuth.js (Google, GitHub OAuth) |
+| **Testing** | Vitest |
+
+---
+
+## Getting Started
 
 ### Prerequisites
 
-- **Bun 1.2+** (recommended) or **Node.js 18+**
-- SQLite (included, no separate installation needed)
+- **Node.js 18+** (or Bun 1.2+)
+- **PostgreSQL 16+**
 
 ### Installation
 
@@ -17,33 +55,45 @@ git clone https://github.com/aicomply-dev/aicomply.git
 cd aicomply
 
 # Install dependencies
-bun install
+npm install
+
+# Configure environment
+cp .env.example .env.local
+# Edit .env.local with your database and OAuth credentials
 
 # Setup database
-bun run db:generate    # Generate migrations from schema
-bun run db:migrate     # Apply migrations to create database
-bun run db:seed       # Populate with demo data
+npm run db:generate    # Generate migrations
+npm run db:migrate     # Apply migrations
+npm run db:seed        # Seed with demo data
 
-# Or reset and seed in one command
-bun run db:reset
-
-# Run development server
-bun run dev
+# Start development server
+npm run dev
 ```
 
 Visit `http://localhost:3000` to see the application.
 
-### Alternative with npm/pnpm
+### Environment Variables
+
+Create a `.env.local` file based on `.env.example`:
 
 ```bash
-npm install
-# or
-pnpm install
+# Database
+DATABASE_URL="postgresql://user:password@localhost:5432/aicomply"
 
-npm run dev
+# NextAuth
+NEXTAUTH_SECRET="your-secret-key"
+NEXTAUTH_URL="http://localhost:3000"
+
+# OAuth Providers (optional)
+GOOGLE_CLIENT_ID="your-google-client-id"
+GOOGLE_CLIENT_SECRET="your-google-client-secret"
+GITHUB_CLIENT_ID="your-github-client-id"
+GITHUB_CLIENT_SECRET="your-github-client-secret"
 ```
 
-## 📁 Project Structure
+---
+
+## Project Structure
 
 ```
 src/
@@ -51,159 +101,88 @@ src/
 │   ├── understand/         # Learning modules
 │   ├── assess/             # Assessment workflows
 │   ├── implement/          # Compliance implementation
-│   └── deliver/            # Documentation & certificates
+│   └── resources/          # Regulation text, glossary, FAQ
 ├── components/             # React components
 │   ├── ui/                 # shadcn/ui components
-│   └── [custom]/          # Business logic components
+│   └── [feature]/          # Feature-specific components
 ├── lib/
-│   ├── actions/           # Server actions (data mutations)
-│   ├── data/              # Static data & markdown content
-│   │   ├── guides/        # Procedure guides
-│   │   └── regulation/    # EU AI Act text
-│   ├── db/                # Database schema & connection
-│   ├── constants.ts       # Application constants
-│   └── errors.ts          # Error types & Result pattern
-└── hooks/                 # React hooks
+│   ├── actions/            # Server actions
+│   ├── data/               # Static content (regulations, guides)
+│   ├── db/                 # Database schema & queries
+│   └── auth/               # Authentication utilities
+└── content/                # Markdown content & assessments
 ```
-
-## 🧪 Testing
-
-```bash
-# Run tests
-bun test
-
-# Run with coverage
-bun test:coverage
-
-# UI mode (interactive)
-bun test:ui
-```
-
-## 🛠️ Tech Stack
-
-- **Framework:** Next.js 16 (App Router)
-- **Language:** TypeScript 5.7
-- **Database:** SQLite + Drizzle ORM
-- **UI:** React 19 + shadcn/ui + Tailwind CSS 4
-- **Runtime:** Bun (or Node.js)
-
-## 🎯 Features
-
-### 1. Understand
-- Interactive learning modules
-- Full EU AI Act regulation text
-- Glossary with official definitions
-- FAQ section
-
-### 2. Assess
-- AI system inventory management
-- Risk classification wizard
-- Comprehensive compliance assessments
-- Gap analysis and remediation tracking
-
-### 3. Implement
-- Policy framework
-- Standards library (14 standards)
-- Compliance controls (114+ controls)
-- Procedure guides and templates
-
-### 4. Deliver
-- Technical documentation generation
-- Compliance certificates
-- Audit reports
-- Export packages
-
-## 📚 Documentation
-
-- [Database Setup Guide](./DATABASE_SETUP.md) - How to set up and seed the database with demo data
-- Additional documentation available in `.temp/docs/` directory
-
-## 🔧 Development
-
-### Database Setup
-
-```bash
-# Generate migrations from schema changes
-bun run db:generate
-
-# Apply migrations (creates empty database)
-bun run db:migrate
-
-# Seed database with demo data (10 AI systems, requirements, gap analysis)
-bun run db:seed
-
-# Reset database (delete and recreate with demo data)
-bun run db:reset
-
-# View database in Drizzle Studio
-bun run db:studio
-
-# Export current database to SQL file
-bun run db:export
-
-# Import database from SQL file
-bun run db:import [path-to-sql-file]
-```
-
-**Note:** The database file (`sqlite.db`) is gitignored. Each developer/clone needs to run migrations and seed to get demo data.
-
-### Code Style
-
-The project uses:
-- TypeScript with strict mode
-- ESLint for linting
-- Prettier for formatting (recommended)
-
-### Environment Variables
-
-Currently, the project uses a demo organization (`demo-org`) by default. No environment variables are required for the demo version.
-
-**Optional Environment Variables:**
-- `NEXT_PUBLIC_BASE_URL` - Base URL for metadata and OpenGraph tags (defaults to `https://aicomply.dev`)
-- `VERCEL_URL` - Automatically used if available (Vercel deployment)
-
-### Database Setup
-
-See [DATABASE_SETUP.md](./DATABASE_SETUP.md) for complete instructions.
-
-**Quick setup:**
-```bash
-bun run db:reset  # Creates database and seeds with demo data
-```
-
-**Manual setup:**
-```bash
-bun run db:migrate  # Create database schema
-bun run db:seed     # Populate with demo data
-```
-
-## 🤝 Contributing
-
-Contributions are welcome! Please:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-MIT License - see LICENSE file for details
-
-## 🙏 Acknowledgments
-
-**Created by:** [Daniel Minda](https://www.linkedin.com/in/danielm7)
-
-- [LinkedIn](https://www.linkedin.com/in/danielm7) | [X/Twitter](https://x.com/mndaniel78)
-- Built for EU AI Act (Regulation 2024/1689) compliance
-- Open-source and community-driven
-- Special thanks to all contributors who help improve this platform
-
-## 📞 Support
-
-For issues, questions, or contributions, please open an issue on GitHub.
 
 ---
 
-**Note:** This is a demo/open-source version. Authentication and multi-tenancy features are disabled for easy setup and demonstration.
+## Database Commands
+
+```bash
+npm run db:generate   # Generate migrations from schema
+npm run db:migrate    # Apply migrations
+npm run db:seed       # Seed with demo data
+npm run db:studio     # Open Drizzle Studio (database GUI)
+```
+
+---
+
+## Testing
+
+```bash
+npm test              # Run tests
+npm run test:ui       # Interactive UI mode
+npm run test:coverage # With coverage report
+```
+
+---
+
+## Deployment
+
+The application is designed for deployment on any Node.js hosting platform:
+
+- **Vercel** — Zero-config deployment
+- **Railway** — PostgreSQL included
+- **Docker** — Self-hosted option
+- **VPS** — Traditional deployment
+
+Ensure your production environment has:
+- PostgreSQL database
+- Environment variables configured
+- OAuth callback URLs updated for your domain
+
+---
+
+## Contributing
+
+Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) before submitting a PR.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+---
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## Author
+
+**Daniel Minda**
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-danielm7-blue?logo=linkedin)](https://www.linkedin.com/in/danielm7)
+[![Twitter](https://img.shields.io/badge/Twitter-mndaniel78-blue?logo=x)](https://x.com/mndaniel78)
+
+---
+
+<div align="center">
+
+**Built for EU AI Act (Regulation 2024/1689) compliance**
+
+⭐ Star this repo if you find it useful!
+
+</div>
