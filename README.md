@@ -3,6 +3,7 @@
 # AI Comply
 
 ### Open-Source EU AI Act Compliance Platform
+<img width="1372" height="874" alt="image" src="https://github.com/user-attachments/assets/ca0eaab7-3944-4945-a0cb-90247ca07a2e" />
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
