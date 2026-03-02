@@ -104,6 +104,7 @@ export function MarkdownRenderer({
         components={mdxComponents}
         options={{
           mdxOptions: {
+            format: 'md',
             remarkPlugins: [remarkGfm],
             rehypePlugins: [
               rehypeSlug,
