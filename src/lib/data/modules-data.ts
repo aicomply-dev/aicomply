@@ -14,16 +14,14 @@
  * Legacy backup: .archive/legacy-data/modules-data.ts.backup (11,526 lines)
  */
 
-import type { LocalizedString } from './modules-translations'
-
 // ============================================
 // TYPE DEFINITIONS
 // ============================================
 
 export interface Chapter {
   id: number | string
-  title: string | LocalizedString
-  description: string | LocalizedString
+  title: string
+  description: string
   type: "video" | "lesson" | "quiz"
   duration: number
   content?: string
@@ -42,8 +40,8 @@ export interface QuizQuestion {
 
 export interface ModuleData {
   slug: string
-  title: string | LocalizedString
-  description: string | LocalizedString
+  title: string
+  description: string
   category: string
   difficulty: string
   duration: number
