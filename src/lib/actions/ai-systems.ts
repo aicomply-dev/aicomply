@@ -6,20 +6,28 @@ import { aiSystem } from "@/lib/db/schema"
 import { desc, eq, and } from "drizzle-orm"
 import { nanoid } from "nanoid"
 import { requireAuth } from "@/lib/auth/require-auth"
+import { logger } from "@/lib/logger"
+import { createAiSystemSchema, updateAiSystemSchema, saveAiSystemRolesSchema } from "@/lib/validators/ai-system"
 
 export async function createAiSystem(formData: FormData) {
   // Require authentication
   const session = await requireAuth()
 
-  const name = formData.get("name") as string
-  const description = formData.get("description") as string
-  const vendor = formData.get("vendor") as string
-  const category = formData.get("category") as string
-  const department = formData.get("department") as string
-
-  if (!name) {
-    return { error: "Name is required" }
+  // Extract and validate input
+  const rawInput = {
+    name: formData.get("name") as string,
+    description: formData.get("description") as string || undefined,
+    vendor: formData.get("vendor") as string || undefined,
+    category: formData.get("category") as string || undefined,
+    department: formData.get("department") as string || undefined,
   }
+
+  const validation = createAiSystemSchema.safeParse(rawInput)
+  if (!validation.success) {
+    return { error: validation.error.errors[0]?.message || "Invalid input" }
+  }
+
+  const { name, description, vendor, category, department } = validation.data
 
   try {
     const now = new Date()
@@ -44,7 +52,7 @@ export async function createAiSystem(formData: FormData) {
     revalidatePath("/assess")
     return { success: true, id }
   } catch (error) {
-    console.error("Failed to create AI system:", error)
+    logger.error("Failed to create AI system:", error)
     return { error: "Failed to create AI system" }
   }
 }
@@ -61,7 +69,7 @@ export async function getAiSystems() {
 
     return systems
   } catch (error) {
-    console.error("Failed to get AI systems:", error)
+    logger.error("Failed to get AI systems:", error)
     return []
   }
 }
@@ -82,7 +90,7 @@ export async function getAiSystemStats() {
 
     return { total, highRisk, compliant, pending }
   } catch (error) {
-    console.error("Failed to get AI system stats:", error)
+    logger.error("Failed to get AI system stats:", error)
     return { total: 0, highRisk: 0, compliant: 0, pending: 0 }
   }
 }
@@ -96,7 +104,7 @@ export async function getAiSystemById(id: string) {
     })
     return system || null
   } catch (error) {
-    console.error("Failed to get AI system:", error)
+    logger.error("Failed to get AI system:", error)
     return null
   }
 }
@@ -125,7 +133,7 @@ export async function updateAiSystem(id: string, data: {
     revalidatePath(`/assess/inventory/${id}`)
     return { success: true }
   } catch (error) {
-    console.error("Failed to update AI system:", error)
+    logger.error("Failed to update AI system:", error)
     return { error: "Failed to update AI system" }
   }
 }
@@ -138,7 +146,7 @@ export async function deleteAiSystem(id: string) {
     revalidatePath("/assess/inventory")
     return { success: true }
   } catch (error) {
-    console.error("Failed to delete AI system:", error)
+    logger.error("Failed to delete AI system:", error)
     return { error: "Failed to delete AI system" }
   }
 }
@@ -171,7 +179,7 @@ export async function saveAiSystemRoles(
     revalidatePath(`/assess/requirements/${id}`)
     return { success: true }
   } catch (error) {
-    console.error("Failed to save AI system roles:", error)
+    logger.error("Failed to save AI system roles:", error)
     return { error: "Failed to save AI system roles" }
   }
 }
@@ -199,7 +207,7 @@ export async function updateAiSystemRiskLevel(
     revalidatePath("/assess/requirements")
     return { success: true }
   } catch (error) {
-    console.error("Failed to update AI system risk level:", error)
+    logger.error("Failed to update AI system risk level:", error)
     return { error: "Failed to update AI system risk level" }
   }
 }
@@ -227,7 +235,7 @@ export async function updateAiSystemRole(
     revalidatePath("/assess/requirements")
     return { success: true }
   } catch (error) {
-    console.error("Failed to update AI system role:", error)
+    logger.error("Failed to update AI system role:", error)
     return { error: "Failed to update AI system role" }
   }
 }
@@ -248,7 +256,7 @@ export async function getHighRiskAiSystems() {
       s.riskLevel === "high" || s.riskLevel === "prohibited"
     )
   } catch (error) {
-    console.error("Failed to get high-risk AI systems:", error)
+    logger.error("Failed to get high-risk AI systems:", error)
     return []
   }
 }
@@ -267,7 +275,7 @@ export async function getAiSystemsWithRoles() {
 
     return systems.filter(s => s.operatorRole !== null)
   } catch (error) {
-    console.error("Failed to get AI systems with roles:", error)
+    logger.error("Failed to get AI systems with roles:", error)
     return []
   }
 }
@@ -294,7 +302,7 @@ export async function getAiSystemsByRoleSummary() {
 
     return summary
   } catch (error) {
-    console.error("Failed to get AI systems by role summary:", error)
+    logger.error("Failed to get AI systems by role summary:", error)
     return {
       provider: 0,
       deployer: 0,

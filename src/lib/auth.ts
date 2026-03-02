@@ -7,15 +7,16 @@ import { user, account, session as sessionTable, verificationToken, organization
 import { eq } from "drizzle-orm"
 import { nanoid } from "nanoid"
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export const authOptions: NextAuthOptions = {
-  // Temporarily disable database adapter to test OAuth flow
-  // adapter: DrizzleAdapter(db, {
-  //   usersTable: user,
-  //   accountsTable: account,
-  //   sessionsTable: sessionTable,
-  //   verificationTokensTable: verificationToken,
-  // }),
-  debug: process.env.NODE_ENV === 'development',
+  adapter: DrizzleAdapter(db, {
+    usersTable: user,
+    accountsTable: account,
+    sessionsTable: sessionTable,
+    verificationTokensTable: verificationToken,
+  }),
+  debug: isDev,
   session: {
     strategy: "jwt",
   },
@@ -23,12 +24,10 @@ export const authOptions: NextAuthOptions = {
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-      allowDangerousEmailAccountLinking: true,
     }),
     GitHubProvider({
       clientId: process.env.GITHUB_CLIENT_ID || "",
       clientSecret: process.env.GITHUB_CLIENT_SECRET || "",
-      allowDangerousEmailAccountLinking: true,
     }),
   ],
   callbacks: {
@@ -41,12 +40,10 @@ export const authOptions: NextAuthOptions = {
       // Default to dashboard
       return `${baseUrl}/dashboard`
     },
-    async signIn({ user: authUser, account: authAccount, profile }) {
-      console.log("🔍 SignIn callback called:", {
-        provider: authAccount?.provider,
-        email: authUser.email,
-        name: authUser.name
-      })
+    async signIn({ user: authUser, account: authAccount }) {
+      if (isDev) {
+        console.log("SignIn callback:", { provider: authAccount?.provider, email: authUser.email })
+      }
 
       // For OAuth providers, ensure user has an organization
       if (authAccount?.provider !== "credentials") {
@@ -54,8 +51,6 @@ export const authOptions: NextAuthOptions = {
           const existingUser = await db.query.user.findFirst({
             where: eq(user.email, authUser.email!)
           })
-
-          console.log("🔍 Existing user found:", existingUser ? "Yes" : "No")
 
           // If user exists but has no organization, create one
           if (existingUser && !existingUser.organizationId) {
@@ -77,10 +72,10 @@ export const authOptions: NextAuthOptions = {
               })
               .where(eq(user.id, existingUser.id))
           }
-          // If user doesn't exist, the adapter will create them,
-          // and we'll handle organization creation in the session callback
         } catch (error) {
-          console.error('❌ Error in signIn callback:', error)
+          if (isDev) {
+            console.error('Error in signIn callback:', error)
+          }
           // Allow sign-in to continue even if organization creation fails
           return true
         }
@@ -88,12 +83,9 @@ export const authOptions: NextAuthOptions = {
       return true
     },
     async jwt({ token, user: authUser, account: authAccount }) {
-      console.log("🔍 JWT callback called:", {
-        hasToken: !!token,
-        hasUser: !!authUser,
-        hasAccount: !!authAccount,
-        provider: authAccount?.provider
-      })
+      if (isDev) {
+        console.log("JWT callback:", { hasUser: !!authUser, provider: authAccount?.provider })
+      }
 
       if (authUser) {
         token.userId = authUser.id
@@ -101,25 +93,23 @@ export const authOptions: NextAuthOptions = {
         token.name = authUser.name
         token.image = authUser.image
 
-        // Fetch organizationId from database, default to demo-org for demo purposes
+        // Fetch organizationId from database
         try {
           const dbUser = await db.query.user.findFirst({
             where: eq(user.email, authUser.email!)
           })
-          // Use demo-org as default for OAuth users without a user record
-          token.organizationId = dbUser?.organizationId || "demo-org"
-        } catch {
-          token.organizationId = "demo-org"
+          if (dbUser?.organizationId) {
+            token.organizationId = dbUser.organizationId
+          }
+        } catch (error) {
+          if (isDev) {
+            console.error('Error fetching user organization:', error)
+          }
         }
       }
       return token
     },
     async session({ session: authSession, token }) {
-      console.log("🔍 Session callback called:", {
-        sessionExists: !!authSession,
-        hasToken: !!token
-      })
-
       if (token && authSession.user) {
         authSession.user.id = token.userId as string
         authSession.user.email = token.email as string

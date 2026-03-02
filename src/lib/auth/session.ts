@@ -16,16 +16,12 @@ export interface Session {
   }
 }
 
+const isDev = process.env.NODE_ENV === 'development'
+
 export async function getSession(): Promise<Session | null> {
   try {
     // First try NextAuth session (for OAuth users)
-    console.log("🔍 getSession: Checking NextAuth session...")
     const nextAuthSession = await getServerSession(authOptions)
-    console.log("🔍 getSession: NextAuth session result:", {
-      hasSession: !!nextAuthSession,
-      hasUser: !!nextAuthSession?.user,
-      email: nextAuthSession?.user?.email
-    })
 
     if (nextAuthSession?.user) {
       return {

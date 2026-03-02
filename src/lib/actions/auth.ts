@@ -1,6 +1,7 @@
 "use server"
 
 import { db } from "@/lib/db"
+import { logger } from "@/lib/logger"
 import { user, organization } from "@/lib/db/schema"
 import { eq } from "drizzle-orm"
 import { hashPassword, verifyPassword, validatePassword } from "@/lib/auth/password"
@@ -57,7 +58,7 @@ export async function loginUser(data: LoginData) {
 
     return { success: true }
   } catch (error) {
-    console.error("Failed to login user:", error)
+    logger.error("Failed to login user:", error)
     return { error: "An unexpected error occurred" }
   }
 }
@@ -125,7 +126,7 @@ export async function registerUser(data: RegisterData) {
 
     return { success: true }
   } catch (error) {
-    console.error("Failed to register user:", error)
+    logger.error("Failed to register user:", error)
     return { error: "An unexpected error occurred" }
   }
 }
@@ -134,7 +135,7 @@ export async function logoutUser() {
   try {
     await destroySession()
   } catch (error) {
-    console.error("Failed to logout user:", error)
+    logger.error("Failed to logout user:", error)
   }
 
   redirect("/auth/login")

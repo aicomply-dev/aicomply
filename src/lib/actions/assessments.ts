@@ -1,5 +1,5 @@
 "use server"
-
+import { logger } from "@/lib/logger"
 import { revalidatePath } from "next/cache"
 import { existsSync, readFileSync } from "fs"
 import path from "path"
@@ -8,6 +8,7 @@ import { assessment, assessmentAnswer, aiSystem, gapAnalysisResult, organization
 import { eq, and, desc, inArray } from "drizzle-orm"
 import { nanoid } from "nanoid"
 import { requireAuth } from "@/lib/auth/require-auth"
+import { createAssessmentSchema, saveAnswerSchema } from "@/lib/validators/assessment"
 import { getAnswerCountsForAssessments } from "@/lib/db/queries"
 import {
   PROHIBITED_PRACTICES_QUESTIONS,
@@ -26,6 +27,7 @@ import {
   getSectionById as getSectionByIdStatic,
   type AssessmentQuestion,
   type AssessmentSection,
+  type LocalizedString,
 } from "@/lib/data/assessment-questions"
 import { calculateRiskClassification } from "@/lib/utils/risk-classification"
 import { calculateComplianceScore } from "@/lib/utils/compliance-scoring"
@@ -65,7 +67,7 @@ function loadQuestionsFromContent(sectionId: string): AssessmentQuestion[] {
     try {
       return JSON.parse(readFileSync(questionsPath, "utf-8"))
     } catch (error) {
-      console.error(`Failed to load questions for ${sectionId}:`, error)
+      logger.error(`Failed to load questions for ${sectionId}:`, error)
     }
   }
   return []
@@ -89,7 +91,7 @@ function loadAllQuestionsFromContent(): AssessmentQuestion[] {
 
     return allQuestions
   } catch (error) {
-    console.error("Failed to load all questions from content:", error)
+    logger.error("Failed to load all questions from content:", error)
     return []
   }
 }
@@ -197,7 +199,7 @@ export async function getSectionById(sectionId: string): Promise<AssessmentSecti
 }
 
 // Get assessment sections index
-export async function getAssessmentSections(): Promise<Array<{
+export async function getAssessmentSections(locale?: string): Promise<Array<{
   id: string
   title: string
   article: string
@@ -241,7 +243,7 @@ export async function getAssessmentSections(): Promise<Array<{
   // Fall back to static
   return ASSESSMENT_SECTIONS.map(s => ({
     id: s.id,
-    title: s.title,
+    title: pickLocalizedText(s.title, locale),
     article: s.article,
     category: s.questions[0]?.category || s.id,
     questionCount: s.questions.length,
@@ -269,6 +271,17 @@ const RISK_CLASSIFICATION_QUESTIONS = [
     weight: q.weight,
   })),
 ]
+
+function pickLocalizedText(value: string | LocalizedString, locale?: string): string {
+  if (typeof value === "string") return value
+
+  // Assessment question content is only authored in these locales today.
+  // For unsupported locales (e.g. "de"), fall back to English.
+  const key: keyof LocalizedString =
+    locale === "fr" || locale === "es" || locale === "ro" || locale === "en" ? locale : "en"
+
+  return value[key] ?? value.en
+}
 
 export async function getAssessments(type?: string) {
   try {
@@ -298,7 +311,7 @@ export async function getAssessments(type?: string) {
       }
     })
   } catch (error) {
-    console.error("Failed to get assessments:", error)
+    logger.error("Failed to get assessments:", error)
     return []
   }
 }
@@ -323,7 +336,7 @@ export async function getAssessmentById(id: string) {
       answers,
     }
   } catch (error) {
-    console.error("Failed to get assessment:", error)
+    logger.error("Failed to get assessment:", error)
     return null
   }
 }
@@ -334,6 +347,12 @@ export async function createAssessment(data: {
   description?: string
   aiSystemId?: string
 }) {
+  // Validate input
+  const validation = createAssessmentSchema.safeParse(data)
+  if (!validation.success) {
+    return { error: validation.error.errors[0]?.message || "Invalid input" }
+  }
+
   try {
     const orgId = await getOrganizationId()
     const session = await getSession()
@@ -351,13 +370,15 @@ export async function createAssessment(data: {
       }
     }
 
+    const { type, title, description, aiSystemId } = validation.data
+
     await db.insert(assessment).values({
       id,
       organizationId: orgId,
-      aiSystemId: data.aiSystemId || null,
-      type: data.type,
-      title: data.title,
-      description: data.description || null,
+      aiSystemId: aiSystemId || null,
+      type,
+      title,
+      description: description || null,
       status: "not_started",
       createdAt: now,
       updatedAt: now,
@@ -367,18 +388,26 @@ export async function createAssessment(data: {
     revalidatePath("/assess/assessments")
     return { success: true, id }
   } catch (error) {
-    console.error("Failed to create assessment:", error)
+    logger.error("Failed to create assessment:", error)
     return { error: "Failed to create assessment" }
   }
 }
 
 export async function saveAssessmentAnswer(assessmentId: string, questionId: string, answer: string, notes?: string) {
+  // Validate input
+  const validation = saveAnswerSchema.safeParse({ assessmentId, questionId, answer, notes })
+  if (!validation.success) {
+    return { error: validation.error.errors[0]?.message || "Invalid input" }
+  }
+
   try {
+    const { assessmentId: validAssessmentId, questionId: validQuestionId, answer: validAnswer, notes: validNotes } = validation.data
+
     // Check if answer exists
     const existing = await db.query.assessmentAnswer.findFirst({
       where: and(
-        eq(assessmentAnswer.assessmentId, assessmentId),
-        eq(assessmentAnswer.questionId, questionId)
+        eq(assessmentAnswer.assessmentId, validAssessmentId),
+        eq(assessmentAnswer.questionId, validQuestionId)
       ),
     })
 
@@ -387,15 +416,15 @@ export async function saveAssessmentAnswer(assessmentId: string, questionId: str
     if (existing) {
       await db
         .update(assessmentAnswer)
-        .set({ answer, notes: notes || null })
+        .set({ answer: validAnswer, notes: validNotes || null })
         .where(eq(assessmentAnswer.id, existing.id))
     } else {
       await db.insert(assessmentAnswer).values({
         id: nanoid(),
-        assessmentId,
-        questionId,
-        answer,
-        notes: notes || null,
+        assessmentId: validAssessmentId,
+        questionId: validQuestionId,
+        answer: validAnswer,
+        notes: validNotes || null,
         createdAt: now,
       })
     }
@@ -404,11 +433,11 @@ export async function saveAssessmentAnswer(assessmentId: string, questionId: str
     await db
       .update(assessment)
       .set({ status: "in_progress", updatedAt: now })
-      .where(eq(assessment.id, assessmentId))
+      .where(eq(assessment.id, validAssessmentId))
 
     return { success: true }
   } catch (error) {
-    console.error("Failed to save assessment answer:", error)
+    logger.error("Failed to save assessment answer:", error)
     return { error: "Failed to save answer" }
   }
 }
@@ -502,7 +531,7 @@ export async function completeAssessment(assessmentId: string, calculatedRiskLev
 
     return { success: true, result, score, riskLevel }
   } catch (error) {
-    console.error("Failed to complete assessment:", error)
+    logger.error("Failed to complete assessment:", error)
     return { error: "Failed to complete assessment" }
   }
 }
@@ -540,8 +569,11 @@ function getRiskRecommendations(riskLevel: string): string[] {
   }
 }
 
-export async function getRiskClassificationQuestions() {
-  return RISK_CLASSIFICATION_QUESTIONS
+export async function getRiskClassificationQuestions(locale?: string) {
+  return RISK_CLASSIFICATION_QUESTIONS.map(q => ({
+    ...q,
+    question: pickLocalizedText(q.question, locale),
+  }))
 }
 
 // ============================================
@@ -608,7 +640,7 @@ export async function calculateAssessmentResult(
 
     return null
   } catch (error) {
-    console.error("Failed to calculate assessment result:", error)
+    logger.error("Failed to calculate assessment result:", error)
     return null
   }
 }
@@ -666,7 +698,7 @@ export async function completeComprehensiveAssessment(assessmentId: string, asse
 
     return { success: true, result, score }
   } catch (error) {
-    console.error("Failed to complete comprehensive assessment:", error)
+    logger.error("Failed to complete comprehensive assessment:", error)
     return { error: "Failed to complete assessment" }
   }
 }
@@ -689,7 +721,7 @@ export async function getAssessmentStats() {
 
     return { total, completed, inProgress, avgScore }
   } catch (error) {
-    console.error("Failed to get assessment stats:", error)
+    logger.error("Failed to get assessment stats:", error)
     return { total: 0, completed: 0, inProgress: 0, avgScore: 0 }
   }
 }
@@ -708,7 +740,7 @@ export async function getGapAnalysisResults(aiSystemId?: string) {
       orderBy: [desc(gapAnalysisResult.createdAt)],
     })
   } catch (error) {
-    console.error("Failed to get gap analysis results:", error)
+    logger.error("Failed to get gap analysis results:", error)
     return []
   }
 }
@@ -752,7 +784,7 @@ export async function createGapAnalysisResult(data: {
     revalidatePath("/assess/comply")
     return { success: true, id }
   } catch (error) {
-    console.error("Failed to create gap analysis result:", error)
+    logger.error("Failed to create gap analysis result:", error)
     return { error: "Failed to create gap analysis result" }
   }
 }
@@ -772,7 +804,7 @@ export async function updateGapStatus(id: string, status: string) {
     revalidatePath("/assess/comply")
     return { success: true }
   } catch (error) {
-    console.error("Failed to update gap status:", error)
+    logger.error("Failed to update gap status:", error)
     return { error: "Failed to update gap status" }
   }
 }
@@ -793,7 +825,7 @@ export async function getGapAnalysisStats() {
 
     return { total, compliant, partial, gaps, score }
   } catch (error) {
-    console.error("Failed to get gap analysis stats:", error)
+    logger.error("Failed to get gap analysis stats:", error)
     return { total: 0, compliant: 0, partial: 0, gaps: 0, score: 0 }
   }
 }
@@ -1044,7 +1076,7 @@ export async function generateGapAnalysisFromAssessment(assessmentId: string) {
     revalidatePath("/assess/comply")
     return { success: true, count: createdCount }
   } catch (error) {
-    console.error("Failed to generate gap analysis from assessment:", error)
+    logger.error("Failed to generate gap analysis from assessment:", error)
     return { error: "Failed to generate gap analysis" }
   }
 }
@@ -1078,7 +1110,7 @@ export async function getGapAnalysisForAssessment(assessmentId: string) {
     })
     return results
   } catch (error) {
-    console.error("Failed to get gap analysis for assessment:", error)
+    logger.error("Failed to get gap analysis for assessment:", error)
     return []
   }
 }

@@ -141,7 +141,9 @@ export function QuickAssessmentModal({
         setStep("questions")
       }
     } catch (error) {
-      console.error("Failed to start assessment:", error)
+      if (process.env.NODE_ENV === "development") {
+        console.error("Failed to start assessment:", error)
+      }
     }
     setLoading(false)
   }

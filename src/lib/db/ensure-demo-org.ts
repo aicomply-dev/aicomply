@@ -1,6 +1,7 @@
 import { db } from "@/lib/db"
 import { organization } from "@/lib/db/schema"
 import { eq } from "drizzle-orm"
+import { logger } from "@/lib/logger"
 
 // Default organization for demo/open source version
 export const DEFAULT_ORG_ID = "demo-org"
@@ -42,6 +43,6 @@ export async function ensureDemoOrganization() {
       demoOrgCreated = true
       return
     }
-    console.error("Failed to ensure demo organization:", error)
+    logger.error("Failed to ensure demo organization:", error)
   }
 }
