@@ -1,0 +1,3 @@
+-- seed.sql
+-- Placeholder for seed data.
+-- Add test organizations, profiles, and sample AI systems here.
