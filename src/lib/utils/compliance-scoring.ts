@@ -61,14 +61,14 @@ export function calculateComplianceScore(
       achievedWeight += question.weight * 0.5
       gaps.push({
         questionId: question.id,
-        question: question.question,
+        question: typeof question.question === "string" ? question.question : question.question.en,
         article: question.article,
       })
     } else if (answer === "no") {
       nonCompliant++
       gaps.push({
         questionId: question.id,
-        question: question.question,
+        question: typeof question.question === "string" ? question.question : question.question.en,
         article: question.article,
       })
     }

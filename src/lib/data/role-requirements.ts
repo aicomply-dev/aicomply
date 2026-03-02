@@ -4,7 +4,10 @@
  * Validated against Regulation (EU) 2024/1689 (EU AI Act)
  *
  * This file defines requirements applicable to each operator role under the EU AI Act.
+ * Supports multi-language content: EN, FR, ES, RO
  */
+
+export type Locale = "en" | "fr" | "es" | "ro";
 
 export type OperatorRole =
   | "provider"
@@ -26,33 +29,51 @@ export type RequirementStatus =
   | "implemented"
   | "verified";
 
+export interface LocalizedTextMap {
+  en: string;
+  fr: string;
+  es: string;
+  ro: string;
+}
+
+// Many datasets in this file are currently authored in English-only strings.
+// Allow both formats to avoid massive duplication, and provide helpers to render safely.
+export type LocalizedText = string | LocalizedTextMap
+
+export function getLocalizedText(value: LocalizedText, locale: string = "en"): string {
+  if (typeof value === "string") return value
+  const key: keyof LocalizedTextMap =
+    locale === "fr" || locale === "es" || locale === "ro" || locale === "en" ? locale : "en"
+  return value[key] ?? value.en
+}
+
 export interface Requirement {
   id: string;
   article: string;
-  category: string;
-  requirement: string;
-  description?: string;
+  category: LocalizedText;
+  requirement: LocalizedText;
+  description?: LocalizedText;
   mandatory: boolean;
-  items?: string[];
+  items?: LocalizedText[];
   controls: string[];
-  evidence: string[];
+  evidence: LocalizedText[];
 }
 
 export interface Control {
   id: string;
-  name: string;
-  description?: string;
-  owner: string;
+  name: LocalizedText;
+  description?: LocalizedText;
+  owner: LocalizedText;
   article: string;
   mandatory?: boolean;
-  implementationSteps?: string[];
-  successCriteria?: string[];
-  evidenceRequired?: string[];
+  implementationSteps?: LocalizedText[];
+  successCriteria?: LocalizedText[];
+  evidenceRequired?: LocalizedText[];
 }
 
 export interface RoleRequirements {
-  title: string;
-  description: string;
+  title: LocalizedText;
+  description: LocalizedText;
   articles: string[];
   riskLevels: RiskLevel[];
   requirements: Requirement[];
@@ -66,8 +87,18 @@ export interface RoleRequirements {
 // =============================================================================
 
 export const PROVIDER_REQUIREMENTS: RoleRequirements = {
-  title: "Provider Obligations (High-Risk AI)",
-  description: "Requirements for providers of high-risk AI systems under EU AI Act Articles 9-21, 43, 72-73",
+  title: {
+    en: "Provider Obligations (High-Risk AI)",
+    fr: "Obligations du Fournisseur (IA à Haut Risque)",
+    es: "Obligaciones del Proveedor (IA de Alto Riesgo)",
+    ro: "Obligațiile Furnizorului (IA cu Risc Ridicat)"
+  },
+  description: {
+    en: "Requirements for providers of high-risk AI systems under EU AI Act Articles 9-21, 43, 72-73",
+    fr: "Exigences pour les fournisseurs de systèmes d'IA à haut risque conformément aux articles 9-21, 43, 72-73 de la loi européenne sur l'IA",
+    es: "Requisitos para proveedores de sistemas de IA de alto riesgo según los artículos 9-21, 43, 72-73 de la Ley de IA de la UE",
+    ro: "Cerințe pentru furnizorii de sisteme IA cu risc ridicat conform articolelor 9-21, 43, 72-73 din Legea UE privind IA"
+  },
   articles: ["9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "43", "72", "73"],
   riskLevels: ["high"],
   obligationsCount: 176,

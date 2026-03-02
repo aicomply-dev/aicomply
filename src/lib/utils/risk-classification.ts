@@ -30,11 +30,11 @@ export function calculateRiskClassification(answers: Record<string, string>): Ri
       const question = getQuestionById(questionId)
       if (question) {
         if (question.riskTrigger === "prohibited") {
-          prohibitedTriggers.push(question.question)
+          prohibitedTriggers.push(typeof question.question === "string" ? question.question : question.question.en)
         } else if (question.riskTrigger === "high-risk") {
-          highRiskTriggers.push(question.question)
+          highRiskTriggers.push(typeof question.question === "string" ? question.question : question.question.en)
         } else if (question.riskTrigger === "limited-risk") {
-          limitedRiskTriggers.push(question.question)
+          limitedRiskTriggers.push(typeof question.question === "string" ? question.question : question.question.en)
         }
       }
     }

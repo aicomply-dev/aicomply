@@ -1,3 +1,9 @@
+export interface StandardControlTranslations {
+  name: string
+  frequency: string
+  objective: string
+}
+
 export interface StandardControl {
   id: string
   name: string
@@ -7,6 +13,11 @@ export interface StandardControl {
   objective: string
   standardId: string
   euAiActArticle?: string
+  translations?: {
+    fr?: StandardControlTranslations
+    es?: StandardControlTranslations
+    ro?: StandardControlTranslations
+  }
 }
 
 export const STANDARD_CONTROLS: StandardControl[] = [
@@ -19,6 +30,23 @@ export const STANDARD_CONTROLS: StandardControl[] = [
     objective: "Ensure no AI systems constitute prohibited practices under EU AI Act Article 5 by systematically screening all AI systems against the 8 prohibited practices before development or deployment, thereby preventing legal violations, regulatory penalties, and reputational damage.",
     standardId: "std-ai-001",
     euAiActArticle: "Articles 5, 6, Annex I, III",
+    translations: {
+      fr: {
+        name: "Évaluation et prévention des pratiques interdites",
+        frequency: "Avant le début du développement, avant le déploiement, annuellement",
+        objective: "Garantir qu'aucun système d'IA ne constitue des pratiques interdites en vertu de l'article 5 de la loi européenne sur l'IA en examinant systématiquement tous les systèmes d'IA par rapport aux 8 pratiques interdites avant le développement ou le déploiement, prévenant ainsi les violations légales, les sanctions réglementaires et les atteintes à la réputation."
+      },
+      es: {
+        name: "Evaluación y prevención de prácticas prohibidas",
+        frequency: "Antes de iniciar el desarrollo, antes del despliegue, anualmente",
+        objective: "Garantizar que ningún sistema de IA constituya prácticas prohibidas según el Artículo 5 de la Ley de IA de la UE mediante la evaluación sistemática de todos los sistemas de IA frente a las 8 prácticas prohibidas antes del desarrollo o despliegue, previniendo así violaciones legales, sanciones regulatorias y daños a la reputación."
+      },
+      ro: {
+        name: "Evaluarea și prevenirea practicilor interzise",
+        frequency: "Înainte de începerea dezvoltării, înainte de implementare, anual",
+        objective: "Asigurarea că niciun sistem AI nu constituie practici interzise conform Articolului 5 din Legea UE privind AI prin verificarea sistematică a tuturor sistemelor AI în raport cu cele 8 practici interzise înainte de dezvoltare sau implementare, prevenind astfel încălcări legale, penalități de reglementare și deteriorarea reputației."
+      }
+    }
   },
   {
     id: "CLS-002",
@@ -29,6 +57,23 @@ export const STANDARD_CONTROLS: StandardControl[] = [
     objective: "Accurately identify AI systems that are safety components of products covered by Union harmonization legislation (Annex I) to ensure they undergo appropriate conformity assessment and meet product safety requirements.",
     standardId: "std-ai-001",
     euAiActArticle: "Articles 5, 6, Annex I, III",
+    translations: {
+      fr: {
+        name: "Évaluation de l'IA pour la sécurité des produits Annexe I",
+        frequency: "Classification initiale, après modifications substantielles",
+        objective: "Identifier avec précision les systèmes d'IA qui sont des composants de sécurité de produits couverts par la législation d'harmonisation de l'Union (Annexe I) afin de garantir qu'ils subissent une évaluation de conformité appropriée et répondent aux exigences de sécurité des produits."
+      },
+      es: {
+        name: "Evaluación de IA de seguridad de productos Anexo I",
+        frequency: "Clasificación inicial, después de modificaciones sustanciales",
+        objective: "Identificar con precisión los sistemas de IA que son componentes de seguridad de productos cubiertos por la legislación de armonización de la Unión (Anexo I) para garantizar que se sometan a la evaluación de conformidad adecuada y cumplan con los requisitos de seguridad del producto."
+      },
+      ro: {
+        name: "Evaluarea AI pentru siguranța produselor Anexa I",
+        frequency: "Clasificare inițială, după modificări substanțiale",
+        objective: "Identificarea precisă a sistemelor AI care sunt componente de siguranță ale produselor acoperite de legislația de armonizare a Uniunii (Anexa I) pentru a asigura că acestea sunt supuse evaluării de conformitate corespunzătoare și îndeplinesc cerințele de siguranță ale produselor."
+      }
+    }
   },
   {
     id: "CLS-003",
