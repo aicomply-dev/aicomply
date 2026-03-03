@@ -8,11 +8,6 @@ const nextConfig: NextConfig = {
   },
   // Mark server-only packages as external
   serverExternalPackages: ['postgres', 'pg', 'better-sqlite3'],
-  // Configure for production domain
-  ...(process.env.NODE_ENV === 'production' && {
-    // Ensure proper URL generation
-    output: 'standalone',
-  }),
   // Security headers
   async headers() {
     return [
