@@ -45,6 +45,11 @@ export function RegisterForm() {
     setLoading(true)
 
     const supabase = createClient()
+    if (!supabase) {
+      setError('Authentication is not configured. Please set up Supabase.')
+      setLoading(false)
+      return
+    }
     const { error } = await supabase.auth.signUp({
       email,
       password,
