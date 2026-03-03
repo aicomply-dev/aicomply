@@ -1,8 +1,8 @@
 import Link from "next/link"
 import { Shield } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
 import { MobileNav } from "@/components/layout/mobile-nav"
+import { UserMenu } from "@/components/auth/user-menu"
 
 const navLinks = [
   { href: "/understand", label: "Understand" },
@@ -39,12 +39,7 @@ export function SiteHeader() {
 
         {/* Right side */}
         <div className="ml-auto flex items-center gap-2">
-          <Button variant="ghost" size="sm" asChild className="hidden md:inline-flex">
-            <Link href="/auth/login">Log In</Link>
-          </Button>
-          <Button size="sm" asChild className="hidden md:inline-flex">
-            <Link href="/assess/classification">Get Started</Link>
-          </Button>
+          <UserMenu />
           <MobileNav />
         </div>
       </div>
