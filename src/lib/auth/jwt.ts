@@ -8,7 +8,12 @@ const getSecret = () => {
   return secret || 'dev-only-secret-do-not-use-in-production'
 }
 
-const secret = getSecret()
+// Lazy-init: allow build to succeed without secrets
+let _secret: string | undefined
+const ensureSecret = () => {
+  if (!_secret) _secret = getSecret()
+  return _secret!
+}
 
 interface TokenPayload {
   userId: string
@@ -35,7 +40,7 @@ function base64UrlDecode(str: string): string {
 
 function createSignature(header: string, payload: string): string {
   const data = `${header}.${payload}`
-  return createHmac('sha256', secret).update(data).digest('base64url')
+  return createHmac('sha256', ensureSecret()).update(data).digest('base64url')
 }
 
 export async function createToken(payload: { userId: string; email: string; orgId: string }): Promise<string> {
