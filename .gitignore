@@ -51,5 +51,5 @@ sqlite.db
 # Finder (MacOS) folder config
 .DS_Store
 
-# Internal documentation (not for public repo)
-docs/
+# Keep docs/plans/ in repo for design/implementation docs
+# docs/
