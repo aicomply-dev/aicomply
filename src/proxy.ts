@@ -19,9 +19,9 @@ export async function proxy(request: NextRequest) {
 
   // Check authentication for protected routes using NextAuth JWT
   if (protectedRoutes.some(route => pathname.startsWith(route))) {
-    const token = await getToken({ 
-      req: request, 
-      secret: process.env.NEXTAUTH_SECRET 
+    const token = await getToken({
+      req: request,
+      secret: process.env.NEXTAUTH_SECRET
     })
 
     if (!token) {
