@@ -1,18 +1,17 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  // Enable experimental features for better performance
+  // Standalone output for production deployments
+  output: 'standalone',
+
+  // Optimised package imports
   experimental: {
-    // Enable optimized package imports
-    optimizePackageImports: ['lucide-react'],
+    optimizePackageImports: ['lucide-react', 'recharts'],
   },
+
   // Mark server-only packages as external
-  serverExternalPackages: ['postgres', 'pg', 'better-sqlite3'],
-  // Configure for production domain
-  ...(process.env.NODE_ENV === 'production' && {
-    // Ensure proper URL generation
-    output: 'standalone',
-  }),
+  serverExternalPackages: ['postgres', 'pg'],
+
   // Security headers
   async headers() {
     return [
