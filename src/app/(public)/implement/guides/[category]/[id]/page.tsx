@@ -8,10 +8,8 @@ import {
 } from '@/lib/content/loader'
 import { Breadcrumbs } from '@/components/layout/breadcrumbs'
 import { MarkdownRenderer } from '@/components/content/markdown-renderer'
-import {
-  TableOfContents,
-  extractTocItems,
-} from '@/components/content/table-of-contents'
+import { TableOfContents } from '@/components/content/table-of-contents'
+import { extractTocItems } from '@/lib/content/toc'
 import { Badge } from '@/components/ui/badge'
 
 // ---------------------------------------------------------------------------
