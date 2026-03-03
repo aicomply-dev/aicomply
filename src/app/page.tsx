@@ -9,6 +9,7 @@ import {
 } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
+import { webApplicationJsonLd } from "@/lib/structured-data"
 import {
   Card,
   CardContent,
@@ -52,26 +53,7 @@ const stats = [
 ]
 
 export default function HomePage() {
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "AI Comply",
-    description:
-      "Open-source platform for EU AI Act compliance. Learn the regulation, classify your AI systems, and implement compliance frameworks.",
-    url: "https://aicomply.dev",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "EUR",
-    },
-    creator: {
-      "@type": "Organization",
-      name: "AI Comply",
-      url: "https://aicomply.dev",
-    },
-  }
+  const jsonLd = webApplicationJsonLd()
 
   return (
     <>

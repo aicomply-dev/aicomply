@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 
 import { getFaqCategories, getFaqs } from '@/lib/content/loader'
+import { faqPageJsonLd } from '@/lib/structured-data'
 import { Breadcrumbs } from '@/components/layout/breadcrumbs'
 import {
   Accordion,
@@ -31,18 +32,7 @@ export default async function FaqPage() {
   }
 
   // JSON-LD structured data for SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  }
+  const jsonLd = faqPageJsonLd(faqs)
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">

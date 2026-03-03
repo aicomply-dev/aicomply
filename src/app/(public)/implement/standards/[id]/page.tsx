@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { getStandard, getStandardIndex } from '@/lib/content/loader'
+import { techArticleJsonLd } from '@/lib/structured-data'
 import { Breadcrumbs } from '@/components/layout/breadcrumbs'
 import { SidebarNav } from '@/components/layout/sidebar-nav'
 import { MarkdownRenderer } from '@/components/content/markdown-renderer'
@@ -80,8 +81,20 @@ export default async function StandardDetailPage({
     href: `/implement/standards/${s.id}`,
   }))
 
+  const jsonLd = techArticleJsonLd({
+    id: std.id,
+    title: std.title,
+    category: std.category,
+    euAiActRef: std.euAiActRef,
+  })
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[

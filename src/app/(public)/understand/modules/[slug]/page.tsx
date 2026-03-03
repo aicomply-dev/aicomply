@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { BookOpen, Clock, GraduationCap } from 'lucide-react'
 
 import { getModule, getModuleIndex, getChapterList } from '@/lib/content/loader'
+import { courseJsonLd } from '@/lib/structured-data'
 import { Breadcrumbs } from '@/components/layout/breadcrumbs'
 import { SidebarNav, type SidebarNavItem } from '@/components/layout/sidebar-nav'
 import { Badge } from '@/components/ui/badge'
@@ -50,8 +51,22 @@ export default async function ModuleDetailPage({ params }: PageProps) {
     href: `/understand/modules/${slug}/${ch.sortIndex}`,
   }))
 
+  const jsonLd = courseJsonLd({
+    title: mod.title,
+    description: mod.description,
+    slug,
+    difficulty: mod.difficulty,
+    duration: mod.duration,
+    chapterCount: chapters.length,
+  })
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Breadcrumbs
         items={[
           { label: 'Understand', href: '/understand' },

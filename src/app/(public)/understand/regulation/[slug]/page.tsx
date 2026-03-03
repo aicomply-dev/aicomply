@@ -10,6 +10,7 @@ import { SidebarNav, type SidebarNavItem } from '@/components/layout/sidebar-nav
 import { MarkdownRenderer } from '@/components/content/markdown-renderer'
 import { TableOfContents } from '@/components/content/table-of-contents'
 import { extractTocItems } from '@/lib/content/toc'
+import { legislationJsonLd } from '@/lib/structured-data'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -46,8 +47,18 @@ export default async function RegulationSectionPage({ params }: PageProps) {
 
   const tocItems = extractTocItems(data.content)
 
+  const jsonLd = legislationJsonLd({
+    title: data.metadata.title,
+    slug,
+  })
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       <Breadcrumbs
         items={[
           { label: 'Understand', href: '/understand' },
