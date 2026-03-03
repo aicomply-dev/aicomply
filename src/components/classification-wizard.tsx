@@ -32,7 +32,6 @@ import {
 import { cn } from "@/lib/utils"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import { createAssessment, saveAssessmentAnswer, completeAssessment } from "@/lib/actions/assessments"
 
 interface AiSystem {
   id: string
@@ -102,7 +101,6 @@ export function ClassificationWizard({
   const [showResult, setShowResult] = useState(false)
   const [assessmentId, setAssessmentId] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
-  const [saving, setSaving] = useState(false)
   const router = useRouter()
 
   const progress = ((currentQuestion + 1) / questions.length) * 100
@@ -111,33 +109,16 @@ export function ClassificationWizard({
     const questionId = questions[currentQuestion].id
     setAnswers({ ...answers, [questionId]: value })
 
-    // Save to database if we have an assessment
-    if (assessmentId) {
-      setSaving(true)
-      await saveAssessmentAnswer(assessmentId, questionId, value)
-      setSaving(false)
-    }
+    // Answers are kept in local state only (no DB persistence)
   }
 
   const startAssessment = async () => {
     setLoading(true)
     const selectedSystemName = aiSystems.find(s => s.id === selectedSystem)?.name || "General"
 
-    // Only try to save to database if authenticated
-    if (isAuthenticated) {
-      const response = await createAssessment({
-        type: "risk-classification",
-        title: `Risk Classification - ${selectedSystemName}`,
-        aiSystemId: selectedSystem || undefined,
-      })
-
-      if (response.success && response.id) {
-        setAssessmentId(response.id)
-      }
-    } else {
-      // Use a temporary ID for unauthenticated users
-      setAssessmentId(`temp-${Date.now()}`)
-    }
+    // Use a temporary ID (no DB persistence)
+    void selectedSystemName // suppress unused warning
+    setAssessmentId(`temp-${Date.now()}`)
     setLoading(false)
   }
 
@@ -183,10 +164,7 @@ export function ClassificationWizard({
     setLoading(true)
     setResult(riskLevel)
 
-    if (assessmentId && !assessmentId.startsWith("temp-")) {
-      // Pass the calculated risk level to ensure it's saved correctly
-      await completeAssessment(assessmentId, riskLevel)
-    }
+    // Results are kept in local state only (no DB persistence)
 
     setShowResult(true)
     setLoading(false)

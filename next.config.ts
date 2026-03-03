@@ -6,8 +6,6 @@ const nextConfig: NextConfig = {
     // Enable optimized package imports
     optimizePackageImports: ['lucide-react'],
   },
-  // Mark server-only packages as external
-  serverExternalPackages: ['postgres', 'pg', 'better-sqlite3'],
   // Security headers
   async headers() {
     return [

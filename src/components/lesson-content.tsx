@@ -4,10 +4,8 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, PlayCircle, Loader2, Lightbulb, Check, XCircle, HelpCircle } from "lucide-react"
-import { markChapterComplete, submitQuiz } from "@/lib/actions/modules"
-import { useRouter } from "next/navigation"
 import { ChapterConclusion } from "@/components/chapter-conclusion"
-import type { Chapter, QuizQuestion } from "@/lib/actions/modules"
+import type { Chapter, QuizQuestion } from "@/lib/data/modules-data"
 import { DIAGRAM_COMPONENTS } from "@/components/diagrams"
 import { LearningObjectives, SelfAssessment, ExpertInsight, ComplianceNote } from "@/components/content"
 import ReactMarkdown from "react-markdown"
@@ -61,23 +59,39 @@ export function LessonContent({
       explanation?: string
     }>
   } | null>(null)
-  const router = useRouter()
-
   const isQuiz = chapter.type === "quiz" && chapter.questions && chapter.questions.length > 0
 
   async function handleQuizSubmit() {
     if (!chapter.questions) return
     setLoading(true)
     try {
-      const result = await submitQuiz(moduleId, chapterIndex, quizAnswers)
-      if (result.success) {
-        setQuizResults(result as typeof quizResults)
-        setQuizSubmitted(true)
-        if (result.passed) {
-          await markChapterComplete(moduleId, chapterIndex)
-          setCompleted(true)
+      // Grade quiz locally without DB
+      const questions = chapter.questions
+      let correctAnswers = 0
+      const results = questions.map((q, idx) => {
+        const isCorrect = quizAnswers[idx] === q.correctAnswer
+        if (isCorrect) correctAnswers++
+        return {
+          questionId: q.id,
+          userAnswer: quizAnswers[idx],
+          correctAnswer: q.correctAnswer,
+          isCorrect,
+          explanation: q.explanation,
         }
-        router.refresh()
+      })
+      const score = Math.round((correctAnswers / questions.length) * 100)
+      const passed = score >= 70
+
+      setQuizResults({
+        score,
+        passed,
+        correctAnswers,
+        totalQuestions: questions.length,
+        results,
+      })
+      setQuizSubmitted(true)
+      if (passed) {
+        setCompleted(true)
       }
     } finally {
       setLoading(false)
@@ -97,16 +111,8 @@ export function LessonContent({
   }
 
   async function handleMarkComplete() {
-    setLoading(true)
-    try {
-      const result = await markChapterComplete(moduleId, chapterId)
-      if (result.success) {
-        setCompleted(true)
-        router.refresh()
-      }
-    } finally {
-      setLoading(false)
-    }
+    // Mark complete locally without DB
+    setCompleted(true)
   }
 
   // Extract key takeaways from the content

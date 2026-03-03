@@ -21,48 +21,29 @@ import {
 } from "lucide-react"
 import { cn } from "@/lib/utils"
 
-// Server actions for real data
-import {
-  getStandards,
-  getStandardsStats,
-  getControlsStats,
-  getOverallProgress,
-  getAtRiskKPIs,
-  getLowProgressStandards,
-} from "@/lib/actions/standards"
-import { getPolicyStats } from "@/lib/actions/policies"
-import { getImplementationStats } from "@/lib/actions/implementation"
 import { getGuideStats } from "@/lib/actions/guides"
 import { getTemplateStats } from "@/lib/actions/templates"
 
 // Static policy data (reference only)
 import { aiPolicy } from "@/lib/data/compliance-framework"
+import { standards as allStandards } from "@/lib/data/compliance-framework"
 
 export default async function ImplementPage() {
-  // Fetch all data in parallel
-  const [
-    standards,
-    standardStats,
-    controlStats,
-    overallProgress,
-    kpisAtRisk,
-    lowProgressStandards,
-    policyStats,
-    implStats,
-    guideStats,
-    templateStats,
-  ] = await Promise.all([
-    getStandards(),
-    getStandardsStats(),
-    getControlsStats(),
-    getOverallProgress(),
-    getAtRiskKPIs(),
-    getLowProgressStandards(50),
-    getPolicyStats(),
-    getImplementationStats(),
+  // Fetch non-DB stats (guides and templates are static data)
+  const [guideStats, templateStats] = await Promise.all([
     getGuideStats(),
     getTemplateStats(),
   ])
+
+  // Static data derived from compliance framework
+  const standards = allStandards
+  const totalControls = standards.reduce((sum, s) => sum + s.controls.length, 0)
+  const criticalControls = standards.reduce(
+    (sum, s) => sum + s.controls.filter((c) => c.riskLevel === "critical").length,
+    0,
+  )
+  const overallProgress = 0
+  const lowProgressStandards = standards.filter((s) => s.progress < 50)
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -87,8 +68,8 @@ export default async function ImplementPage() {
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground">Standards</p>
                   <div className="mt-1 flex items-center gap-3">
-                    <span className="text-2xl font-bold">{standardStats.total}</span>
-                    <Badge variant="secondary" className="text-xs">{standardStats.draft} draft</Badge>
+                    <span className="text-2xl font-bold">{standards.length}</span>
+                    <Badge variant="secondary" className="text-xs">{standards.filter(s => s.status === "draft").length} draft</Badge>
                   </div>
                 </div>
               </div>
@@ -100,8 +81,8 @@ export default async function ImplementPage() {
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground">Controls</p>
                   <div className="mt-1 flex items-center gap-3">
-                    <span className="text-2xl font-bold">{controlStats.total}</span>
-                    <Badge variant="secondary" className="text-xs">{controlStats.byRiskLevel.critical} critical</Badge>
+                    <span className="text-2xl font-bold">{totalControls}</span>
+                    <Badge variant="secondary" className="text-xs">{criticalControls} critical</Badge>
                   </div>
                 </div>
               </div>
@@ -126,7 +107,7 @@ export default async function ImplementPage() {
                 <div className="flex-1">
                   <p className="text-sm text-muted-foreground">KPIs At Risk</p>
                   <div className="mt-1 flex items-center gap-3">
-                    <span className="text-2xl font-bold">{kpisAtRisk.length}</span>
+                    <span className="text-2xl font-bold">0</span>
                     <Badge variant="secondary" className="text-xs">requires attention</Badge>
                   </div>
                 </div>
@@ -155,7 +136,7 @@ export default async function ImplementPage() {
                         </div>
                         <h2 className="mt-2 text-xl font-bold">{aiPolicy.title}</h2>
                         <p className="mt-1 text-muted-foreground">
-                          {aiPolicy.requirements.length} requirements | {standards.length} supporting standards | {controlStats.total} controls
+                          {aiPolicy.requirements.length} requirements | {standards.length} supporting standards | {totalControls} controls
                         </p>
                       </div>
                     </div>
@@ -391,7 +372,7 @@ export default async function ImplementPage() {
                     Specific measures with requirements and evidence documentation
                   </p>
                   <p className="mt-3 text-2xl font-bold text-accent">
-                    {controlStats.total}
+                    {totalControls}
                   </p>
                   <p className="text-xs text-muted-foreground">Total Controls</p>
                 </CardContent>

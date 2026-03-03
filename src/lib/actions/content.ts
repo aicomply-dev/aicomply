@@ -25,7 +25,6 @@ import {
   type FAQCategory,
   type FAQ,
 } from "@/lib/content/loader"
-import { getSession } from "@/lib/auth/session"
 
 // Re-export types for consumers
 export type {
@@ -41,40 +40,29 @@ export type {
   FAQ,
 }
 
-// Helper to get current user's organization ID
-async function getOrganizationId(): Promise<string | undefined> {
-  const session = await getSession()
-  // TODO: Get organization from user profile when multi-org is implemented
-  return session?.user?.organizationId
-}
-
 // ============================================
 // Module Content Actions
 // ============================================
 
 export async function loadModuleIndex(): Promise<ModuleMetadata[]> {
-  const orgId = await getOrganizationId()
-  return getModuleIndex(orgId)
+  return getModuleIndex()
 }
 
 export async function loadModule(slug: string): Promise<ModuleMetadata | null> {
-  const orgId = await getOrganizationId()
-  return getModule(slug, orgId)
+  return getModule(slug)
 }
 
 export async function loadChapter(
   moduleSlug: string,
   chapterIndex: number
 ): Promise<{ metadata: ChapterMetadata; content?: string } | null> {
-  const orgId = await getOrganizationId()
-  return getChapter(moduleSlug, chapterIndex, orgId)
+  return getChapter(moduleSlug, chapterIndex)
 }
 
 export async function loadAllChapters(
   moduleSlug: string
 ): Promise<ChapterMetadata[]> {
-  const orgId = await getOrganizationId()
-  return getAllChapters(moduleSlug, orgId)
+  return getAllChapters(moduleSlug)
 }
 
 // ============================================
@@ -82,24 +70,21 @@ export async function loadAllChapters(
 // ============================================
 
 export async function loadAssessmentIndex(): Promise<AssessmentSectionMetadata[]> {
-  const orgId = await getOrganizationId()
-  return getAssessmentIndex(orgId)
+  return getAssessmentIndex()
 }
 
 export async function loadAssessmentQuestions(
   sectionId: string
 ): Promise<AssessmentQuestion[]> {
-  const orgId = await getOrganizationId()
-  return getAssessmentQuestions(sectionId, orgId)
+  return getAssessmentQuestions(sectionId)
 }
 
 export async function loadAllAssessmentQuestions(): Promise<AssessmentQuestion[]> {
-  const orgId = await getOrganizationId()
-  const sections = await getAssessmentIndex(orgId)
+  const sections = await getAssessmentIndex()
 
   const allQuestions: AssessmentQuestion[] = []
   for (const section of sections) {
-    const questions = await getAssessmentQuestions(section.id, orgId)
+    const questions = await getAssessmentQuestions(section.id)
     allQuestions.push(...questions)
   }
 
@@ -111,8 +96,7 @@ export async function loadAllAssessmentQuestions(): Promise<AssessmentQuestion[]
 // ============================================
 
 export async function loadStandardsIndex(): Promise<StandardMetadata[]> {
-  const orgId = await getOrganizationId()
-  return getStandardsIndex(orgId)
+  return getStandardsIndex()
 }
 
 export async function loadStandard(standardId: string): Promise<{
@@ -120,8 +104,7 @@ export async function loadStandard(standardId: string): Promise<{
   controls: StandardControl[]
   guidance?: string
 } | null> {
-  const orgId = await getOrganizationId()
-  return getStandard(standardId, orgId)
+  return getStandard(standardId)
 }
 
 // ============================================
@@ -129,13 +112,11 @@ export async function loadStandard(standardId: string): Promise<{
 // ============================================
 
 export async function loadGlossaryIndex(): Promise<GlossaryCategory[]> {
-  const orgId = await getOrganizationId()
-  return getGlossaryIndex(orgId)
+  return getGlossaryIndex()
 }
 
 export async function loadGlossaryTerms(): Promise<GlossaryTerm[]> {
-  const orgId = await getOrganizationId()
-  return getGlossaryTerms(orgId)
+  return getGlossaryTerms()
 }
 
 export async function loadGlossaryCategories(): Promise<string[]> {
@@ -146,8 +127,7 @@ export async function loadGlossaryCategories(): Promise<string[]> {
 export async function loadGlossaryByCategory(
   categoryId: string
 ): Promise<GlossaryTerm[]> {
-  const orgId = await getOrganizationId()
-  return getGlossaryByCategory(categoryId, orgId)
+  return getGlossaryByCategory(categoryId)
 }
 
 // ============================================
@@ -158,11 +138,9 @@ export async function loadFAQIndex(): Promise<{
   categories: FAQCategory[]
   faqCount: number
 }> {
-  const orgId = await getOrganizationId()
-  return getFAQIndex(orgId)
+  return getFAQIndex()
 }
 
 export async function loadFAQs(): Promise<FAQ[]> {
-  const orgId = await getOrganizationId()
-  return getFAQs(orgId)
+  return getFAQs()
 }

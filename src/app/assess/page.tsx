@@ -30,9 +30,6 @@ import {
 } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import { getAiSystems, getAiSystemStats, getAiSystemsWithRoles } from "@/lib/actions/ai-systems"
-import { getAssessmentStats, getGapAnalysisStats } from "@/lib/actions/assessments"
-import { getOrganizationRequirementsSummary } from "@/lib/actions/requirements"
 
 // Assessment journey steps following EU AI Act methodology
 const ASSESSMENT_STEPS = [
@@ -219,68 +216,18 @@ const OPERATOR_ROLES = [
   },
 ]
 
-export default async function AssessPage() {
-  // Fetch all stats
-  const [inventoryStats, assessmentStats, gapStats, aiSystems, systemsWithRoles, reqSummary] = await Promise.all([
-    getAiSystemStats(),
-    getAssessmentStats(),
-    getGapAnalysisStats(),
-    getAiSystems(),
-    getAiSystemsWithRoles(),
-    getOrganizationRequirementsSummary(),
-  ])
-
-  // Calculate requirements completion
-  const reqCompleted = reqSummary.implemented + reqSummary.verified
-  const reqProgress = reqSummary.total > 0
-    ? Math.round((reqCompleted / reqSummary.total) * 100)
-    : (systemsWithRoles.length > 0 ? 10 : 0) // Show some progress if roles assigned
-
-  // Calculate step completion status
+export default function AssessPage() {
+  // Static step status (no DB dependency)
   const stepStatus = {
-    inventory: {
-      completed: inventoryStats.total > 0,
-      count: inventoryStats.total,
-      progress: inventoryStats.total > 0 ? 100 : 0,
-    },
-    classification: {
-      completed: aiSystems.filter(s => s.riskLevel && s.riskLevel !== "unclassified").length === aiSystems.length && aiSystems.length > 0,
-      count: aiSystems.filter(s => s.riskLevel && s.riskLevel !== "unclassified").length,
-      total: aiSystems.length,
-      progress: aiSystems.length > 0
-        ? Math.round((aiSystems.filter(s => s.riskLevel && s.riskLevel !== "unclassified").length / aiSystems.length) * 100)
-        : 0,
-    },
-    requirements: {
-      completed: reqCompleted > 0 || systemsWithRoles.length > 0,
-      count: reqCompleted,
-      total: reqSummary.total,
-      progress: reqProgress,
-    },
-    comply: {
-      completed: gapStats.total > 0 && gapStats.score >= 80,
-      count: gapStats.compliant,
-      total: gapStats.total,
-      progress: gapStats.score,
-    },
-    monitor: {
-      completed: gapStats.score >= 90, // Consider monitoring complete when score is high
-      count: inventoryStats.compliant,
-      total: inventoryStats.total,
-      progress: gapStats.score >= 80 ? 100 : (gapStats.score > 0 ? 50 : 0),
-    },
+    inventory: { completed: false, count: 0, progress: 0 },
+    classification: { completed: false, count: 0, total: 0, progress: 0 },
+    requirements: { completed: false, count: 0, total: 0, progress: 0 },
+    comply: { completed: false, count: 0, total: 0, progress: 0 },
+    monitor: { completed: false, count: 0, total: 0, progress: 0 },
   }
 
-  // Determine current step (first incomplete step)
-  const currentStepIndex = ASSESSMENT_STEPS.findIndex(step => {
-    const status = stepStatus[step.id as keyof typeof stepStatus]
-    return !status.completed
-  })
-  const currentStep = currentStepIndex >= 0 ? currentStepIndex : ASSESSMENT_STEPS.length - 1
-
-  // Calculate overall progress
-  const completedSteps = ASSESSMENT_STEPS.filter(step => stepStatus[step.id as keyof typeof stepStatus].completed).length
-  const overallProgress = Math.round((completedSteps / ASSESSMENT_STEPS.length) * 100)
+  // First incomplete step
+  const currentStep = 0
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -377,50 +324,28 @@ export default async function AssessPage() {
         {/* Assessment Journey Overview */}
         <section className="border-b border-border/50 py-8 bg-gradient-to-b from-muted/30 to-transparent">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            {/* Overall Progress - only show tracker when user has started */}
-            {inventoryStats.total > 0 ? (
-              <Card className="mb-8 border-teal-500/30 bg-gradient-to-r from-teal-500/5 to-transparent">
-                <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-500 text-white shadow-lg shadow-teal-500/25">
-                      <ClipboardCheck className="h-7 w-7" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-medium text-muted-foreground">Assessment Journey</p>
-                      <p className="text-xl font-bold">
-                        {completedSteps} of {ASSESSMENT_STEPS.length} steps completed
-                      </p>
-                    </div>
+            {/* Begin Assessment CTA */}
+            <Card className="mb-8 border-teal-500/30 bg-gradient-to-r from-teal-500/5 to-transparent">
+              <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-500 text-white shadow-lg shadow-teal-500/25">
+                    <Layers className="h-7 w-7" />
                   </div>
-                  <div className="w-full max-w-xs">
-                    <Progress value={overallProgress} className="h-3 [&>div]:bg-teal-500" />
-                    <p className="mt-2 text-right text-sm font-medium">{overallProgress}% complete</p>
+                  <div>
+                    <p className="text-xl font-bold">Begin Your Assessment Journey</p>
+                    <p className="text-sm text-muted-foreground">
+                      Start by adding your first AI system to the inventory
+                    </p>
                   </div>
-                </CardContent>
-              </Card>
-            ) : (
-              <Card className="mb-8 border-teal-500/30 bg-gradient-to-r from-teal-500/5 to-transparent">
-                <CardContent className="flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-teal-500 text-white shadow-lg shadow-teal-500/25">
-                      <Layers className="h-7 w-7" />
-                    </div>
-                    <div>
-                      <p className="text-xl font-bold">Begin Your Assessment Journey</p>
-                      <p className="text-sm text-muted-foreground">
-                        Start by adding your first AI system to the inventory
-                      </p>
-                    </div>
-                  </div>
-                  <Button className="bg-teal-500 hover:bg-teal-600 shadow-lg shadow-teal-500/25" asChild>
-                    <Link href="/assess/inventory">
-                      Add AI System
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            )}
+                </div>
+                <Button className="bg-teal-500 hover:bg-teal-600 shadow-lg shadow-teal-500/25" asChild>
+                  <Link href="/assess/inventory">
+                    Add AI System
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
 
             {/* Step Cards */}
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
@@ -594,7 +519,7 @@ export default async function AssessPage() {
                           <Layers className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="text-2xl font-bold">{inventoryStats.total}</p>
+                          <p className="text-2xl font-bold">0</p>
                           <p className="text-xs text-muted-foreground">AI Systems</p>
                         </div>
                       </div>
@@ -609,8 +534,8 @@ export default async function AssessPage() {
                         </div>
                         <div>
                           <p className="text-2xl font-bold">
-                            {aiSystems.filter(s => s.riskLevel && s.riskLevel !== "unclassified").length}
-                            <span className="text-sm font-normal text-muted-foreground">/{aiSystems.length}</span>
+                            0
+                            <span className="text-sm font-normal text-muted-foreground">/0</span>
                           </p>
                           <p className="text-xs text-muted-foreground">Classified</p>
                         </div>
@@ -625,7 +550,7 @@ export default async function AssessPage() {
                           <AlertTriangle className="h-5 w-5 text-destructive" />
                         </div>
                         <div>
-                          <p className="text-2xl font-bold text-destructive">{inventoryStats.highRisk}</p>
+                          <p className="text-2xl font-bold text-destructive">0</p>
                           <p className="text-xs text-muted-foreground">High Risk</p>
                         </div>
                       </div>
@@ -639,44 +564,13 @@ export default async function AssessPage() {
                           <CheckCircle2 className="h-5 w-5 text-accent" />
                         </div>
                         <div>
-                          <p className="text-2xl font-bold text-accent">{gapStats.score}%</p>
+                          <p className="text-2xl font-bold text-accent">0%</p>
                           <p className="text-xs text-muted-foreground">Compliance Score</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
                 </div>
-
-                {/* Risk Distribution */}
-                {aiSystems.length > 0 && (
-                  <Card className="border-border/50">
-                    <CardHeader className="pb-3">
-                      <CardTitle className="text-base">Risk Distribution</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        {[
-                          { level: "high", label: "High Risk", color: "destructive", count: inventoryStats.highRisk },
-                          { level: "limited", label: "Limited Risk", color: "primary", count: aiSystems.filter(s => s.riskLevel === "limited").length },
-                          { level: "minimal", label: "Minimal Risk", color: "accent", count: aiSystems.filter(s => s.riskLevel === "minimal").length },
-                          { level: "unclassified", label: "Unclassified", color: "muted", count: aiSystems.filter(s => !s.riskLevel || s.riskLevel === "unclassified").length },
-                        ].map(item => (
-                          <div key={item.level} className="flex items-center gap-3">
-                            <div className={cn(
-                              "h-3 w-3 rounded-full",
-                              item.color === "destructive" && "bg-destructive",
-                              item.color === "primary" && "bg-primary",
-                              item.color === "accent" && "bg-accent",
-                              item.color === "muted" && "bg-muted-foreground/50",
-                            )} />
-                            <span className="text-sm flex-1">{item.label}</span>
-                            <span className="text-sm font-medium">{item.count}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </CardContent>
-                  </Card>
-                )}
               </div>
             </div>
           </div>

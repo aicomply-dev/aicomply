@@ -15,10 +15,8 @@ import {
   ArrowRight,
 } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { submitQuiz } from "@/lib/actions/modules"
-import { useRouter } from "next/navigation"
 import Link from "next/link"
-import type { Chapter, QuizQuestion } from "@/lib/actions/modules"
+import type { Chapter, QuizQuestion } from "@/lib/data/modules-data"
 
 interface QuizContentProps {
   moduleId: string
@@ -45,7 +43,6 @@ export function QuizContent({
     correctAnswers: number
   } | null>(isCompleted ? { score: 100, passed: true, correctAnswers: questions.length } : null)
   const [loading, setLoading] = useState(false)
-  const router = useRouter()
 
   const question = questions[currentQuestion]
   const answeredCount = answers.filter(a => a !== null).length
@@ -62,20 +59,16 @@ export function QuizContent({
     setError(null)
     setLoading(true)
     try {
-      const result = await submitQuiz(moduleId, chapterIndex, answers as number[])
-      if (result.error) {
-        setError(result.error)
-        return
-      }
-      if (result.success) {
-        setResults({
-          score: result.score!,
-          passed: result.passed!,
-          correctAnswers: result.correctAnswers!,
-        })
-        setShowResults(true)
-        router.refresh()
-      }
+      // Grade quiz locally without DB
+      let correctAnswers = 0
+      questions.forEach((q, idx) => {
+        if (answers[idx] === q.correctAnswer) correctAnswers++
+      })
+      const score = Math.round((correctAnswers / questions.length) * 100)
+      const passed = score >= 70
+
+      setResults({ score, passed, correctAnswers })
+      setShowResults(true)
     } finally {
       setLoading(false)
     }

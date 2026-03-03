@@ -1,9 +1,6 @@
 import "server-only"
 import * as fs from "fs"
 import * as path from "path"
-import { db } from "@/lib/db"
-import { organizationContent } from "@/lib/db/schema"
-import { eq, and } from "drizzle-orm"
 
 // Content types supported by the loader
 export type ContentType =
@@ -16,15 +13,6 @@ export type ContentType =
 
 // Base path for content files
 const CONTENT_BASE_PATH = path.join(process.cwd(), "content")
-
-/**
- * Content Loader - 3-tier content resolution
- *
- * Priority order:
- * 1. Organization custom content (database)
- * 2. Default content (file system /content/)
- * 3. System content (read-only, fallback)
- */
 
 // ============================================
 // Module Content
@@ -53,29 +41,7 @@ export interface ChapterMetadata {
   questions?: any[]
 }
 
-export async function getModuleIndex(
-  organizationId?: string
-): Promise<ModuleMetadata[]> {
-  // Try org-specific content first
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "module"),
-          eq(organizationContent.contentId, "index")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
-  // Fall back to file system
+export async function getModuleIndex(): Promise<ModuleMetadata[]> {
   const indexPath = path.join(CONTENT_BASE_PATH, "modules", "index.json")
   if (fs.existsSync(indexPath)) {
     const content = fs.readFileSync(indexPath, "utf-8")
@@ -87,28 +53,7 @@ export async function getModuleIndex(
 
 export async function getModule(
   slug: string,
-  organizationId?: string
 ): Promise<ModuleMetadata | null> {
-  // Try org-specific content first
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "module"),
-          eq(organizationContent.contentId, slug)
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
-  // Fall back to file system
   const modulePath = path.join(
     CONTENT_BASE_PATH,
     "modules",
@@ -126,9 +71,7 @@ export async function getModule(
 export async function getChapter(
   moduleSlug: string,
   chapterIndex: number,
-  organizationId?: string
 ): Promise<{ metadata: ChapterMetadata; content?: string } | null> {
-  // List chapter files
   const chaptersPath = path.join(
     CONTENT_BASE_PATH,
     "modules",
@@ -139,7 +82,6 @@ export async function getChapter(
     return null
   }
 
-  // Find file with matching index
   const files = fs.readdirSync(chaptersPath).filter((f) => f.endsWith(".json"))
   const jsonFile = files.find((f) => f.startsWith(`${chapterIndex.toString().padStart(2, "0")}-`))
 
@@ -152,12 +94,10 @@ export async function getChapter(
     fs.readFileSync(metadataPath, "utf-8")
   )
 
-  // If quiz, return as-is (questions embedded in metadata)
   if (metadata.type === "quiz") {
     return { metadata }
   }
 
-  // For lessons, try to load markdown content
   const mdFile = jsonFile.replace(".json", ".md")
   const mdPath = path.join(chaptersPath, mdFile)
   let content: string | undefined
@@ -171,7 +111,6 @@ export async function getChapter(
 
 export async function getAllChapters(
   moduleSlug: string,
-  organizationId?: string
 ): Promise<ChapterMetadata[]> {
   const chaptersPath = path.join(
     CONTENT_BASE_PATH,
@@ -227,27 +166,7 @@ export interface AssessmentQuestion {
   followUp?: string[]
 }
 
-export async function getAssessmentIndex(
-  organizationId?: string
-): Promise<AssessmentSectionMetadata[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "assessment"),
-          eq(organizationContent.contentId, "index")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
+export async function getAssessmentIndex(): Promise<AssessmentSectionMetadata[]> {
   const indexPath = path.join(CONTENT_BASE_PATH, "assessments", "index.json")
   if (fs.existsSync(indexPath)) {
     return JSON.parse(fs.readFileSync(indexPath, "utf-8"))
@@ -258,26 +177,7 @@ export async function getAssessmentIndex(
 
 export async function getAssessmentQuestions(
   sectionId: string,
-  organizationId?: string
 ): Promise<AssessmentQuestion[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "assessment"),
-          eq(organizationContent.contentId, sectionId)
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
   const questionsPath = path.join(
     CONTENT_BASE_PATH,
     "assessments",
@@ -315,27 +215,7 @@ export interface StandardControl {
   progress?: number
 }
 
-export async function getStandardsIndex(
-  organizationId?: string
-): Promise<StandardMetadata[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "standard"),
-          eq(organizationContent.contentId, "index")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
+export async function getStandardsIndex(): Promise<StandardMetadata[]> {
   const indexPath = path.join(CONTENT_BASE_PATH, "standards", "index.json")
   if (fs.existsSync(indexPath)) {
     return JSON.parse(fs.readFileSync(indexPath, "utf-8"))
@@ -346,7 +226,6 @@ export async function getStandardsIndex(
 
 export async function getStandard(
   standardId: string,
-  organizationId?: string
 ): Promise<{
   metadata: StandardMetadata
   controls: StandardControl[]
@@ -407,27 +286,7 @@ export interface GlossaryTerm {
   keyPoints?: string[]
 }
 
-export async function getGlossaryIndex(
-  organizationId?: string
-): Promise<GlossaryCategory[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "glossary"),
-          eq(organizationContent.contentId, "index")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
+export async function getGlossaryIndex(): Promise<GlossaryCategory[]> {
   const indexPath = path.join(CONTENT_BASE_PATH, "glossary", "index.json")
   if (fs.existsSync(indexPath)) {
     return JSON.parse(fs.readFileSync(indexPath, "utf-8"))
@@ -436,27 +295,7 @@ export async function getGlossaryIndex(
   return []
 }
 
-export async function getGlossaryTerms(
-  organizationId?: string
-): Promise<GlossaryTerm[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "glossary"),
-          eq(organizationContent.contentId, "terms")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
+export async function getGlossaryTerms(): Promise<GlossaryTerm[]> {
   const termsPath = path.join(CONTENT_BASE_PATH, "glossary", "terms.json")
   if (fs.existsSync(termsPath)) {
     return JSON.parse(fs.readFileSync(termsPath, "utf-8"))
@@ -467,7 +306,6 @@ export async function getGlossaryTerms(
 
 export async function getGlossaryByCategory(
   categoryId: string,
-  organizationId?: string
 ): Promise<GlossaryTerm[]> {
   const categoryPath = path.join(
     CONTENT_BASE_PATH,
@@ -479,7 +317,7 @@ export async function getGlossaryByCategory(
   }
 
   // Fall back to filtering from all terms
-  const allTerms = await getGlossaryTerms(organizationId)
+  const allTerms = await getGlossaryTerms()
   return allTerms.filter(
     (t) => t.category.toLowerCase().replace(/[^a-z0-9]+/g, "-") === categoryId
   )
@@ -502,28 +340,10 @@ export interface FAQ {
   category: string
 }
 
-export async function getFAQIndex(organizationId?: string): Promise<{
+export async function getFAQIndex(): Promise<{
   categories: FAQCategory[]
   faqCount: number
 }> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "faq"),
-          eq(organizationContent.contentId, "index")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
   const indexPath = path.join(CONTENT_BASE_PATH, "faq", "index.json")
   if (fs.existsSync(indexPath)) {
     return JSON.parse(fs.readFileSync(indexPath, "utf-8"))
@@ -532,122 +352,11 @@ export async function getFAQIndex(organizationId?: string): Promise<{
   return { categories: [], faqCount: 0 }
 }
 
-export async function getFAQs(organizationId?: string): Promise<FAQ[]> {
-  if (organizationId) {
-    const orgContent = await db
-      .select()
-      .from(organizationContent)
-      .where(
-        and(
-          eq(organizationContent.organizationId, organizationId),
-          eq(organizationContent.contentType, "faq"),
-          eq(organizationContent.contentId, "faqs")
-        )
-      )
-      .limit(1)
-
-    if (orgContent.length > 0) {
-      return JSON.parse(orgContent[0].content)
-    }
-  }
-
+export async function getFAQs(): Promise<FAQ[]> {
   const faqsPath = path.join(CONTENT_BASE_PATH, "faq", "faqs.json")
   if (fs.existsSync(faqsPath)) {
     return JSON.parse(fs.readFileSync(faqsPath, "utf-8"))
   }
 
   return []
-}
-
-// ============================================
-// Organization Content Management
-// ============================================
-
-export async function setOrganizationContent(
-  organizationId: string,
-  contentType: ContentType,
-  contentId: string,
-  content: unknown
-): Promise<void> {
-  const now = new Date()
-  const id = `${organizationId}-${contentType}-${contentId}`
-
-  await db
-    .insert(organizationContent)
-    .values({
-      id,
-      organizationId,
-      contentType,
-      contentId,
-      content: JSON.stringify(content),
-      isCustomized: true,
-      version: "1.0",
-      createdAt: now,
-      updatedAt: now,
-    })
-    .onConflictDoUpdate({
-      target: [
-        organizationContent.organizationId,
-        organizationContent.contentType,
-        organizationContent.contentId,
-      ],
-      set: {
-        content: JSON.stringify(content),
-        updatedAt: now,
-      },
-    })
-}
-
-export async function deleteOrganizationContent(
-  organizationId: string,
-  contentType: ContentType,
-  contentId: string
-): Promise<void> {
-  await db
-    .delete(organizationContent)
-    .where(
-      and(
-        eq(organizationContent.organizationId, organizationId),
-        eq(organizationContent.contentType, contentType),
-        eq(organizationContent.contentId, contentId)
-      )
-    )
-}
-
-export async function getOrganizationContentList(
-  organizationId: string,
-  contentType?: ContentType
-): Promise<
-  Array<{
-    contentType: string
-    contentId: string
-    isCustomized: boolean
-    version: string
-    updatedAt: Date
-  }>
-> {
-  const conditions = [eq(organizationContent.organizationId, organizationId)]
-
-  if (contentType) {
-    conditions.push(eq(organizationContent.contentType, contentType))
-  }
-
-  const results = await db
-    .select({
-      contentType: organizationContent.contentType,
-      contentId: organizationContent.contentId,
-      isCustomized: organizationContent.isCustomized,
-      version: organizationContent.version,
-      updatedAt: organizationContent.updatedAt,
-    })
-    .from(organizationContent)
-    .where(and(...conditions))
-
-  return results.map((r) => ({
-    contentType: r.contentType,
-    contentId: r.contentId,
-    isCustomized: r.isCustomized ?? true,
-    version: r.version ?? "1.0",
-    updatedAt: r.updatedAt,
-  }))
 }

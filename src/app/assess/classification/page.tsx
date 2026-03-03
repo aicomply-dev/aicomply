@@ -27,7 +27,11 @@ import {
 } from "lucide-react"
 import { ClassificationWizard } from "@/components/classification-wizard"
 import { RoleDeterminationWizard } from "@/components/role-determination-wizard"
-import { getRiskClassificationQuestions } from "@/lib/actions/assessments"
+import {
+  PROHIBITED_PRACTICES_QUESTIONS,
+  HIGH_RISK_CLASSIFICATION_QUESTIONS,
+  LIMITED_RISK_QUESTIONS,
+} from "@/lib/data/assessment-questions"
 
 // Risk level definitions for educational content
 const RISK_LEVELS = [
@@ -153,9 +157,18 @@ const OPERATOR_ROLES = [
   },
 ]
 
-export default async function ClassificationPage() {
-  // Get questions for demo wizard
-  const questions = await getRiskClassificationQuestions()
+export default function ClassificationPage() {
+  // Construct risk classification questions from static data (same logic as the deleted getRiskClassificationQuestions action)
+  const questions = [
+    ...PROHIBITED_PRACTICES_QUESTIONS,
+    ...HIGH_RISK_CLASSIFICATION_QUESTIONS,
+    ...LIMITED_RISK_QUESTIONS,
+  ].map((q) => ({
+    id: q.id,
+    question: q.question,
+    category: q.category,
+    weight: q.weight,
+  }))
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle2, ChevronRight, FileText, Video, HelpCircle } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
-import type { Chapter } from "@/lib/actions/modules"
+import type { Chapter } from "@/lib/data/modules-data"
 
 function getTypeIcon(type: string) {
   switch (type) {

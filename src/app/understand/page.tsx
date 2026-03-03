@@ -27,7 +27,7 @@ import {
   GraduationCap,
 } from "lucide-react"
 import Link from "next/link"
-import { getModules } from "@/lib/actions/modules"
+import { loadModuleIndex } from "@/lib/actions/content"
 import { cn } from "@/lib/utils"
 
 const resources = [
@@ -122,17 +122,16 @@ const timelineMilestones = [
 ]
 
 export default async function UnderstandPage() {
-  const modules = await getModules()
+  const modules = await loadModuleIndex()
 
   // Transform modules for display
   const displayModules = modules.map((mod) => {
-    const chapters = mod.chapters || []
     return {
       slug: mod.slug,
       title: mod.title,
       description: mod.description || "",
       duration: `${mod.duration} min`,
-      topics: chapters.slice(0, 4).map((ch: { title: string }) => ch.title),
+      topics: [] as string[],
       completed: false,
       locked: false,
       progress: 0,
@@ -140,9 +139,9 @@ export default async function UnderstandPage() {
   })
 
   // Calculate total learning time
-  const totalMinutes = modules.reduce((sum, mod) => sum + mod.duration, 0)
+  const totalMinutes = modules.reduce((sum, mod) => sum + (parseInt(String(mod.duration || "0"), 10) || 0), 0)
   const totalHours = Math.round(totalMinutes / 60)
-  const totalChapters = modules.reduce((sum, mod) => sum + (mod.chapters?.length || 0), 0)
+  const totalChapters = modules.reduce((sum, mod) => sum + (mod.chapterCount || 0), 0)
 
   return (
     <div className="flex min-h-screen flex-col">

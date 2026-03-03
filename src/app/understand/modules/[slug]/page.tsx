@@ -3,26 +3,19 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import {
   BookOpen,
   Clock,
-  CheckCircle2,
   PlayCircle,
   ChevronLeft,
-  ChevronRight,
-  Download,
   Bookmark,
   Share2,
   Award,
-  FileText,
-  Video,
-  HelpCircle,
   ArrowRight,
 } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { getModuleBySlug, getModules, getModuleResources, getUserModuleProgress, type Chapter } from "@/lib/actions/modules"
+import { loadModule, loadModuleIndex, loadAllChapters, type ChapterMetadata } from "@/lib/actions/content"
 import { ChapterList } from "@/components/chapter-list"
 
 function getDifficultyLabel(difficulty: string) {
@@ -37,33 +30,25 @@ function getDifficultyLabel(difficulty: string) {
 export default async function ModuleDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
 
-  const mod = await getModuleBySlug(slug)
+  const mod = await loadModule(slug)
   if (!mod) {
     notFound()
   }
 
-  const chapters: Chapter[] = mod.chapters || []
+  const chapters: ChapterMetadata[] = await loadAllChapters(slug)
   const totalChapters = chapters.length
-
-  // Get user progress for this module
-  const userProgress = await getUserModuleProgress(mod.id)
-  const progressRecord = userProgress[0]
-  const completedChapters: number[] = progressRecord?.completedChapters || []
-  const completedCount = completedChapters.length
-  const progressPercent = progressRecord?.progress || 0
-
-  // Get resources for this module
-  const resources = await getModuleResources(mod.id)
+  const completedChapters: number[] = []
+  const completedCount = 0
 
   // Get related modules (other modules in same category, or just next modules)
-  const allModules = await getModules()
+  const allModules = await loadModuleIndex()
   const relatedModules = allModules
     .filter(m => m.id !== mod.id && m.category === mod.category)
     .slice(0, 3)
     .map(m => ({
       slug: m.slug,
       title: m.title,
-      lessons: m.chapters?.length || 0,
+      lessons: m.chapterCount || 0,
     }))
 
   // If not enough related, add other modules
@@ -74,7 +59,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
       .map(m => ({
         slug: m.slug,
         title: m.title,
-        lessons: m.chapters?.length || 0,
+        lessons: m.chapterCount || 0,
       }))
     relatedModules.push(...otherModules)
   }
@@ -126,7 +111,7 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
                     >
                       <Link href={`/understand/modules/${slug}/chapter/0`}>
                         <PlayCircle className="h-5 w-5" />
-                        {completedCount > 0 ? "Continue Learning" : "Start Learning"}
+                        Start Learning
                       </Link>
                     </Button>
                   )}
@@ -144,24 +129,18 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
               <div>
                 <Card className="border-border/50 bg-background/50 backdrop-blur">
                   <CardHeader className="pb-3">
-                    <CardTitle className="text-lg">Your Progress</CardTitle>
+                    <CardTitle className="text-lg">Module Info</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
-                    <div className="space-y-2">
-                      <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">
-                          {completedCount} of {totalChapters} complete
-                        </span>
-                        <span className="font-medium">{progressPercent}%</span>
-                      </div>
-                      <Progress value={progressPercent} className="h-2" />
+                    <div className="text-sm text-muted-foreground">
+                      {totalChapters} chapters available
                     </div>
                     <div className="flex items-center gap-3 rounded-lg bg-muted/50 p-3">
                       <Award className="h-8 w-8 text-muted-foreground" />
                       <div className="text-sm">
-                        <p className="font-medium">Earn a Certificate</p>
+                        <p className="font-medium">Self-Paced Learning</p>
                         <p className="text-muted-foreground">
-                          Complete all lessons to earn your certificate
+                          Work through lessons at your own pace
                         </p>
                       </div>
                     </div>
@@ -186,46 +165,19 @@ export default async function ModuleDetailPage({ params }: { params: Promise<{ s
 
                 <ChapterList
                   slug={slug}
-                  chapters={chapters}
+                  chapters={chapters.map((ch, idx) => ({
+                    id: idx,
+                    title: ch.title,
+                    description: ch.description || "",
+                    type: ch.type as "lesson" | "quiz" | "video",
+                    duration: parseInt(String(ch.duration || "0"), 10) || 0,
+                  }))}
                   completedChapters={completedChapters}
                 />
               </div>
 
               {/* Sidebar */}
               <div className="space-y-6">
-                {/* Resources */}
-                {resources.length > 0 && (
-                  <Card className="border-border/50">
-                    <CardHeader>
-                      <CardTitle className="text-lg">Resources</CardTitle>
-                      <CardDescription>Downloadable materials for this module</CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-3">
-                      {resources.map((resource) => (
-                        <div
-                          key={resource.id}
-                          className="flex items-center justify-between rounded-lg border border-border/50 bg-muted/30 p-3"
-                        >
-                          <div className="flex items-center gap-3">
-                            <FileText className="h-5 w-5 text-primary" />
-                            <div>
-                              <p className="text-sm font-medium">{resource.title}</p>
-                              <p className="text-xs text-muted-foreground">
-                                {resource.type.toUpperCase()} {resource.size && `• ${resource.size}`}
-                              </p>
-                            </div>
-                          </div>
-                          <Button variant="ghost" size="icon" className="h-8 w-8" asChild>
-                            <a href={resource.url} target="_blank" rel="noopener noreferrer">
-                              <Download className="h-4 w-4" />
-                            </a>
-                          </Button>
-                        </div>
-                      ))}
-                    </CardContent>
-                  </Card>
-                )}
-
                 {/* Related Modules */}
                 {relatedModules.length > 0 && (
                   <Card className="border-border/50">

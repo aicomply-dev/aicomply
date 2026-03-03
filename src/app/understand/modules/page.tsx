@@ -5,61 +5,40 @@ import { PageHeader } from "@/components/page-header"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { BookOpen, Clock, CheckCircle2, Award, TrendingUp, ArrowRight, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { getModules, getUserModuleProgress, getOverallProgress } from "@/lib/actions/modules"
+import { loadModuleIndex } from "@/lib/actions/content"
 
 export default async function ModulesPage() {
-  let modules: any[] = []
+  let modules: Awaited<ReturnType<typeof loadModuleIndex>> = []
   try {
-    modules = await getModules()
+    modules = await loadModuleIndex()
   } catch (err) {
     // If modules cannot be fetched, fall back to empty to show graceful UI
     modules = []
   }
 
-  // Get user progress for all modules
-  const userProgressList = await getUserModuleProgress()
-  const progressMap = new Map(userProgressList.map(p => [p.moduleId, p]))
-
   const enhancedModules = modules.map((mod) => {
-    const progress = progressMap.get(mod.id)
-    const progressPercent = progress?.progress || 0
-    let status: "completed" | "in_progress" | "not_started" = "not_started"
-    if (progress?.status === "completed") {
-      status = "completed"
-    } else if (progress?.status === "in_progress" || progressPercent > 0) {
-      status = "in_progress"
-    }
-
     return {
       ...mod,
-      progress: progressPercent,
-      status,
-      lessons: mod.chapters.length,
+      progress: 0,
+      status: "not_started" as "completed" | "in_progress" | "not_started",
+      lessons: mod.chapterCount || 0,
       level: mod.difficulty.charAt(0).toUpperCase() + mod.difficulty.slice(1),
-      topics: mod.chapters.map((c: { title: string }) => c.title),
+      topics: [] as string[],
     }
   })
 
-  // Get overall progress stats
-  const overallStats = await getOverallProgress()
-  const completedCount = overallStats.completedModules
-  const totalModules = overallStats.totalModules
-  const totalProgress = overallStats.overallProgress
-  const totalDuration = modules.reduce((acc, m) => acc + m.duration, 0)
-  const completedDuration = enhancedModules
-    .filter(m => m.status === "completed")
-    .reduce((acc, m) => acc + m.duration, 0)
-  const remainingDuration = totalDuration - completedDuration
+  const completedCount = 0
+  const totalModules = modules.length
+  const totalDuration = modules.reduce((acc, m) => acc + (parseInt(String(m.duration || "0"), 10) || 0), 0)
 
   const stats = [
     { label: "Total Modules", value: totalModules.toString(), icon: BookOpen, color: "primary" },
     { label: "Completed", value: completedCount.toString(), icon: CheckCircle2, color: "accent" },
     { label: "Hours of Content", value: (totalDuration / 60).toFixed(1), icon: Clock, color: "chart-3" },
-    { label: "Certificates", value: completedCount === totalModules ? "1" : "0", icon: Award, color: "chart-5" },
+    { label: "Certificates", value: "0", icon: Award, color: "chart-5" },
   ]
 
   return (
@@ -119,7 +98,7 @@ export default async function ModulesPage() {
                   })}
                 </div>
 
-                {/* Overall Progress */}
+                {/* Overall Info */}
                 <Card className="mt-6 border-primary/20 bg-gradient-to-r from-primary/5 to-transparent">
                   <CardContent className="flex flex-col items-center justify-between gap-6 p-6 sm:flex-row">
                     <div className="flex items-center gap-4">
@@ -127,18 +106,16 @@ export default async function ModulesPage() {
                         <TrendingUp className="h-8 w-8" />
                       </div>
                       <div>
-                        <p className="text-sm font-medium text-muted-foreground">Overall Progress</p>
+                        <p className="text-sm font-medium text-muted-foreground">Learning Modules</p>
                         <p className="text-2xl font-bold">
-                          {completedCount} of {totalModules} modules completed
+                          {totalModules} modules available
                         </p>
                       </div>
                     </div>
                     <div className="w-full max-w-sm">
                       <div className="flex items-center justify-between text-sm">
-                        <span className="font-medium">{totalProgress}% complete</span>
-                        <span className="text-muted-foreground">~{(remainingDuration / 60).toFixed(1)} hours remaining</span>
+                        <span className="text-muted-foreground">~{(totalDuration / 60).toFixed(1)} hours of content</span>
                       </div>
-                      <Progress value={totalProgress} className="mt-2 h-3" />
                     </div>
                   </CardContent>
                 </Card>
@@ -279,32 +256,14 @@ export default async function ModulesPage() {
                               </div>
 
                               <div className="flex items-center justify-between pt-2">
-                                {module.status === "in_progress" && (
-                                  <span className="text-sm font-medium text-primary">{module.progress}% complete</span>
-                                )}
-                                {module.status === "completed" && (
-                                  <span className="flex items-center gap-1.5 text-sm font-medium text-accent">
-                                    <CheckCircle2 className="h-4 w-4" />
-                                    Completed
-                                  </span>
-                                )}
-                                {module.status === "not_started" && (
-                                  <span className="text-sm text-muted-foreground">Ready to start</span>
-                                )}
+                                <span className="text-sm text-muted-foreground">Ready to start</span>
 
                                 <Button
                                   size="sm"
-                                  className={cn(
-                                    module.status === "completed" && "bg-accent hover:bg-accent/90",
-                                  )}
                                   asChild
                                 >
                                   <Link href={`/understand/modules/${module.slug}`}>
-                                    {module.status === "completed"
-                                      ? "Review"
-                                      : module.status === "in_progress"
-                                        ? "Continue"
-                                        : "Start"}
+                                    Start
                                     <ChevronRight className="ml-1 h-4 w-4" />
                                   </Link>
                                 </Button>
@@ -338,7 +297,7 @@ export default async function ModulesPage() {
                 </div>
                 <Button size="lg" variant="secondary" className="shadow-xl" asChild>
                   <Link href="/assess">
-                    {completedCount === totalModules ? "Start Assessment" : "Learn More"}
+                    Learn More
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

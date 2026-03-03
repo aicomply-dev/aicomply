@@ -16,7 +16,8 @@ import {
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { LessonContent } from "@/components/lesson-content"
-import { getModuleBySlug, getUserModuleProgress, type Chapter } from "@/lib/actions/modules"
+import { loadModule, loadAllChapters, loadChapter } from "@/lib/actions/content"
+import type { Chapter } from "@/lib/data/modules-data"
 
 function chapterIcon(type: Chapter["type"]) {
   switch (type) {
@@ -40,26 +41,47 @@ export default async function ChapterPage({
     notFound()
   }
 
-  const mod = await getModuleBySlug(slug)
+  const mod = await loadModule(slug)
   if (!mod) {
     notFound()
   }
 
-  const chapters = (mod.chapters || []) as Chapter[]
-  if (chapterIndex < 0 || chapterIndex >= chapters.length) {
+  const allChapters = await loadAllChapters(slug)
+  if (chapterIndex < 0 || chapterIndex >= allChapters.length) {
     notFound()
   }
 
-  const chapter = chapters[chapterIndex]
+  const chapterMeta = allChapters[chapterIndex]
+  // Map ChapterMetadata to Chapter shape for LessonContent compatibility
+  const chapter: Chapter = {
+    id: chapterIndex,
+    title: chapterMeta.title,
+    description: chapterMeta.description || "",
+    type: chapterMeta.type as "lesson" | "quiz" | "video",
+    duration: parseInt(String(chapterMeta.duration || "0"), 10) || 0,
+    videoUrl: chapterMeta.videoUrl,
+    questions: chapterMeta.questions as Chapter["questions"],
+  }
+
+  // Load chapter content if available
+  const chapterData = await loadChapter(slug, chapterIndex)
+  if (chapterData?.content) {
+    chapter.content = chapterData.content
+  }
+
+  const chapters = allChapters.map((ch, idx) => ({
+    id: idx,
+    title: ch.title,
+    description: ch.description || "",
+    type: ch.type as "lesson" | "quiz" | "video",
+    duration: ch.duration || 0,
+  }))
+
   const PrevIcon = chapterIcon(chapter.type)
   const prevIndex = chapterIndex > 0 ? chapterIndex - 1 : null
-  const nextIndex = chapterIndex < chapters.length - 1 ? chapterIndex + 1 : null
+  const nextIndex = chapterIndex < allChapters.length - 1 ? chapterIndex + 1 : null
 
-  // Get user progress for this module
-  const userProgress = await getUserModuleProgress(mod.id)
-  const progressRecord = userProgress[0]
-  const completedChapters = progressRecord?.completedChapters || []
-  const isChapterCompleted = completedChapters.includes(chapterIndex)
+  const isChapterCompleted = false
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -91,7 +113,7 @@ export default async function ChapterPage({
                 </Badge>
                 <Badge variant="secondary" className="gap-1">
                   <BookOpen className="h-3 w-3" />
-                  Chapter {chapterIndex + 1} of {chapters.length}
+                  Chapter {chapterIndex + 1} of {allChapters.length}
                 </Badge>
               </div>
 
@@ -135,7 +157,7 @@ export default async function ChapterPage({
               chapterIndex={chapterIndex}
               chapter={chapter}
               isCompleted={isChapterCompleted}
-              totalChapters={chapters.length}
+              totalChapters={allChapters.length}
               moduleTitle={mod.title}
               prevChapterIndex={prevIndex ?? undefined}
               nextChapterIndex={nextIndex ?? undefined}
