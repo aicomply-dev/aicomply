@@ -3,6 +3,7 @@ import { Shield } from "lucide-react"
 
 import { MobileNav } from "@/components/layout/mobile-nav"
 import { UserMenu } from "@/components/auth/user-menu"
+import { SearchBar } from "@/components/content/search-bar"
 
 const navLinks = [
   { href: "/understand", label: "Understand" },
@@ -39,6 +40,7 @@ export function SiteHeader() {
 
         {/* Right side */}
         <div className="ml-auto flex items-center gap-2">
+          <SearchBar />
           <UserMenu />
           <MobileNav />
         </div>

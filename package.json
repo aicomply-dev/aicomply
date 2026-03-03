@@ -10,6 +10,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev --turbopack -H 0.0.0.0",
+    "prebuild": "npx tsx scripts/build-search-index.ts || echo '[prebuild] Search index build skipped'",
     "build": "next build",
     "build:standalone": "next build && npm run postbuild",
     "postbuild": "mkdir -p .next/standalone/.next/static/chunks .next/standalone/.next/static/css .next/standalone/.next/static/media .next/standalone/.next/server && cp -r .next/static/chunks/* .next/standalone/.next/static/chunks/ 2>/dev/null || true && cp -r .next/static/css/* .next/standalone/.next/static/css/ 2>/dev/null || true && cp -r .next/static/media/* .next/standalone/.next/static/media/ 2>/dev/null || true && cp -r .next/server/* .next/standalone/.next/server/ 2>/dev/null || true && cp -r public .next/standalone/ 2>/dev/null || true",
